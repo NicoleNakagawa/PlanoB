@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>PlanoB</title>
+    <link rel="stylesheet" href="../css/planob.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <img src="..\imgs\planob-logo.png" alt="Logo PlanoB" />
+    <nav>
+      <a href="#planos">Planos</a>
+      <a href="#videos">Vídeos</a>
+      <a href="#tabela">Tabela</a>
+      
+      <!-- Ícone com menu suspenso -->
+      <div class="menu-perfil">
+        <div class="perfil-icon">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="dropdown-menu">
+          <a href="#">ALUNO</a>
+          <a href="#">PROFESSOR</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1><span>VENHA</span> <span>FAZER</span> <span>PARTE DO</span> <span><strong>PlanoB</strong></span></h1>
+  </section>
+
+  <section class="section" id="planos">
+    <div class="planos-section">
+      <h2>PLANOS</h2>
+      <div class="planos">
+
+      <div class="plano">
+      <div class="plano-front">
+      <br>
+    <h3>PLANO<br>FREE</h3>
+    <p>$00,00</p>
+    <br><br>
+    <h4 class="ver-mais" onclick="togglePlano(this)">Clique aqui<br>para ver mais</h4>
+  </div>
+  <div class="plano-back" style="display: none;">
+    <br>
+    <h3>FREE</h3>
+    <ul>
+      <li>Acesse todos os vídeos da plataforma, use a tabela de anotações semanal durante <strong>UMA SEMANA</strong></li>
+    </ul>
+  </div>
+</div>
+
+       <div class="plano">
+      <div class="plano-front">
+      <br>
+    <h3>PLANO<br>SEMANAL</h3>
+    <p>$24,90</p>
+    <br><br>
+    <h4 class="ver-mais" onclick="togglePlano(this)">Clique aqui<br>para ver mais</h4>
+  </div>
+  <div class="plano-back" style="display: none;">
+    <br>
+    <h3>SEMANAL</h3>
+    <ul>
+      <li>Acesse todos os vídeos da plataforma e use a tabela de anotações semanal feita por personal</li>
+    </ul>
+  </div>
+</div>
+
+        <div class="plano">
+      <div class="plano-front">
+      <br>
+    <h3>PLANO<br>MENSAL</h3>
+    <p>$79,90</p>
+    <br><br>
+    <h4 class="ver-mais" onclick="togglePlano(this)">Clique aqui<br>para ver mais</h4>
+  </div>
+  <div class="plano-back" style="display: none;">
+    <br>
+    <h3>MENSAL</h3>
+    <ul>
+      <li>Acesse todos os vídeos da plataforma e use a tabela de anotações mensal feita por personal</li>
+    </ul>
+  </div>
+</div>
+  </section>
+
+  <section class="section" id="videos">
+  <h2>VÍDEOS</h2>
+  <div class="videos">
+    <div class="video-card">
+      <img src="https://i.ytimg.com/vi/DkmN6esM8N4/sddefault.jpg" alt="Vídeo 1">
+      <div class="play-button"><i class="fas fa-play"></i></div>
+    </div>
+    <div class="video-card">
+      <img src="https://i.ytimg.com/vi/DkmN6esM8N4/sddefault.jpg" alt="Vídeo 2">
+      <div class="play-button"><i class="fas fa-play"></i></div>
+    </div>
+    <div class="video-card">
+      <img src="https://i.ytimg.com/vi/DkmN6esM8N4/sddefault.jpg" alt="Vídeo 3">
+      <div class="play-button"><i class="fas fa-play"></i></div>
+    </div>
+  </div>
+</section>
+
+  <section class="section tabela" id="tabela">
+    <h2>TABELA</h2>
+    <table>
+      <thead>
+        <tr><th colspan="7">Mês: Fevereiro</th></tr>
+        <tr>
+          <th>Domingo</th>
+          <th>Segunda</th>
+          <th>Terça</th>
+          <th>Quarta</th>
+          <th>Quinta</th>
+          <th>Sexta</th>
+          <th>Sábado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td></td><td></td><td></td><td></td><td>01</td><td>02</td><td>03</td></tr>
+        <tr><td>04</td><td>05</td><td>06</td><td>07</td><td>08</td><td>09</td><td>10</td></tr>
+        <tr><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr>
+        <tr><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
+        <tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 PLANOB<br/>TODOS OS DIREITOS RESERVADOS.</p>
+  </footer>
+
+  <script>
+  function togglePlano(element) {
+    const plano = element.closest('.plano');
+    const front = plano.querySelector('.plano-front');
+    const back = plano.querySelector('.plano-back');
+    
+    // Alternar visibilidade
+    if (back.style.display === 'none') {
+      front.style.display = 'none';
+      back.style.display = 'block';
+    } else {
+      front.style.display = 'block';
+      back.style.display = 'none';
+    }
+  }
+</script>
+
+
+</body>
+</html>
