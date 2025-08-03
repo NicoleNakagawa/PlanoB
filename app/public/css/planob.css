@@ -278,3 +278,133 @@ th {
   padding: 15px 0;
   margin-top: 40px;
 }
+
+@media (max-width: 768px) {
+
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  header img {
+    height: 50px;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 14px;
+    padding: 4px;
+  }
+
+  .menu-perfil {
+    margin-left: 10px;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 60px 20px 40px;
+    background-size: cover;
+    height: 500px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  .hero strong {
+    font-size: 30px;
+  }
+
+  .planos-section {
+    padding: 20px 10px;
+  }
+
+  .planos {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .plano {
+    width: 100%;
+    font-size: 16px;
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .plano h3 {
+    font-size: 18px;
+  }
+
+  .plano p {
+    font-size: 16px;
+  }
+
+  .plano h4 {
+    font-size: 14px;
+  }
+
+  .plano ul {
+    font-size: 14px;
+  }
+
+  #videos h2,
+  #tabela h2 {
+    font-size: 20px;
+    padding-left: 10px;
+  }
+
+  .videos {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .video-card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .play-button {
+    font-size: 28px;
+    padding: 12px;
+  }
+
+  .tabela {
+    padding: 10px;
+  }
+
+  table {
+    font-size: 11px;
+  }
+
+  th {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  td {
+    padding: 6px;
+  }
+
+  .footer {
+    padding: 10px;
+    font-size: 13px;
+  }
+}
