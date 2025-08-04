@@ -22,7 +22,7 @@
           <i class="fas fa-user"></i>
         </div>
         <div class="dropdown-menu">
-          <a href="../html/loginaluno.html">ALUNO</a>
+          <a href="loginaluno.html">ALUNO</a>
           <a href="#">PROFESSOR</a>
         </div>
       </div>
@@ -108,30 +108,53 @@
   </div>
 </section>
 
-  <section class="section tabela" id="tabela">
-    <h2>TABELA</h2>
-    <table>
-      <thead>
-        <tr><th colspan="7">Mês: Fevereiro</th></tr>
-        <tr>
-          <th>Domingo</th>
-          <th>Segunda</th>
-          <th>Terça</th>
-          <th>Quarta</th>
-          <th>Quinta</th>
-          <th>Sexta</th>
-          <th>Sábado</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td></td><td></td><td></td><td></td><td>01</td><td>02</td><td>03</td></tr>
-        <tr><td>04</td><td>05</td><td>06</td><td>07</td><td>08</td><td>09</td><td>10</td></tr>
-        <tr><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr>
-        <tr><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
-        <tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td></td><td></td></tr>
-      </tbody>
-    </table>
-  </section>
+ <section class="section tabela" id="tabela">
+  <h2>TABELA</h2>
+  <table class="calendario">
+    <caption>Mês: Fevereiro</caption>
+    <thead>
+      <tr>
+        <th>Seg</th>
+        <th>Ter</th>
+        <th>Qua</th>
+        <th>Qui</th>
+        <th>Sex</th>
+        <th class="sabado">Sáb</th>
+        <th class="domingo">Dom</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="fora-do-mes">30</td>
+        <td class="fora-do-mes">31</td>
+        <td>01</td>
+        <td><span class="hoje">02</span></td>
+        <td>03</td>
+        <td class="sabado">04</td>
+        <td class="domingo">05</td>
+      </tr>
+      <tr>
+        <td>06</td><td>07</td><td>08</td><td>09</td><td>10</td><td class="sabado">11</td><td class="domingo">12</td>
+      </tr>
+      <tr>
+        <td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td class="sabado">18</td><td class="domingo">19</td>
+      </tr>
+      <tr>
+        <td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td class="sabado">25</td><td class="domingo">26</td>
+      </tr>
+      <tr>
+        <td>27</td>
+        <td class="fora-do-mes">28</td>
+        <td class="fora-do-mes">01</td>
+        <td class="fora-do-mes">02</td>
+        <td class="fora-do-mes">03</td>
+        <td class="fora-do-mes">04</td>
+        <td class="fora-do-mes">05</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
 
   <footer class="footer">
     <p>© 2025 PLANOB<br/>TODOS OS DIREITOS RESERVADOS.</p>

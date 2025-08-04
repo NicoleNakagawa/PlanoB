@@ -271,6 +271,65 @@ th {
   font-size: 20px;
 }
 
+.calendario {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  background-color: #A8BDD1;
+  border: 2px solid #000000;
+}
+
+.calendario caption {
+  background-color: #007BFF;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  padding: 10px;
+}
+
+.calendario th {
+  background-color: white;
+  color: #2C3E50;
+  border: 1px solid #333;
+  padding: 8px;
+  font-weight: bold;
+}
+
+.calendario td {
+  border: 1px solid #333;
+  padding: 10px;
+  text-align: center;
+  background-color: #e6f0f5;
+  color: black;
+  font-size: 16px;
+}
+
+.calendario .fora-do-mes {
+  color: #5f94c4;
+}
+
+.calendario .sabado {
+  color: red;
+}
+
+.calendario .domingo {
+  color: red;
+}
+
+.calendario .hoje {
+  background-color: #007BFF;
+  color: white;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  line-height: 35px;
+}
+
+
 .footer {
   background-color: #2C3E50;
   color: white;
