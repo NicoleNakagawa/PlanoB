@@ -159,31 +159,37 @@ nav a {
 .plano {
   background-color: #007BFF;
   color: white;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 30px 15px;
+  border-radius: 15px;
   text-align: center;
   width: 30%;
-  min-height: 350px;
-  font-size: 20px;
-  position: relative;
-  transition: all 0.3s ease;
+  font-size: 18px;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .plano h3 {
-  margin-bottom: 20px;
-  font-size: 36px;
+  font-size: 24px;
   font-weight: bold;
+  line-height: 1.4;
+  margin-bottom: 15px;
 }
 
 .plano p {
-  font-size: 22px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .plano h4 {
+  font-size: 14px;
+  color: white;
   cursor: pointer;
-  font-size: 18px;
-  color: black;
-  margin-top: 30px;
+  font-weight: normal;
 }
 
 .plano ul {
