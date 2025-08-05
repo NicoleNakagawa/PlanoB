@@ -19,6 +19,13 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Viga';
+  src: url('../fonts/Viga-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
  
 body {
   background-color: #f0f2f5;
@@ -162,6 +169,7 @@ nav a {
   padding: 20px 0;
   text-align: center;
   border-radius: 15px;
+  font-size: 30px;
 }
  
 .planos-section h2 {
@@ -197,8 +205,8 @@ nav a {
  
 .plano p {
   font-size: 40px;
-  font-weight: bold;
   margin-bottom: 20px;
+  font-family: 'Viga';
 }
  
 .plano h4 {
@@ -219,6 +227,11 @@ nav a {
   margin-bottom: 10px;
 }
  
+
+h2{
+font-size: 30px;
+}
+
 .ver-mais:hover {
   text-decoration: underline;
 }
@@ -235,7 +248,7 @@ nav a {
  
 .video-card {
   position: relative;
-  width: 250px;
+  width: 400px;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
