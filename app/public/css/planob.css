@@ -2,59 +2,74 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Arial', sans-serif, 'nunito';
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
 }
-
+ 
+@font-face {
+  font-family: 'Nunito';
+  src: url('../fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+@font-face {
+  font-family: 'Baumans';
+  src: url('../fonts/Baumans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
 body {
   background-color: #f0f2f5;
 }
-
+ 
 header {
   background-color: #2C3E50;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 50px;
-  
+ 
 }
-
+ 
 header img {
-  height: 65px;
+  height: 60px;
   color: white;
 }
-
+ 
 nav a {
    margin: 0 10px;
    text-decoration: none;
    color: #ffffff;
    font-weight: bold;
 }
-
+ 
 /* Container do menu de perfil */
 .menu-perfil {
   position: relative;
   display: inline-block;
 }
-
+ 
 /* Ícone de perfil */
 .perfil-icon {
-  font-size: 25px; 
-  background-color: #2C3E50; 
+  font-size: 25px;
+  background-color: #2C3E50;
   padding: 10px;
-  border-radius: 50%; 
-  transition: background-color 0.3s ease; 
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
 }
-
+ 
 /* Animação de hover no botão */
 .menu-perfil:hover .perfil-icon {
   background-color: #A8BDD1;
 }
-
+ 
 /* Cor do ícone */
 .perfil-icon i {
   color: white;
 }
-
+ 
 /* Menu suspenso */
 .dropdown-menu {
   display: none;
@@ -67,7 +82,7 @@ nav a {
   box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
   z-index: 1000;
 }
-
+ 
 /* Links do menu */
 .dropdown-menu a {
   display: block;
@@ -77,28 +92,28 @@ nav a {
   font-weight: bold;
   font-size: 16px;
 }
-
+ 
 /* Hover nos links do menu */
 .dropdown-menu a:hover {
   background-color: #90a7bd;
   border-radius: 5px;
 }
-
+ 
 /* Mostrar o menu ao passar o mouse no container */
 .menu-perfil:hover .dropdown-menu {
   display: block;
 }
-
+ 
 .hero {
   background: url('https://www.bp.org.br/Content/artigos/rotina-de-exercicios-em-casa-5-dicas-da-BP.jpg') no-repeat center center;
-  background-size: 100%; 
-  height: 700px; 
+  background-size: 100%;
+  height: 700px;
   display: flex;
   align-items: center;
-  padding-left: 90px; 
+  padding-left: 90px;
   position: relative;
 }
-
+ 
 .hero::after {
   content: '';
   position: absolute;
@@ -106,7 +121,7 @@ nav a {
   background-color: rgba(0, 0, 0, 0.6); /* escurece a imagem mais */
   z-index: 1;
 }
-
+ 
 .hero h1 {
   position: relative;
   z-index: 2;
@@ -115,24 +130,25 @@ nav a {
   font-weight: 300;
   font-family: 'Nunito';
   line-height: 1.3;
-  text-align: left;
+  text-align: center;
 }
-
+ 
 .hero h1 span {
   display: block;
 }
-
+ 
 .hero strong {
   color: #D9D9D9;
-  font-size: 80px;
+  font-size: 110px;
   font-family: 'Baumans';
-
+  font-weight: 100;
+  text-align: center;
 }
-
+ 
 .section {
   padding: 20px 30px;
 }
-
+ 
 .planos {
   background-color: #A8BDD1;
   display: flex;
@@ -140,22 +156,22 @@ nav a {
   padding: 20px ;
   font-family: 'Arial', sans-serif;
 }
-
+ 
 .planos-section {
-  background-color: #A8BDD1; 
+  background-color: #A8BDD1;
   padding: 20px 0;
   text-align: center;
   border-radius: 15px;
 }
-
+ 
 .planos-section h2 {
   margin-bottom: 20px;
   font-size: 28px;
   font-weight: bold;
-  color: #2C3E50; 
+  color: #2C3E50;
 }
-
-
+ 
+ 
 .plano {
   background-color: #007BFF;
   color: white;
@@ -163,7 +179,7 @@ nav a {
   border-radius: 15px;
   text-align: center;
   width: 30%;
-  font-size: 18px;
+  font-size: 28px;
   font-family: 'Arial', sans-serif;
   display: flex;
   flex-direction: column;
@@ -171,43 +187,43 @@ nav a {
   transition: transform 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-
+ 
 .plano h3 {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: bold;
   line-height: 1.4;
   margin-bottom: 15px;
 }
-
+ 
 .plano p {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 20px;
 }
-
+ 
 .plano h4 {
   font-size: 14px;
   color: rgb(0, 0, 0);
   cursor: pointer;
   font-weight: normal;
 }
-
+ 
 .plano ul {
   list-style: disc;
   text-align: left;
   padding-left: 20px;
   font-size: 18px;
 }
-
+ 
 .plano ul li {
   margin-bottom: 10px;
 }
-
+ 
 .ver-mais:hover {
   text-decoration: underline;
 }
-
-
+ 
+ 
 .videos {
   display: flex;
   justify-content: space-around;
@@ -215,8 +231,8 @@ nav a {
   gap: 20px;
   flex-wrap: wrap;
 }
-
-
+ 
+ 
 .video-card {
   position: relative;
   width: 250px;
@@ -225,17 +241,17 @@ nav a {
   cursor: pointer;
   transition: transform 0.3s ease;
 }
-
+ 
 .video-card img {
   width: 100%;
   display: block;
   border-radius: 10px;
 }
-
+ 
 .video-card:hover {
   transform: scale(1.03);
 }
-
+ 
 .play-button {
   position: absolute;
   top: 50%;
@@ -248,27 +264,27 @@ nav a {
   border-radius: 50%;
   pointer-events: none;
 }
-
+ 
 .tabela {
   margin-top: 30px;
-  background-color: #A8BDD1; 
-  padding: 20px; 
-  
+  background-color: #A8BDD1;
+  padding: 20px;
+ 
 }
-
+ 
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
 }
-
+ 
 th, td {
   border: 1px solid #ccc;
   padding: 10px;
   text-align: center;
   background-color: #e6f0f5; /* Fundo mais claro para as células da tabela */
 }
-
+ 
 th {
   background-color: #007BFF;
   color: rgb(0, 0, 0);
@@ -276,7 +292,7 @@ th {
   text-align: left;
   font-size: 20px;
 }
-
+ 
 .calendario {
   width: 100%;
   max-width: 600px;
@@ -286,7 +302,7 @@ th {
   background-color: #A8BDD1;
   border: 2px solid #000000;
 }
-
+ 
 .calendario caption {
   background-color: #007BFF;
   color: black;
@@ -295,7 +311,7 @@ th {
   text-align: left;
   padding: 10px;
 }
-
+ 
 .calendario th {
   background-color: white;
   color: #2C3E50;
@@ -303,7 +319,7 @@ th {
   padding: 8px;
   font-weight: bold;
 }
-
+ 
 .calendario td {
   border: 1px solid #333;
   padding: 10px;
@@ -312,19 +328,19 @@ th {
   color: black;
   font-size: 16px;
 }
-
+ 
 .calendario .fora-do-mes {
   color: #5f94c4;
 }
-
+ 
 .calendario .sabado {
   color: red;
 }
-
+ 
 .calendario .domingo {
   color: red;
 }
-
+ 
 .calendario .hoje {
   background-color: #007BFF;
   color: white;
@@ -334,8 +350,8 @@ th {
   display: inline-block;
   line-height: 35px;
 }
-
-
+ 
+ 
 .footer {
   background-color: #2C3E50;
   color: white;
@@ -343,40 +359,40 @@ th {
   padding: 15px 0;
   margin-top: 40px;
 }
-
+ 
 @media (max-width: 768px) {
-
+ 
   body {
     padding: 0;
     margin: 0;
   }
-
+ 
   header {
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: left;
     padding: 10px 20px;
   }
-
+ 
   header img {
     height: 50px;
   }
-
+ 
   nav {
     display: flex;
     align-items: center;
     gap: 10px;
   }
-
+ 
   nav a {
     font-size: 14px;
     padding: 4px;
   }
-
+ 
   .menu-perfil {
     margin-left: 10px;
   }
-
+ 
   .hero {
     flex-direction: column;
     padding: 60px 20px 40px;
@@ -384,92 +400,90 @@ th {
     height: 500px;
     text-align: center;
   }
-
+ 
   .hero h1 {
     font-size: 22px;
     line-height: 1.2;
   }
-
+ 
   .hero strong {
     font-size: 30px;
   }
-
+ 
   .planos-section {
     padding: 20px 10px;
   }
-
+ 
   .planos {
     flex-direction: column;
     align-items: center;
     gap: 10px;
     padding: 0 10px;
   }
-
+ 
   .plano {
     width: 100%;
     font-size: 16px;
     min-height: auto;
     padding: 15px;
   }
-
+ 
   .plano h3 {
     font-size: 18px;
   }
-
+ 
   .plano p {
     font-size: 16px;
   }
-
+ 
   .plano h4 {
     font-size: 14px;
   }
-
+ 
   .plano ul {
     font-size: 14px;
   }
-
-  
-
+ 
   #videos h2,
   #tabela h2 {
     font-size: 20px;
     padding-left: 10px;
   }
-
+ 
   .videos {
     flex-direction: column;
     align-items: center;
     gap: 10px;
     padding: 0 10px;
   }
-
+ 
   .video-card {
     width: 100%;
     max-width: 320px;
   }
-
+ 
   .play-button {
     font-size: 28px;
     padding: 12px;
   }
-
+ 
   .tabela {
     padding: 10px;
   }
-
+ 
   table {
     font-size: 11px;
   }
-
+ 
   th {
     font-size: 13px;
     text-align: center;
   }
-
+ 
   td {
     padding: 6px;
   }
-
+ 
   .footer {
     padding: 10px;
     font-size: 13px;

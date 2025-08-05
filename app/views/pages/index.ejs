@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/planob.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
-
+ 
 <body>
   <header>
     <img src="../img/planoblogo.png" alt="Logo PlanoB" />
@@ -15,29 +15,29 @@
       <a href="#planos">Planos</a>
       <a href="#videos">Vídeos</a>
       <a href="#tabela">Tabela</a>
-      
+     
       <!-- Ícone com menu suspenso -->
       <div class="menu-perfil">
         <div class="perfil-icon">
           <i class="fas fa-user"></i>
         </div>
         <div class="dropdown-menu">
-          <a href="loginaluno.html">ALUNO</a>
+          <a href="../html/loginaluno.html">ALUNO</a>
           <a href="#">PROFESSOR</a>
         </div>
       </div>
     </nav>
   </header>
-
+ 
   <section class="hero">
     <h1><span>VENHA</span> <span>FAZER</span> <span>PARTE DO</span> <span><strong>PlanoB</strong></span></h1>
   </section>
-
+ 
   <section class="section" id="planos">
     <div class="planos-section">
       <h2>PLANOS</h2>
       <div class="planos">
-
+ 
       <div class="plano">
       <div class="plano-front">
       <br>
@@ -54,7 +54,7 @@
     </ul>
   </div>
 </div>
-
+ 
        <div class="plano">
       <div class="plano-front">
       <br>
@@ -71,7 +71,7 @@
     </ul>
   </div>
 </div>
-
+ 
         <div class="plano">
       <div class="plano-front">
       <br>
@@ -89,7 +89,7 @@
   </div>
 </div>
   </section>
-
+ 
   <section class="section" id="videos">
   <h2>VÍDEOS</h2>
   <div class="videos">
@@ -107,7 +107,7 @@
     </div>
   </div>
 </section>
-
+ 
  <section class="section tabela" id="tabela">
   <h2>TABELA</h2>
   <table class="calendario">
@@ -154,18 +154,18 @@
     </tbody>
   </table>
 </section>
-
-
+ 
+ 
   <footer class="footer">
     <p>© 2025 PLANOB<br/>TODOS OS DIREITOS RESERVADOS.</p>
   </footer>
-
+ 
   <script>
   function togglePlano(element) {
     const plano = element.closest('.plano');
     const front = plano.querySelector('.plano-front');
     const back = plano.querySelector('.plano-back');
-    
+   
     // Alternar visibilidade
     if (back.style.display === 'none') {
       front.style.display = 'none';
@@ -176,7 +176,6 @@
     }
   }
 </script>
-
-
+ 
 </body>
 </html>
