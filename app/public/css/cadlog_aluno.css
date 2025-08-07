@@ -1,7 +1,14 @@
+@font-face {
+  font-family: 'Nunito';
+  src: url('../fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Nunito', sans-serif;
   background-color: #f2f2f2;
 }
 
@@ -11,45 +18,53 @@ body {
   align-items: center;
   height: 100vh;
   position: relative;
+  border-radius: 100px;
+  overflow: hidden;
+  width: 90%;
+  max-width: 1000px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .caixa-esquerda, .caixa-direita {
   width: 50%;
-  height: 400px;
-  padding: 30px;
+  height: 100%;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .caixa-esquerda {
   background-color: #1d2d3d;
   color: white;
-  border-top-left-radius: 100px;
-  border-bottom-left-radius: 100px;
 }
 
 .caixa-direita {
   background-color: #ffffff;
-  border-top-right-radius: 100px;
-  border-bottom-right-radius: 100px;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
 }
 
-.caixa-esquerda h2,
-.caixa-direita h2 {
-  margin-bottom: 20px;
-  font-size: 24px;
-  line-height: 1.3;
+h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+p {
+  font-size: 14px;
+  margin: 10px 0 20px;
 }
 
 input {
   margin-bottom: 15px;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 12px;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #e9f0f7;
+  outline: none;
 }
 
 .botao-principal {
@@ -57,7 +72,7 @@ input {
   color: white;
   padding: 12px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -67,22 +82,22 @@ input {
 }
 
 .botao-secundario {
-  background-color: white;
-  color: #1d2d3d;
+  background-color: transparent;
+  color: white;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: bold;
   text-align: center;
   text-decoration: none;
   border: 2px solid white;
+  width: 120px;
+  margin: 10px auto;
   display: inline-block;
-  width: 100px;
-  margin-top: 10px;
 }
 
 .botao-secundario:hover {
-  background-color: #e0e0e0;
-  color: #000;
+  background-color: white;
+  color: #1d2d3d;
 }
 
 .voltar {
@@ -92,4 +107,22 @@ input {
   color: #1d2d3d;
   font-size: 22px;
   text-decoration: none;
+}
+
+/* Estiliza imagem de ilustração */
+.logo {
+  width: 40px;
+  margin: 15px auto 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    border-radius: 0;
+  }
+
+  .caixa-esquerda, .caixa-direita {
+    width: 100%;
+    border-radius: 0;
+  }
 }
