@@ -5,49 +5,57 @@
   font-style: normal;
 }
 
-body {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Nunito', sans-serif;
   background-color: #f2f2f2;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
 }
 
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
-  position: relative;
+  width: 100vw;
   border-radius: 100px;
   overflow: hidden;
-  width: 90%;
-  max-width: 1000px;
   background-color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .caixa-esquerda, .caixa-direita {
   width: 50%;
-  height: 100%;
   padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-sizing: border-box;
+  align-items: center;
   text-align: center;
 }
 
 .caixa-esquerda {
   background-color: #1d2d3d;
   color: white;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
 }
 
 .caixa-direita {
   background-color: #ffffff;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
 }
 
 h2 {
-  font-size: 28px;
+  font-size: 26px;
+  font-weight: 600;
   margin-bottom: 10px;
   line-height: 1.4;
 }
@@ -64,6 +72,8 @@ input {
   border: none;
   border-radius: 10px;
   background-color: #e9f0f7;
+  width: 100%;
+  max-width: 250px;
   outline: none;
 }
 
@@ -71,6 +81,8 @@ input {
   background-color: #1d2d3d;
   color: white;
   padding: 12px;
+  width: 100%;
+  max-width: 250px;
   border: none;
   border-radius: 10px;
   font-weight: bold;
@@ -91,8 +103,7 @@ input {
   text-decoration: none;
   border: 2px solid white;
   width: 120px;
-  margin: 10px auto;
-  display: inline-block;
+  margin-top: 10px;
 }
 
 .botao-secundario:hover {
@@ -100,20 +111,22 @@ input {
   color: #1d2d3d;
 }
 
+.logo {
+  width: 130px;
+  margin-bottom: 20px;
+}
+
 .voltar {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+  position: fixed;
+  top: 25px;
+  left: 30px;
   color: #1d2d3d;
   font-size: 22px;
   text-decoration: none;
+  z-index: 9999;
 }
 
-/* Estiliza imagem de ilustração */
-.logo {
-  width: 40px;
-  margin: 15px auto 0;
-}
+
 
 @media (max-width: 768px) {
   .container {
