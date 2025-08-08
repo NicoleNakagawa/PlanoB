@@ -179,7 +179,6 @@ nav a {
   color: #2C3E50;
 }
  
- 
 .plano {
   background-color: #007BFF;
   color: white;
@@ -194,6 +193,7 @@ nav a {
   justify-content: space-between;
   transition: transform 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  min-height: 490px;
 }
  
 .plano h3 {
