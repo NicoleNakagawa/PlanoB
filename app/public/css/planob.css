@@ -156,6 +156,29 @@ nav a {
   padding: 20px 30px;
 }
  
+.caixa-azul {
+    background-color: #7ed0ec;
+    padding: 100px 20px; 
+    text-align: center;
+    font-size: 25px;
+    color: #000;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.caixa-azul h2 {
+    color: #2F4F6F; 
+    margin-bottom: 10px;
+    font-size: 60px;
+    text-align: center;
+}
+
+.caixa-azul p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+
 .planos {
   display: flex;
   justify-content: space-around;
@@ -172,7 +195,8 @@ nav a {
  
 .planos-section h2 {
   margin-bottom: 20px;
-  font-size: 38px;
+  text-align: center;
+  font-size: 48px;
   font-weight: bold;
   color: #2C3E50;
 }
@@ -267,6 +291,21 @@ nav a {
     transform: rotateY(360deg);
 }
 
+.voltar-btn {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background-color: white;
+  color: #007bff;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.voltar-btn:hover {
+  background-color: #f0f0f0;
+}
+
 .caixa-plano {
     display: block;
     width: 300px;
@@ -286,8 +325,8 @@ nav a {
 }
 
 h2{
-font-size: 38px;
-text-align: center;
+font-size: 48px;
+text-align: left;
 color: #2C3E50;
 }
 
@@ -493,6 +532,7 @@ th {
     font-size: 16px;
     min-height: auto;
     padding: 15px;
+    min-height: 250px;
   }
  
   .plano h3 {
@@ -513,8 +553,7 @@ th {
  
   #videos h2,
   #tabela h2 {
-    font-size: 20px;
-    padding-left: 10px;
+    font-size: 40px;
   }
  
   .videos {

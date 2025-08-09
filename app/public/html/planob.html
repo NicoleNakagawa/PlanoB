@@ -22,8 +22,8 @@
           <i class="fas fa-user"></i>
         </div>
         <div class="dropdown-menu">
-          <a href="loginaluno.html">ALUNO</a>
-          <a href="#">PROFESSOR</a>
+          <a href="../html/loginaluno.html">ALUNO</a>
+          <a href="../html/loginprofessor.html">PROFESSOR</a>
         </div>
       </div>
     </nav>
@@ -32,14 +32,26 @@
   <section class="hero">
     <h1><span>VENHA</span> <span>FAZER</span> <span>PARTE DO</span> <span><strong>PlanoB</strong></span></h1>
   </section>
+
+  <div class="caixa-azul">
+    <h2>Sem tempo para academia?</h2>
+    <p><strong>Sem problemas!</strong> Treinar em casa nunca foi tão fácil!</p>
+    <p>
+        Acesse nosso site, escolha o plano ideal para você e comece hoje mesmo a transformar sua rotina
+        com vídeos exclusivos e treinos feitos por profissionais. 
+        Seu corpo, seu ritmo, sua casa, seu bem-estar
+        a um clique de distância!
+    </p>
+</div>
  
   <section class="section" id="planos">
     <div class="planos-section">
       <h2>PLANOS</h2>
       <div class="planos">
+ 
       <div class="plano">
-      <div class="plano-front">
-      <br>
+  <div class="plano-front">
+    <br>
     <h3>PLANO<br>FREE</h3>
     <p>R$00,00</p>
     <br><br>
@@ -51,11 +63,14 @@
     <ul>
       <li>Acesse todos os vídeos da plataforma, use a tabela de anotações semanal durante <strong>UMA SEMANA</strong></li>
     </ul>
+    <br>
+    <button onclick="togglePlano(this)" class="voltar-btn">Clique para ver menos</button>
   </div>
 </div>
-       <div class="plano">
-      <div class="plano-front">
-      <br>
+
+<div class="plano">
+  <div class="plano-front">
+    <br>
     <h3>PLANO<br>SEMANAL</h3>
     <p>R$24,90</p>
     <br><br>
@@ -67,11 +82,14 @@
     <ul>
       <li>Acesse todos os vídeos da plataforma e use a tabela de anotações semanal feita por personal</li>
     </ul>
+    <br>
+    <button onclick="togglePlano(this)" class="voltar-btn">Clique para ver menos</button>
   </div>
 </div>
-        <div class="plano">
-      <div class="plano-front">
-      <br>
+
+<div class="plano">
+  <div class="plano-front">
+    <br>
     <h3>PLANO<br>MENSAL</h3>
     <p>R$79,90</p>
     <br><br>
@@ -83,6 +101,8 @@
     <ul>
       <li>Acesse todos os vídeos da plataforma e use a tabela de anotações mensal feita por personal</li>
     </ul>
+    <br>
+    <button onclick="togglePlano(this)" class="voltar-btn">Clique para ver menos</button>
   </div>
 </div>
   </section>
@@ -98,9 +118,15 @@
       <img src="https://i.ytimg.com/vi/DkmN6esM8N4/sddefault.jpg" alt="Vídeo 2">
       <div class="play-button"><i class="fas fa-play"></i></div>
     </div>
+    <div class="video-card">
+      <img src="https://i.ytimg.com/vi/DkmN6esM8N4/sddefault.jpg" alt="Vídeo 3">
+      <div class="play-button"><i class="fas fa-play"></i></div>
+    </div>
+  </div>
+</section>
  
  <section class="section tabela" id="tabela">
-  <h2 class="titulo-tabela">TABELA</h2>
+  <h2>TABELA</h2>
   <table class="calendario">
     <caption>Mês: Fevereiro</caption>
     <thead>
