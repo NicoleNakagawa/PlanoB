@@ -54,14 +54,14 @@ body {
 }
 
 h2 {
-  font-size: 26px;
+  font-size: 50px;
   font-weight: 600;
   margin-bottom: 10px;
   line-height: 1.4;
 }
 
 p {
-  font-size: 14px;
+  font-size: 24px;
   margin: 10px 0 20px;
 }
 
@@ -112,7 +112,7 @@ input {
 }
 
 .logo {
-  width: 130px;
+  width: 230px;
   margin-bottom: 20px;
 }
 
@@ -121,7 +121,7 @@ input {
   top: 25px;
   left: 30px;
   color: #1d2d3d;
-  font-size: 22px;
+  font-size: 32px;
   text-decoration: none;
   z-index: 9999;
 }

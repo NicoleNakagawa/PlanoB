@@ -50,6 +50,7 @@ nav a {
    text-decoration: none;
    color: #ffffff;
    font-weight: bold;
+   font-size: 21px;
 }
  
 /* Container do menu de perfil */
@@ -60,7 +61,7 @@ nav a {
  
 /* Ícone de perfil */
 .perfil-icon {
-  font-size: 25px;
+  font-size: 35px;
   background-color: #2C3E50;
   padding: 10px;
   border-radius: 50%;
@@ -97,7 +98,7 @@ nav a {
   padding: 10px 5px;
   text-decoration: none;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 19px;
 }
  
 /* Hover nos links do menu */
@@ -292,11 +293,12 @@ nav a {
 }
 
 .voltar-btn {
-  margin-top: 15px;
+  margin-top: 25px;
   padding: 10px 15px;
   background-color: white;
   color: #007bff;
   font-weight: bold;
+  font-size: 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -344,7 +346,7 @@ color: #2C3E50;
  
 .video-card {
   position: relative;
-  width: 400px;
+  width: 500px;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
