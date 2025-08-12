@@ -9,6 +9,7 @@
   box-sizing: border-box;
 }
 
+
 body {
   font-family: 'Nunito', sans-serif;
   background-color: #e6e6e6;
@@ -72,6 +73,7 @@ input {
 .botao-principal:hover {
   background-color: #2e425a;
 }
+
 
 .caixa-direita {
   background-color: #1d2d3d; 
