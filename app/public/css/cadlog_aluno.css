@@ -1,8 +1,6 @@
 @font-face {
   font-family: 'Nunito';
   src: url('../fonts/Nunito-VariableFont_wght.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
 }
 
 * {
@@ -13,97 +11,59 @@
 
 body {
   font-family: 'Nunito', sans-serif;
-  background-color: #f2f2f2;
+  background-color: #e6e6e6; /
   height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
   display: flex;
-  height: 100vh;
-  width: 100vw;
-  border-radius: 100px;
+  width: 100%;
+  max-width: 1000px;
+  height: 600px;
+  border-radius: 0;
   overflow: hidden;
-  background-color: white;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.caixa-esquerda, .caixa-direita {
-  width: 50%;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
 .caixa-esquerda {
   background-color: #1d2d3d;
   color: white;
-  border-top-left-radius: 100px;
-  border-bottom-left-radius: 100px;
-}
-
-.caixa-direita {
-  background-color: #ffffff;
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-top-right-radius: 100px;
   border-bottom-right-radius: 100px;
+  position: relative;
 }
 
-h2 {
+.caixa-esquerda h2 {
   font-size: 50px;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 10px;
-  line-height: 1.4;
 }
 
-p {
-  font-size: 24px;
-  margin: 10px 0 20px;
-}
-
-input {
-  margin-bottom: 15px;
-  padding: 12px;
-  font-size: 15px;
-  border: none;
-  border-radius: 10px;
-  background-color: #e9f0f7;
-  width: 100%;
-  max-width: 250px;
-  outline: none;
-}
-
-.botao-principal {
-  background-color: #1d2d3d;
-  color: white;
-  padding: 12px;
-  width: 100%;
-  max-width: 250px;
-  border: none;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.botao-principal:hover {
-  background-color: #2e425a;
+.caixa-esquerda p {
+  font-size: 26px;
+  margin-bottom: 10px;
 }
 
 .botao-secundario {
   background-color: transparent;
   color: white;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-size: 15px;
   font-weight: bold;
   text-align: center;
   text-decoration: none;
-  border: 2px solid white;
-  width: 120px;
-  margin-top: 10px;
+  border: 1.5px solid white;
+  width: 100px;
+  margin-bottom: 10px;
 }
 
 .botao-secundario:hover {
@@ -112,30 +72,81 @@ input {
 }
 
 .logo {
-  width: 230px;
-  margin-bottom: 20px;
+  width: 200px;
 }
 
 .voltar {
-  position: fixed;
-  top: 25px;
+  position: absolute;
+  top: 30px;
   left: 30px;
-  color: #1d2d3d;
-  font-size: 32px;
+  font-size: 40px;
+  color: white;
   text-decoration: none;
-  z-index: 9999;
 }
 
+.voltar:hover {
+  color: #ccc;
+}
 
+.caixa-direita {
+  background-color: #e6e6e6;
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+
+.caixa-direita h2 {
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+input {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #e9f0f7;
+  width: 100%;
+  max-width: 200px;
+  outline: none;
+}
+
+.botao-principal {
+  background-color: #1d2d3d;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  max-width: 200px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.botao-principal:hover {
+  background-color: #2e425a;
+}
 
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
-    border-radius: 0;
+    height: auto;
   }
 
-  .caixa-esquerda, .caixa-direita {
+  .caixa-esquerda,
+  .caixa-direita {
     width: 100%;
     border-radius: 0;
   }
+}
+
+.logo {
+  width: 150px;
 }
