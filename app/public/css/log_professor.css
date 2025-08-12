@@ -6,25 +6,28 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box 20px;
 }
+
 
 body {
   font-family: 'Nunito', sans-serif;
-  background-color: #e6e6e6; /
-  height: 100vh;
+  background-color: #e6e6e6;
+  min-height: 100vh;
+  padding: 0px 0px; /* Espaço no topo e embaixo */
   display: flex;
   justify-content: center;
-  align-items: center;
 }
+
 
 .container {
   display: flex;
   width: 100%;
   max-width: 1000px;
-  height: 600px;
+  /*height: 600px;*/
   border-radius: 0;
   overflow: hidden;
+  max-width: 100%;
 }
 
 .caixa-esquerda {
@@ -42,7 +45,7 @@ body {
 }
 
 .caixa-esquerda h2 {
-  font-size: 50px;
+  font-size: 75px;
   font-weight: 500;
   margin-bottom: 10px;
 }
@@ -55,9 +58,9 @@ body {
 .botao-secundario {
   background-color: transparent;
   color: white;
-  padding: 5px 15px;
+  padding: 15px 20px;
   border-radius: 5px;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
   text-align: center;
   text-decoration: none;
@@ -91,7 +94,7 @@ body {
 .caixa-direita {
   background-color: #e6e6e6;
   width: 100%;
-  padding: 40px;
+  padding: 20px 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -101,7 +104,7 @@ body {
 }
 
 .caixa-direita h2 {
-  font-size: 50px;
+  font-size: 75px;
   font-weight: 600;
   margin-bottom: 20px;
 }
@@ -121,7 +124,9 @@ input {
 .botao-principal {
   background-color: #1d2d3d;
   color: white;
-  padding: 10px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  font-size: 20px;
   width: 100%;
   max-width: 200px;
   border: none;
