@@ -13,23 +13,24 @@
 body {
   font-family: 'Nunito', sans-serif;
   background-color: #e6e6e6;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 0px 0px; /* Espaço no topo e embaixo */
   display: flex;
   justify-content: center;
-  align-items: center;
 }
+
 
 .container {
   display: flex;
   width: 100%;
   max-width: 1000px;
-  height: 500px;
+  /*height: 600px;*/
   border-radius: 0;
   overflow: hidden;
+  max-width: 100%;
 }
 
 .caixa-esquerda {
-  
   color: black;
   width: 50%;
   padding: 40px;
@@ -41,7 +42,7 @@ body {
 }
 
 .caixa-esquerda h2 {
-  font-size: 50px;
+  font-size: 75px;
   font-weight: bold;
   margin-bottom: 20px;
 }
@@ -61,13 +62,14 @@ input {
 .botao-principal {
   background-color: #1d2d3d;
   color: white;
-  padding: 8px;
+  padding: 15px 20px;
   width: 100%;
   max-width: 200px;
   border: none;
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
+  font-size: 20px;
 }
 
 .botao-principal:hover {
@@ -89,7 +91,7 @@ input {
 }
 
 .caixa-direita h2 {
-  font-size: 50px;
+  font-size: 75px;
   font-weight: bold;
   margin-bottom: 10px;
   text-align: center;
@@ -103,13 +105,14 @@ input {
 .botao-secundario {
   background-color: transparent;
   color: white;
-  padding: 5px 20px;
-  border-radius: 3px;
-  font-size: 14px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  font-size: 20px;
   font-weight: bold;
   text-align: center;
   text-decoration: none;
-  border: 1px solid white;
+  border: 1.5px solid white;
+  width: 100px;
   margin-bottom: 10px;
 }
 
