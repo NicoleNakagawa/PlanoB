@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport">
+  <title>PlanoB</title>
+  <link rel="stylesheet" href="../css/planob.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <img src="../img/planoblogo.png" alt="Logo PlanoB" />
+    <nav>
+      <a href="#planos">Planos</a>
+      <a href="#videos">Vídeos</a>
+      <a href="#tabela">Tabela</a>
+      <div class="menu-perfil">
+        <div class="perfil-icon">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="dropdown-menu">
+          <a href="../html/loginaluno.html">ALUNO</a>
+          <a href="../html/loginprofessor.html">PROFESSOR</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Olá, aluno</h2>
+
+    <!-- PLANOS -->
+    <section class="planos">
+      <div class="meu-plano">
+        <h3>MEU PLANO</h3>
+        <div class="plano-card ativo">
+          <p>PLANO</p>
+          <h4>FREE</h4>
+          <p class="preco">R$00,00</p>
+        </div>
+      </div>
+
+      <div class="outros-planos">
+        <h3>OUTROS PLANOS</h3>
+        <div class="plano-card">
+          <h4>PLANO SEMANAL</h4>
+          <p>R$24,90</p>
+        </div>
+        <div class="plano-card">
+          <h4>MENSAL</h4>
+          <p>R$64,90</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VÍDEOS -->
+    <section class="videos">
+      <h3>VÍDEOS</h3>
+      <div class="grid-videos">
+        <div class="video">
+          <img src="https://via.placeholder.com/300x180" alt="Treino">
+          <span>EXERCÍCIO EM CASA</span>
+        </div>
+        <div class="video">
+          <img src="https://via.placeholder.com/300x180" alt="Treino">
+          <span>EXERCÍCIO EM CASA</span>
+        </div>
+        <div class="video">
+          <img src="https://via.placeholder.com/300x180" alt="Treino">
+          <span>EXERCÍCIO EM CASA</span>
+        </div>
+        <div class="video">
+          <img src="https://via.placeholder.com/300x180" alt="Treino">
+          <span>EXERCÍCIO EM CASA</span>
+        </div>
+        <div class="video">
+          <img src="https://via.placeholder.com/300x180" alt="Treino">
+          <span>EXERCÍCIO EM CASA</span>
+        </div>
+        <div class="video">
+          <img src="https://via.placeholder.com/300x180" alt="Treino">
+          <span>EXERCÍCIO EM CASA</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TABELA -->
+    <section class="tabela">
+      <h3>TABELA</h3>
+      <label for="mes">Mês:</label>
+      <select id="mes">
+        <option>Set</option>
+        <option>Out</option>
+        <option>Nov</option>
+      </select>
+
+      <table>
+        <tr>
+          <th class="ativo">01</th>
+          <th>02</th>
+          <th>03</th>
+          <th>04</th>
+          <th>05</th>
+          <th>06</th>
+          <th>07</th>
+        </tr>
+      </table>
+    </section>
+  </main>
+
+
+  <footer>
+    <p>© 2025 PLANOS<br>TODOS OS DIREITOS RESERVADOS.</p>
+  </footer>
+</body>
+</html>
