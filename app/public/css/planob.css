@@ -244,6 +244,7 @@ nav a {
   text-align: left;
   padding-left: 20px;
   font-size: 18px;
+
 }
  
 .plano ul li {
@@ -312,8 +313,8 @@ nav a {
 .voltar-btn {
   margin-top: 25px;
   padding: 10px 15px;
-  background-color: white;
-  color: #007bff;
+ 
+  background-color: #007BFF;
   font-weight: bold;
   font-size: 15px;
   border: none;
@@ -321,16 +322,18 @@ nav a {
   cursor: pointer;
 }
 
+/*
 .voltar-btn:hover {
   background-color: #f0f0f0;
 }
+*/
 
 .caixa-plano {
     display: block;
     width: 300px;
     height: 350px;
     background-color: #007BFF;
-    color: white;
+    /*color: white;*/
     text-decoration: none; /* remove o sublinhado */
     border-radius: 15px;
     padding: 30px 15px;
@@ -351,6 +354,7 @@ color: #2C3E50;
 
 .ver-mais:hover {
   text-decoration: underline;
+  font-weight: bold;
 }
  
 .videos {
@@ -363,7 +367,7 @@ color: #2C3E50;
  
 .video-card {
   position: relative;
-  width: 500px;
+  width: 450px;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
