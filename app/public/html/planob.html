@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="../css/planob.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
- 
 <body>
   <header>
     <img src="../img/planoblogo.png" alt="Logo PlanoB" />
@@ -15,20 +14,18 @@
       <a href="#planos">Planos</a>
       <a href="#videos">Vídeos</a>
       <a href="#tabela">Tabela</a>
-     
-      <!-- Ícone com menu suspenso -->
       <div class="menu-perfil">
         <div class="perfil-icon">
           <i class="fas fa-user"></i>
         </div>
         <div class="dropdown-menu">
           <a href="../html/loginaluno.html">ALUNO</a>
-          <a href="../html/cadastroaluno.html">PROFESSOR</a>
+          <a href="../html/loginprofessor.html">PROFESSOR</a>
         </div>
       </div>
     </nav>
   </header>
- 
+
   <section class="hero">
     <h1><span>VENHA</span> <span>FAZER</span> <span>PARTE DO</span> <span><strong>PlanoB</strong></span></h1>
   </section>
@@ -37,14 +34,14 @@
     <h2>Sem tempo para academia?</h2>
     <p><strong>Sem problemas!</strong> Treinar em casa nunca foi tão fácil!</p>
     <p>
-        Acesse nosso site, escolha o plano ideal para você e comece hoje mesmo a transformar sua rotina
-        com vídeos exclusivos e treinos feitos por profissionais. 
-        Seu corpo, seu ritmo, sua casa, seu bem-estar
-        a um clique de distância!
+      Acesse nosso site, escolha o plano ideal para você e comece hoje mesmo a transformar sua rotina
+      com vídeos exclusivos e treinos feitos por profissionais. 
+      Seu corpo, seu ritmo, sua casa, seu bem-estar
+      a um clique de distância!
     </p>
-</div>
- 
-<section class="section" id="planos">
+  </div>
+
+  <section class="section" id="planos">
   <div class="planos-section">
     <h2>PLANOS</h2>
     <div class="planos">
@@ -137,60 +134,90 @@
   </div>
 </section>
  
- <section class="section tabela" id="tabela">
-  <h2>TABELA</h2>
-  <table class="calendario">
-    <caption>Mês: Fevereiro</caption>
-    <thead>
-      <tr>
-        <th>Seg</th>
-        <th>Ter</th>
-        <th>Qua</th>
-        <th>Qui</th>
-        <th>Sex</th>
-        <th class="sabado">Sáb</th>
-        <th class="domingo">Dom</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="fora-do-mes">30</td>
-        <td class="fora-do-mes">31</td>
-        <td>01</td>
-        <td><span class="hoje">02</span></td>
-        <td>03</td>
-        <td class="sabado">04</td>
-        <td class="domingo">05</td>
-      </tr>
-      <tr>
-        <td>06</td><td>07</td><td>08</td><td>09</td><td>10</td><td class="sabado">11</td><td class="domingo">12</td>
-      </tr>
-      <tr>
-        <td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td class="sabado">18</td><td class="domingo">19</td>
-      </tr>
-      <tr>
-        <td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td class="sabado">25</td><td class="domingo">26</td>
-      </tr>
-      <tr>
-        <td>27</td>
-        <td class="fora-do-mes">28</td>
-        <td class="fora-do-mes">01</td>
-        <td class="fora-do-mes">02</td>
-        <td class="fora-do-mes">03</td>
-        <td class="fora-do-mes">04</td>
-        <td class="fora-do-mes">05</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
- 
- 
+  <!-- CALENDÁRIO -->
+  <section class="section tabela" id="tabela">
+    <h2>TABELA</h2>
+    <table class="calendario">
+      <caption>Mês: Fevereiro</caption>
+      <thead>
+        <tr>
+          <th>Seg</th>
+          <th>Ter</th>
+          <th>Qua</th>
+          <th>Qui</th>
+          <th>Sex</th>
+          <th class="sabado">Sáb</th>
+          <th class="domingo">Dom</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fora-do-mes">30</td>
+          <td class="fora-do-mes">31</td>
+          <td><span class="dia">01</span></td>
+          <td><span class="dia">02</span></td>
+          <td><span class="dia">03</span></td>
+          <td class="sabado"><span class="dia">04</span></td>
+          <td class="domingo"><span class="dia">05</span></td>
+        </tr>
+        <tr>
+          <td><span class="dia">06</span></td>
+          <td><span class="dia">07</span></td>
+          <td><span class="dia">08</span></td>
+          <td><span class="dia">09</span></td>
+          <td><span class="dia">10</span></td>
+          <td class="sabado"><span class="dia">11</span></td>
+          <td class="domingo"><span class="dia">12</span></td>
+        </tr>
+        <tr>
+          <td><span class="dia">13</span></td>
+          <td><span class="dia">14</span></td>
+          <td><span class="dia">15</span></td>
+          <td><span class="dia">16</span></td>
+          <td><span class="dia">17</span></td>
+          <td class="sabado"><span class="dia">18</span></td>
+          <td class="domingo"><span class="dia">19</span></td>
+        </tr>
+        <tr>
+          <td><span class="dia">20</span></td>
+          <td><span class="dia">21</span></td>
+          <td><span class="dia">22</span></td>
+          <td><span class="dia">23</span></td>
+          <td><span class="dia">24</span></td>
+          <td class="sabado"><span class="dia">25</span></td>
+          <td class="domingo"><span class="dia">26</span></td>
+        </tr>
+        <tr>
+          <td><span class="dia">27</span></td>
+          <td class="fora-do-mes">28</td>
+          <td class="fora-do-mes">01</td>
+          <td class="fora-do-mes">02</td>
+          <td class="fora-do-mes">03</td>
+          <td class="fora-do-mes">04</td>
+          <td class="fora-do-mes">05</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- POPUP -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close">&times;</span>
+      <h3>Exercícios realizados</h3>
+      <label><input type="checkbox" checked> 50 flexões</label><br>
+      <label><input type="checkbox"> 50 abdominais</label><br>
+      <label><input type="checkbox" checked> 50 polichinelos</label><br>
+      <label><input type="checkbox" checked> Pular corda</label>
+    </div>
+  </div>
+
   <footer class="footer">
     <p>© 2025 PLANOB<br/>TODOS OS DIREITOS RESERVADOS.</p>
   </footer>
- 
+
   <script>
-  function togglePlano(element) {
+function togglePlano(element) {
     const plano = element.closest('.plano');
     const front = plano.querySelector('.plano-front');
     const back = plano.querySelector('.plano-back');
@@ -204,9 +231,26 @@
       back.style.display = 'none';
     }
   }
-</script>
- 
- 
+
+    const dias = document.querySelectorAll('.dia');
+    const popup = document.getElementById('popup');
+    const closeBtn = document.querySelector('.close');
+
+    dias.forEach(dia => {
+      dia.addEventListener('click', () => {
+        popup.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        popup.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
- 
