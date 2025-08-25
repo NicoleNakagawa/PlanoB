@@ -23,7 +23,7 @@
         </div>
         <div class="dropdown-menu">
           <a href="../html/loginaluno.html">ALUNO</a>
-          <a href="../html/cadastroaluno.html">PROFESSOR</a>
+          <a href="../html/loginprofessor.html">PROFESSOR</a>
         </div>
       </div>
     </nav>
@@ -106,7 +106,7 @@
           <br>
           <h3>MENSAL</h3>
           <ul>
-            <li>Acesse todos os vídeos da plataforma e use a tabela de anotações mensal feita por personal</li>
+            <li>Acesse todos os vídeos da plataforma e utilize a tabela de anotações mensal feita por personal</li>
           </ul>
           <br>
           <button class="assinar-btn">ASSINAR</button>
@@ -190,7 +190,7 @@
   </footer>
  
   <script>
-  function togglePlano(element) {
+function togglePlano(element) {
     const plano = element.closest('.plano');
     const front = plano.querySelector('.plano-front');
     const back = plano.querySelector('.plano-back');
@@ -204,6 +204,26 @@
       back.style.display = 'none';
     }
   }
+
+    const dias = document.querySelectorAll('.dia');
+    const popup = document.getElementById('popup');
+    const closeBtn = document.querySelector('.close');
+
+    dias.forEach(dia => {
+      dia.addEventListener('click', () => {
+        popup.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        popup.style.display = 'none';
+      }
+    });
 </script>
  
  
