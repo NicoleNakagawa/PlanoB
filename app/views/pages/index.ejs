@@ -9,25 +9,22 @@
 </head>
 <body>
   <header>
-    <img src="../img/planoblogo.png" alt="Logo PlanoB" />
-    <nav>
-      <a href="#planos">Planos</a>
-      <a href="#videos">Vídeos</a>
-      <a href="#tabela">Tabela</a>
-      <div class="menu-perfil">
-        <div class="perfil-icon">
-          <i class="fas fa-user"></i>
-        </div>
-        <div class="dropdown-menu">
-          <a href="../html/loginaluno.html">ALUNO</a>
-          <a href="../html/loginprofessor.html">PROFESSOR</a>
-        </div>
-      </div>
-    </nav>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <img src="../img/logo plano b.png" alt="LogoPlanoB" />
+
+      <nav id="menu">
+    <ul>
+      <li><a href="../html/cadastroaluno.html">Cadastro</a></li>
+      <li><a href="../html/loginaluno.html">Login</a></li>
+      <li><a href="#">Planos</a></li>
+      <li><a href="#">Sobre nós</a></li>
+    </ul>
+  </nav>
+
   </header>
 
   <section class="hero">
-    <h1><span>VENHA</span> <span>FAZER</span> <span>PARTE DO</span> <span><strong>PlanoB</strong></span></h1>
+    <h1><span><strong>PlanoB</strong></span><span>Treine onde quiser,</span><span>quando quiser</span></h1>
   </section>
 
   <div class="caixa-azul">
@@ -41,216 +38,15 @@
     </p>
   </div>
 
-  <section class="section" id="planos">
-  <div class="planos-section">
-    <h2>PLANOS</h2>
-    <div class="planos">
-
-      <!-- PLANO FREE -->
-      <div class="plano">
-        <div class="plano-front">
-          <br>
-          <h3>PLANO<br>FREE</h3>
-          <p>R$00,00</p>
-          <br><br>
-          <h4 class="ver-mais" onclick="togglePlano(this)">Clique aqui<br>para ver mais</h4>
-        </div>
-        <div class="plano-back" style="display: none;">
-          <br>
-          <h3>FREE</h3>
-          <ul>
-            <li>Acesse todos os vídeos da plataforma, use a tabela de anotações semanal durante <strong>UMA SEMANA</strong></li>
-          </ul>
-          <br>
-          <button class="assinar-btn">ASSINAR</button>
-          <br>
-          <button onclick="togglePlano(this)" class="voltar-btn">Clique para ver menos</button>
-        </div>
-      </div>
-
-      <!-- PLANO SEMANAL -->
-      <div class="plano">
-        <div class="plano-front">
-          <br>
-          <h3>PLANO<br>SEMANAL</h3>
-          <p>R$24,90</p>
-          <br><br>
-          <h4 class="ver-mais" onclick="togglePlano(this)">Clique aqui<br>para ver mais</h4>
-        </div>
-        <div class="plano-back" style="display: none;">
-          <br>
-          <h3>SEMANAL</h3>
-          <ul>
-            <li>Acesse todos os vídeos da plataforma e use a tabela de anotações semanal feita por personal</li>
-          </ul>
-          <br>
-          <button class="assinar-btn">ASSINAR</button>
-          <br>
-          <button onclick="togglePlano(this)" class="voltar-btn">Clique para ver menos</button>
-        </div>
-      </div>
-
-      <!-- PLANO MENSAL -->
-      <div class="plano">
-        <div class="plano-front">
-          <br>
-          <h3>PLANO<br>MENSAL</h3>
-          <p>R$79,90</p>
-          <br><br>
-          <h4 class="ver-mais" onclick="togglePlano(this)">Clique aqui<br>para ver mais</h4>
-        </div>
-        <div class="plano-back" style="display: none;">
-          <br>
-          <h3>MENSAL</h3>
-          <ul>
-            <li>Acesse todos os vídeos da plataforma e utilize a tabela de anotações mensal feita por personal</li>
-          </ul>
-          <br>
-          <button class="assinar-btn">ASSINAR</button>
-          <br>
-          <button onclick="togglePlano(this)" class="voltar-btn">Clique para ver menos</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
- 
-  <section class="section" id="videos">
-  <h2>VÍDEOS</h2>
-  <div class="videos">
-    <div class="video-card">
-      <img src="https://i.ytimg.com/vi/DkmN6esM8N4/sddefault.jpg" alt="Vídeo 1">
-      <div class="play-button"><i class="fas fa-play"></i></div>
-    </div>
-    <div class="video-card">
-      <img src="https://i.ytimg.com/vi/DkmN6esM8N4/sddefault.jpg" alt="Vídeo 2">
-      <div class="play-button"><i class="fas fa-play"></i></div>
-    </div>
-    <div class="video-card">
-      <img src="https://i.ytimg.com/vi/DkmN6esM8N4/sddefault.jpg" alt="Vídeo 3">
-      <div class="play-button"><i class="fas fa-play"></i></div>
-    </div>
-  </div>
-</section>
- 
-  <!-- CALENDÁRIO -->
-  <section class="section tabela" id="tabela">
-    <h2>TABELA</h2>
-    <table class="calendario">
-      <caption>Mês: Fevereiro</caption>
-      <thead>
-        <tr>
-          <th>Seg</th>
-          <th>Ter</th>
-          <th>Qua</th>
-          <th>Qui</th>
-          <th>Sex</th>
-          <th class="sabado">Sáb</th>
-          <th class="domingo">Dom</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="fora-do-mes">30</td>
-          <td class="fora-do-mes">31</td>
-          <td><span class="dia">01</span></td>
-          <td><span class="dia">02</span></td>
-          <td><span class="dia">03</span></td>
-          <td class="sabado"><span class="dia">04</span></td>
-          <td class="domingo"><span class="dia">05</span></td>
-        </tr>
-        <tr>
-          <td><span class="dia">06</span></td>
-          <td><span class="dia">07</span></td>
-          <td><span class="dia">08</span></td>
-          <td><span class="dia">09</span></td>
-          <td><span class="dia">10</span></td>
-          <td class="sabado"><span class="dia">11</span></td>
-          <td class="domingo"><span class="dia">12</span></td>
-        </tr>
-        <tr>
-          <td><span class="dia">13</span></td>
-          <td><span class="dia">14</span></td>
-          <td><span class="dia">15</span></td>
-          <td><span class="dia">16</span></td>
-          <td><span class="dia">17</span></td>
-          <td class="sabado"><span class="dia">18</span></td>
-          <td class="domingo"><span class="dia">19</span></td>
-        </tr>
-        <tr>
-          <td><span class="dia">20</span></td>
-          <td><span class="dia">21</span></td>
-          <td><span class="dia">22</span></td>
-          <td><span class="dia">23</span></td>
-          <td><span class="dia">24</span></td>
-          <td class="sabado"><span class="dia">25</span></td>
-          <td class="domingo"><span class="dia">26</span></td>
-        </tr>
-        <tr>
-          <td><span class="dia">27</span></td>
-          <td class="fora-do-mes">28</td>
-          <td class="fora-do-mes">01</td>
-          <td class="fora-do-mes">02</td>
-          <td class="fora-do-mes">03</td>
-          <td class="fora-do-mes">04</td>
-          <td class="fora-do-mes">05</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- POPUP -->
-  <div id="popup" class="popup">
-    <div class="popup-content">
-      <span class="close">&times;</span>
-      <h3>Exercícios realizados</h3>
-      <label><input type="checkbox" checked> 50 flexões</label><br>
-      <label><input type="checkbox"> 50 abdominais</label><br>
-      <label><input type="checkbox" checked> 50 polichinelos</label><br>
-      <label><input type="checkbox" checked> Pular corda</label>
-    </div>
-  </div>
-
-  <footer class="footer">
-    <p>© 2025 PLANOB<br/>TODOS OS DIREITOS RESERVADOS.</p>
-  </footer>
-
-  <script>
-function togglePlano(element) {
-    const plano = element.closest('.plano');
-    const front = plano.querySelector('.plano-front');
-    const back = plano.querySelector('.plano-back');
-   
-    // Alternar visibilidade
-    if (back.style.display === 'none') {
-      front.style.display = 'none';
-      back.style.display = 'block';
-    } else {
-      front.style.display = 'block';
-      back.style.display = 'none';
-    }
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("open");
   }
+</script>
 
-    const dias = document.querySelectorAll('.dia');
-    const popup = document.getElementById('popup');
-    const closeBtn = document.querySelector('.close');
+<footer class="footer">
+    <p>© 2025 PLANOB<br/>TODOS OS DIREITOS RESERVADOS.</p>
+</footer>
 
-    dias.forEach(dia => {
-      dia.addEventListener('click', () => {
-        popup.style.display = 'flex';
-      });
-    });
-
-    closeBtn.addEventListener('click', () => {
-      popup.style.display = 'none';
-    });
-
-    window.addEventListener('click', (e) => {
-      if (e.target === popup) {
-        popup.style.display = 'none';
-      }
-    });
-  </script>
 </body>
 </html>

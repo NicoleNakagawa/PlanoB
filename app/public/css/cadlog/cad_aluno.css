@@ -8,9 +8,7 @@
   padding: 0;
   box-sizing: border-box;
 
-  
 }
-
 
 body {
   font-family: 'Nunito', sans-serif;
@@ -62,7 +60,7 @@ input {
 }
 
 .botao-principal {
-  background-color: #1d2d3d;
+  background-color: #214CCE;
   color: white;
   padding: 15px 20px;
   width: 100%;
@@ -75,12 +73,12 @@ input {
 }
 
 .botao-principal:hover {
-  background-color: #2e425a;
+  background-color: #214CCE;
 }
 
 
 .caixa-direita {
-  background-color: #1d2d3d; 
+  background-color: #214CCE; 
   color: white;
   width: 50%;
   padding: 40px;

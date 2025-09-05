@@ -32,19 +32,70 @@ body {
 }
  
 header {
-  background-color: #2C3E50;
+  background-color: #214CCE;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* separa menu e logo */
   align-items: center;
-  padding: 10px 50px;
- 
-}
- 
-header img {
+  padding: 0 20px;
   height: 60px;
-  color: white;
 }
- 
+
+header img {
+  height: 130px;   /* aumenta a logo */
+  width: auto;    /* mantém proporção */
+  object-fit: contain;
+}
+
+/* BOTÃO MENU HAMBÚRGUER */
+.menu-toggle {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  z-index: 1100; /* fica acima do menu */
+}
+
+/* MENU LATERAL */
+nav#menu {
+  position: fixed;
+  top: 0;
+  left: -250px; /* escondido */
+  width: 250px;
+  height: 100%;
+  background-color: #214CCE;
+  padding-top: 80px;
+  transition: left 0.3s ease; /* animação suave */
+  z-index: 1000;
+}
+
+nav#menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav#menu ul li {
+  margin: 20px 0;
+  text-align: left;
+}
+
+nav#menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  padding: 10px 20px;
+  display: block;
+  transition: background 0.3s;
+}
+
+nav#menu ul li a:hover {
+  background: #1565c0;
+  border-radius: 5px;
+}
+
+/* QUANDO O MENU ESTÁ ABERTO */
+nav#menu.open {
+  left: 0;
+}
+
 nav a {
    margin: 0 10px;
    text-decoration: none;
@@ -53,67 +104,8 @@ nav a {
    font-size: 21px;
 }
  
-/* Container do menu de perfil */
-.menu-perfil {
-  position: relative;
-  display: inline-block;
-}
- 
-/* Ícone de perfil */
-.perfil-icon {
-  font-size: 35px;
-  background-color: #2C3E50;
-  padding: 10px;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
-}
- 
-/* Animação de hover no botão */
-.menu-perfil:hover .perfil-icon {
-  background-color: #A8BDD1;
-}
- 
-/* Cor do ícone */
-.perfil-icon i {
-  color: white;
-}
- 
-/* Menu suspenso */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  right: 0;
-  background-color: #A8BDD1;
-  padding: 15px;
-  border-radius: 10px;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-  z-index: 1000;
-}
- 
-/* Links do menu */
-.dropdown-menu a {
-  display: block;
-  color: #2C3E50;
-  padding: 10px 5px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 19px;
-}
- 
-/* Hover nos links do menu */
-.dropdown-menu a:hover {
-  background-color: #90a7bd;
-  border-radius: 5px;
-}
- 
-/* Mostrar o menu ao passar o mouse no container */
-.menu-perfil:hover .dropdown-menu {
-  display: block;
-}
- 
 .hero {
-  background: url('https://www.bp.org.br/Content/artigos/rotina-de-exercicios-em-casa-5-dicas-da-BP.jpg') no-repeat center center;
+  background: url('../img/imagem banner.jpg') no-repeat center center;
   background-size: 100%;
   height: 700px;
   display: flex;
@@ -133,12 +125,12 @@ nav a {
 .hero h1 {
   position: relative;
   z-index: 2;
-  color: #A8BDD1;
-  font-size: 50px;
+  color: #ffffff;
+  font-size: 60px;
   font-weight: 300;
   font-family: 'Nunito';
   line-height: 1.3;
-  text-align: center;
+  text-align: left;
 }
  
 .hero h1 span {
@@ -146,7 +138,7 @@ nav a {
 }
  
 .hero strong {
-  color: #D9D9D9;
+  color: #ffffff;
   font-size: 110px;
   font-family: 'Baumans';
   font-weight: 100;
@@ -158,7 +150,6 @@ nav a {
 }
  
 .caixa-azul {
-    background-color: #a4c9f0;
     padding: 100px 150px; 
     text-align: center;
     font-size: 25px;
@@ -180,371 +171,14 @@ nav a {
 }
 
 
-.planos {
-  display: flex;
-  justify-content: space-around;
-  padding: 20px ;
-  font-family: 'Arial', sans-serif;
-}
- 
-.planos-section {
-  padding: 20px 0;
-  text-align: center;
-  border-radius: 15px;
-  font-size: 30px;
-}
- 
-.planos-section h2 {
-  margin-bottom: 20px;
-  text-align: center;
-  font-size: 55px;
-  font-weight: bold;
-  color: #2C3E50;
-}
- 
-.plano {
-  background-color: #007BFF;
-  color: white;
-  padding: 30px 15px;
-  border-radius: 15px;
-  text-align: center;
-  width: 30%;
-  font-size: 24px;
-  font-family: 'Arial', sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  min-height: 490px;
-}
- 
-.plano h3 {
-  font-size: 40px;
-  font-weight: bold;
-  line-height: 1.4;
-  margin-bottom: 15px;
-}
- 
-.plano p {
-  font-size: 40px;
-  margin-bottom: 20px;
-  font-family: 'Viga';
-}
- 
-.plano h4 {
-  font-size: 20px;
-  color: rgb(0, 0, 0);
-  cursor: pointer;
-  font-weight: normal;
-}
- 
-.plano ul {
-  list-style: disc;
-  text-align: left;
-  padding-left: 20px;
-  font-size: 18px;
-
-}
- 
-.plano ul li {
-  margin-bottom: 10px;
-}
-
-.plano-card {
-    display: block;
-    width: 300px;
-    height: 350px;
-    perspective: 1000px;
-    text-decoration: none; /* remove sublinhado */
-}
-
-.plano-card .front, 
-.plano-card .back {
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-    background-color: #007BFF;
-    color: white;
-    padding: 20px;
-    box-sizing: border-box;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    backface-visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: transform 0.6s;
-}
-
-.plano-card .front {
-    transform: rotateY(0deg);
-}
-
-.plano-card .back {
-    transform: rotateY(180deg);
-    background-color: #0056b3;
-}
-
-.plano-card:hover .front {
-    transform: rotateY(180deg);
-}
-
-.plano-card:hover .back {
-    transform: rotateY(360deg);
-}
-
-.assinar-btn {
-  margin-top: 15px;
-  padding: 12px 25px;
-  background-color: white;
-  color: #007bff;
-  font-weight: bold;
-  font-size: 20px;
-  border: 3px solid white;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.assinar-btn:hover {
-  background-color: #f0f0f0;
-}
-
-.voltar-btn {
-  margin-top: 25px;
-  padding: 10px 15px;
- 
-  background-color: #007BFF;
-  font-weight: bold;
-  font-size: 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/*
-.voltar-btn:hover {
-  background-color: #f0f0f0;
-}
-*/
-
-.caixa-plano {
-    display: block;
-    width: 300px;
-    height: 350px;
-    background-color: #007BFF;
-    /*color: white;*/
-    text-decoration: none; /* remove o sublinhado */
-    border-radius: 15px;
-    padding: 30px 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s, background-color 0.2s;
-}
-
-.caixa-plano:hover {
-    background-color: #0056b3;
-    transform: scale(1.03);
-}
-
 h2{
 font-size: 48px;
 text-align: left;
 color: #2C3E50;
 }
 
-.ver-mais:hover {
-  text-decoration: underline;
-  font-weight: bold;
-}
- 
-.videos {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
-  gap: 20px;
-  flex-wrap: wrap;
-}
- 
-.video-card {
-  position: relative;
-  width: 450px;
-  border-radius: 10px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
- 
-.video-card img {
-  width: 100%;
-  display: block;
-  border-radius: 10px;
-}
- 
-.video-card:hover {
-  transform: scale(1.03);
-}
- 
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 40px;
-  padding: 15px;
-  border-radius: 50%;
-  pointer-events: none;
-}
- 
-.tabela {
-  margin-top: 30px;
-  padding: 20px;
-}
- 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
- 
-th, td {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: center;
-  background-color: #e6f0f5; /* Fundo mais claro para as células da tabela */
-}
- 
-th {
-  background-color: #007BFF;
-  color: rgb(0, 0, 0);
-  font-family: 'Nunito';
-  text-align: left;
-  font-size: 20px;
-}
- 
-.calendario {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  border-collapse: collapse;
-  font-family: Arial, sans-serif;
-  background-color: #A8BDD1;
-  border: 2px solid #000000;
-}
- 
-.calendario caption {
-  background-color: #007BFF;
-  color: black;
-  font-size: 20px;
-  font-weight: bold;
-  text-align: left;
-  padding: 10px;
-}
- 
-.calendario th {
-  background-color: white;
-  color: #2C3E50;
-  border: 1px solid #333;
-  padding: 8px;
-  font-weight: bold;
-}
- 
-.calendario td {
-  border: 1px solid #333;
-  padding: 10px;
-  text-align: center;
-  background-color: #e6f0f5;
-  color: black;
-  font-size: 16px;
-}
- 
-.calendario .fora-do-mes {
-  color: #5f94c4;
-}
- 
-.calendario .sabado {
-  color: red;
-}
- 
-.calendario .domingo {
-  color: red;
-}
- 
-.calendario .hoje {
-  background-color: #007BFF;
-  color: white;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  display: inline-block;
-  line-height: 35px;
-}
- 
-/* Dias do calendário com hover */
-.dia {
-  display: inline-block;
-  width: 35px;
-  height: 35px;
-  line-height: 35px;
-  border-radius: 50%;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  cursor: pointer;
-}
-
-.dia:hover {
-  background-color: #007BFF;
-  color: white;
-}
-
-/* POPUP */
-.popup {
-  display: none; /* escondido inicialmente */
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
-}
-
-.popup-content {
-  background: white;
-  padding: 20px 30px;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  text-align: left;
-  width: 250px;
-  font-size: 16px;
-  position: relative;
-}
-
-.popup-content h3 {
-  margin-bottom: 15px;
-  font-size: 20px;
-}
-
-.popup-content label {
-  display: block;
-  margin-bottom: 8px;
-}
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  color: #333;
-}
-
-.close:hover {
-  color: red;
-}
-
 .footer {
-  background-color: #2C3E50;
+  background-color: #214CCE;
   color: white;
   text-align: center;
   padding: 15px 0;

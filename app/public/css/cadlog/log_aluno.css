@@ -32,7 +32,7 @@ body {
 }
 
 .caixa-esquerda {
-  background-color: #1d2d3d;
+  background-color: #214CCE;
   color: white;
   width: 100%;
   padding: 40px;
@@ -72,7 +72,7 @@ body {
 
 .botao-secundario:hover {
   background-color: white;
-  color: #1d2d3d;
+  color: #214CCE;
 }
 
 .logo {
@@ -123,7 +123,7 @@ input {
 }
 
 .botao-principal {
-  background-color: #1d2d3d;
+  background-color: #214CCE;
   color: white;
   padding: 15px 20px;
   border-radius: 5px;
@@ -137,7 +137,7 @@ input {
 }
 
 .botao-principal:hover {
-  background-color: #2e425a;
+  background-color: #214CCE;
 }
 
 @media (max-width: 768px) {
