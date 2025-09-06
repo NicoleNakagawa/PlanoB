@@ -5,4 +5,16 @@ router.get('/', function(req,res){
     res.render('pages/index')
 })
 
+router.get('/login', function(req,res){
+    res.render('pages/login')
+})
+
+router.get('/cadastroaluno', function(req,res){
+    res.render('pages/cadastroaluno')
+})
+
+router.get('/cadastroprofessor', function(req,res){
+    res.render('pages/cadastroprofessor')
+})
+
 module.exports = router
