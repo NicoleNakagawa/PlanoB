@@ -58,12 +58,12 @@ header img {
 nav#menu {
   position: fixed;
   top: 0;
-  left: -250px; /* escondido */
+  right: -250px; /* escondido */
   width: 250px;
   height: 100%;
   background-color: #214CCE;
   padding-top: 80px;
-  transition: left 0.3s ease; /* animação suave */
+  transition: right 0.3s ease; /* animação suave */
   z-index: 1000;
 }
 
@@ -93,7 +93,7 @@ nav#menu ul li a:hover {
 
 /* QUANDO O MENU ESTÁ ABERTO */
 nav#menu.open {
-  left: 0;
+  right: 0;
 }
 
 nav a {
