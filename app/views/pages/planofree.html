@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+</html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlanoB</title>
+    <link rel="stylesheet" href="planofree.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <img src="../img/logo plano b.png" alt="LogoPlanoB" />
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+      
+        <nav id="menu">
+          <ul>
+            <li><a href="/cadastroaluno">Cadastro</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="#">Planos</a></li>
+            <li><a href="#">Sobre nós</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+    <main class="container">
+        <section class="greeting">
+            <h1>Olá, Fulano!</h1>
+            <p>Pronto para treinar hoje?</p>
+        </section>
+
+        <section class="planos">
+            <div class="meu-plano">
+                <h3>MEU PLANO</h3>
+                <div class="plano-card azul">
+                    <h2>Plano<br><span>Mova-se</span></h2>
+                    <ul>
+                        <li>Treinos gravados</li>
+                        <li>Novos treinos semanais</li>
+                        <li>Suporte por e-mail</li>
+                    </ul>
+                    <div class="check">&#10004;</div>
+                </div>
+            </div>
+            <div class="outros-planos">
+                <h3>OUTROS PLANOS</h3>
+                <div class="plano-card branco">
+                    <h2>Plano<br><span>Consistência</span></h2>
+                    <button>Saiba Mais</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="video-do-dia">
+            <h3>VÍDEOS DO DIA</h3>
+            <div class="video-card">
+                <span class="tag-novo">Novo hoje</span>
+                <img src="https://via.placeholder.com/400x200?text=Treino+de+Braço" alt="Treino de braço" />
+                <p>Treino de braço - 15 min</p>
+            </div>
+        </section>
+
+        <section class="tabela-mes">
+            <h3>TABELA DO MÊS</h3>
+            <div class="calendario">
+                <div class="mes">Ago</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Seg</th>
+                            <th>Ter</th>
+                            <th>Qua</th>
+                            <th>Qui</th>
+                            <th>Sex</th>
+                            <th>Sab</th>
+                            <th>Dom</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>29</td>
+                            <td>30</td>
+                            <td>31</td>
+                            <td>01</td>
+                            <td class="hoje">02</td>
+                            <td class="marcado">03</td>
+                            <td class="marcado">04</td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td>06</td>
+                            <td>07</td>
+                            <td>08</td>
+                            <td>09</td>
+                            <td class="marcado">10</td>
+                            <td class="marcado">11</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>14</td>
+                            <td>15</td>
+                            <td>16</td>
+                            <td class="marcado">17</td>
+                            <td class="marcado">18</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td>20</td>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>24</td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td>26</td>
+                            <td>27</td>
+                            <td>28</td>
+                            <td>29</td>
+                            <td>30</td>
+                            <td>31</td>
+                            <td>01</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleMenu() {
+          document.getElementById("menu").classList.toggle("open");
+        }
+      </script>
+
+    <footer>
+        © 2025 PLANOB <br>
+        TODOS OS DIREITOS RESERVADOS.
+    </footer>
+</body>
+
+</html>
