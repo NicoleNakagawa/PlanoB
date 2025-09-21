@@ -17,4 +17,8 @@ router.get('/cadastroprofessor', function(req,res){
     res.render('pages/cadastroprofessor')
 })
 
+router.get('/planofree', function(req,res){
+    res.render('pages/planofree')
+})
+
 module.exports = router
