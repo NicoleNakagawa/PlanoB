@@ -9,9 +9,8 @@
 </head>
 <body>
 <header>
-  <img src="../img/logo plano b.png" alt="Logo PlanoB" />
+  <img src="../img/logo plano b.png" alt="Logo PlanoB"/>
 
-  <!-- Botão de menu (substituí o <div> por um <button>) -->
   <button class="menu-toggle" aria-label="Abrir menu" onclick="toggleMenu()">&#9776;</button>
 
   <nav id="menu">
@@ -59,7 +58,7 @@
       <button>Selecionar</button>
     </li>
     <li class="card">
-      <h3>Plano "Lazul"</h3>
+      <h3>Plano "Lazuli"</h3>
       <p>R$59,90/mês</p>
       <ul>
         <li>✓ Treinos gravados</li>
@@ -75,6 +74,7 @@
         <li>✓ Treinos gravados</li>
         <li>✓ Novos treinos semanais</li>
         <li>✓ Suporte por e-mail</li>
+        <li>✓ Tabelas de treinos</li>
       </ul>
       <button>Selecionar</button>
     </li>
@@ -94,7 +94,7 @@
 
   section.carousel {
   position: relative;
-  width: 350px;
+  width: 950px;
   margin: 40px auto; /* centraliza no meio da página */
   overflow: hidden;
 }
@@ -110,19 +110,23 @@ ul.track {
 li.card {
   flex: 0 0 100%;
   background: #fff;
-  border-radius: 10px;
+ /* border-radius: 10px;*/
   padding: 20px;
   text-align: center;
   font-family: 'Nunito';
+  color:black;
+  font-size: 1.8rem;
 }
 
 li.card h3 {
   color: #1d4ed8;
   margin-bottom: 10px;
+  font-size: 2.0rem;
+  font-weight:bold;
 }
 
 li.card p {
-  font-size: 1.2rem;
+  font-size: 2.0rem;
   font-weight: bold;
   color: #1d4ed8;
 }
@@ -157,8 +161,8 @@ button.prev, button.next {
   font-size: 1.5rem;
   cursor: pointer;
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
+  width: 65px;
+  height: 65px;
   display: flex;
   justify-content: center;
   align-items: center;
