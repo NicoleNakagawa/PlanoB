@@ -44,12 +44,157 @@
       a um clique de distância!
     </p>
   </section>
+
+<section class="planos">
+<section class="carousel">
+  <button class="prev">&#10094;</button>
+  <ul class="track">
+    <li class="card">
+      <h3>Plano "Prata"</h3>
+      <p>R$29,90/mês</p>
+      <ul>
+        <li>✓ Treinos gravados</li>
+        <li>✓ Novos treinos semanais</li>
+      </ul>
+      <button>Selecionar</button>
+    </li>
+    <li class="card">
+      <h3>Plano "Lazul"</h3>
+      <p>R$59,90/mês</p>
+      <ul>
+        <li>✓ Treinos gravados</li>
+        <li>✓ Novos treinos semanais</li>
+        <li>✓ Tabelas de treinos</li>
+      </ul>
+      <button>Selecionar</button>
+    </li>
+    <li class="card">
+      <h3>Plano "Diamante"</h3>
+      <p>R$105,90/mês</p>
+      <ul>
+        <li>✓ Treinos gravados</li>
+        <li>✓ Novos treinos semanais</li>
+        <li>✓ Suporte por e-mail</li>
+      </ul>
+      <button>Selecionar</button>
+    </li>
+  </ul>
+  <button class="next">&#10095;</button>
+</section>
+</section>
 </main>
+
+<style>
+.planos {
+  background: #214CCE; /* fundo azul */
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+}
+
+  section.carousel {
+  position: relative;
+  width: 350px;
+  margin: 40px auto; /* centraliza no meio da página */
+  overflow: hidden;
+}
+
+ul.track {
+  display: flex;
+  transition: transform 0.5s ease;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li.card {
+  flex: 0 0 100%;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Nunito';
+}
+
+li.card h3 {
+  color: #1d4ed8;
+  margin-bottom: 10px;
+}
+
+li.card p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1d4ed8;
+}
+
+li.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+  text-align: center;
+}
+
+li.card ul li {
+  margin: 5px 0;
+}
+
+li.card button {
+  background: #1d4ed8;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.prev, button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #1d4ed8;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+button.prev { left: 10px; }
+button.next { right: 10px; }
+
+</style>
 
 <script>
   function toggleMenu() {
     document.getElementById("menu").classList.toggle("open");
   }
+</script>
+
+<script>
+  const track = document.querySelector('.track');
+  const nextBtn = document.querySelector('.next');
+  const prevBtn = document.querySelector('.prev');
+  let index = 0;
+
+  nextBtn.addEventListener('click', () => {
+    if (index < track.children.length - 1) {
+      index++;
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (index > 0) {
+      index--;
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+  });
 </script>
 
 <footer class="footer">
