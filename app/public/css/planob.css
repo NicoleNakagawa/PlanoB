@@ -175,6 +175,9 @@ h2 {
   color: #2C3E50;
 }
 
+.card button{
+  font-size: 25px;
+}
 
 .footer {
   background-color: #214CCE;
@@ -198,7 +201,8 @@ h2 {
   }
  
   header img {
-    height: 50px;
+    height: 90px;
+    width: auto;
   }
  
   nav {
@@ -208,7 +212,7 @@ h2 {
   }
  
   nav a {
-    font-size: 14px;
+    font-size: 34px;
     padding: 4px;
   }
  
@@ -221,8 +225,12 @@ h2 {
     padding: 40px 20px;
   }
 
+  .hero strong {
+    font-size: 2.5rem;
+  }
+
   .hero h1 {
-    font-size: 1.6rem;
+    font-size: 2.6rem;
   }
 
   .hero strong {
