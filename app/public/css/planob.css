@@ -147,6 +147,33 @@ nav a {
   text-align: center;
 }
  
+.hero-content {
+  position:left;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+}
+
+.hero-btn {
+  margin-top: 25px;
+}
+
+.hero .btn-cadastrar {
+  display: inline-block;
+  background: #214CCE;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.hero .btn-cadastrar:hover {
+  background: #16389e;
+}
+
 /* SEÇÃO DE DESTAQUE (antes .caixa-azul) */
 section.caixa-azul {
     padding: 100px 150px; 
@@ -187,7 +214,7 @@ h2 {
   margin-top: 40px;
 }
  
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
   body {
     padding: 0;
     margin: 0;
@@ -249,5 +276,102 @@ h2 {
   .footer {
     padding: 10px;
     font-size: 8px;
+  }
+}
+*/
+
+@media (max-width: 768px) {
+
+  /* HEADER */
+  header {
+    height: 60px;
+    padding: 0 10px;
+  }
+
+  header img {
+    height: 90px;
+  }
+
+  /* HERO */
+  .hero {
+    height: 100vh;
+    padding: 20px;
+    text-align: left;
+    justify-content: left;
+  }
+
+  .hero h1 {
+    font-size: 2.6rem;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  .hero strong {
+  /*display: block;*/
+    font-size: 3.9rem;
+    margin-bottom: 10px;
+  }
+
+  /* CAIXA AZUL */
+  section.caixa-azul {
+    padding: 30px 15px;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  section.caixa-azul h2 {
+    font-size: 1.4rem;
+  }
+
+  /* PLANOS */
+  .planos {
+    padding: 40px 15px;
+  }
+
+  .planos h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  section.carousel {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  ul.track {
+    display: flex;
+    width: 100%;
+  }
+
+  li.card {
+    flex: 0 0 100%;
+    margin: 0 5px;
+    padding: 20px;
+    font-size: 1rem;
+  }
+
+  li.card h3 {
+    font-size: 1.3rem;
+  }
+
+  li.card p {
+    font-size: 1.2rem;
+  }
+
+  li.card button {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+
+  button.prev,
+  button.next {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .footer {
+    font-size: 0.7rem;
+    padding: 10px;
   }
 }

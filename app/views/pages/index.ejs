@@ -24,15 +24,21 @@
 </header>
 
 <main>
-  <section class="hero">
+  
+<section class="hero">
+  <div class="hero-content">
     <h1>
       <span><strong>PlanoB</strong></span>
       <span>Treine onde quiser,</span>
       <span>quando quiser</span>
     </h1>
-  </section>
+    <div class="hero-btn">
+      <a href="/cadastroaluno" class="btn-cadastrar">Cadastrar-se</a>
+    </div>
+  </div>
+</section>
 
-  <!-- Troquei a div pela tag <section>, já que é conteúdo -->
+
   <section class="caixa-azul">
     <h2>Sem tempo para academia?</h2>
     <p><strong>Sem problemas!</strong> Treinar em casa nunca foi tão fácil!</p>
@@ -45,6 +51,7 @@
   </section>
 
 <section class="planos">
+<h3>Nossos Planos</h3>
 <section class="carousel">
   <button class="prev">&#10094;</button>
   <ul class="track">
@@ -149,6 +156,10 @@ li.card button {
   padding: 8px 16px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.planos h3{
+  font-size: 50px;
 }
 
 button.prev, button.next {
