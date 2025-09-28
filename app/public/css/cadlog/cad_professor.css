@@ -139,19 +139,134 @@ input {
   color: #333;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+  html, body { overflow-x: hidden; } /* evita scroll horizontal */
+
   .container {
+    display: flex;
     flex-direction: column;
-    height: auto;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
   }
 
-  .caixa-esquerda,
-  .caixa-direita {
-    width: 100%;
-    border-radius: 0;
-  }
+  .voltar {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 40px;
+  color: #214CCE;
+  text-decoration: none;
 }
 
-.logo {
-  width: 150px;
+  .caixa-esquerda {
+    order: 1;
+    width: 100%;
+    padding: 70px 16px 18px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    border-radius: 0;
+    box-sizing: border-box;
+  }
+
+  .caixa-esquerda h2 {
+    font-size: 45px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+  }
+
+  .form-input {
+    width: 86%;
+    max-width: 360px;
+    margin-bottom: 12px;
+  }
+
+  .form-input input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: none;
+    background-color: #cfd8dd; 
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  .botao-principal {
+    margin-top: 12px;
+    width: 150px;
+    padding: 10px 16px;
+    border-radius: 16px;
+    background-color: #214CCE;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: none;
+  }
+
+ 
+  .caixa-direita {
+    order: 2;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw; 
+    max-width: 100vw;
+    padding: 36px 22px 40px;
+    margin-top: 22px;
+    box-sizing: border-box;
+    background-color: #214CCE;
+    color: white;
+    text-align: center;
+    border-top-left-radius: 48px; 
+    border-top-right-radius: 48px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .caixa-direita h2 {
+    font-size: 40px;
+    margin: 6px 0 8px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .caixa-direita .sub {
+    font-size: 13px;
+    margin-bottom: 10px;
+    opacity: 0.95;
+  }
+
+  .botao-secundario {
+    display: block;
+    width: 140px;
+    margin: 10px auto 6px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 2px solid #ffffff;
+    background: transparent;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .caixa-direita .ou {
+    margin: 6px 0;
+    color: rgba(255,255,255,0.9);
+    font-size: 13px;
+  }
+
+  .caixa-direita > * { max-width: 360px; margin-left: auto; margin-right: auto; }
+
+  .container { padding-left: 0; padding-right: 0; }
 }
