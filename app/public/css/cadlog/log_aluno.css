@@ -141,7 +141,7 @@ input {
   background-color: #214CCE;
 }
 
-@media (max-width: 768px)
+@media (max-width: 375px)
  {html, body { overflow-x: hidden; }
   body {
     background-color: #e6e6e6;

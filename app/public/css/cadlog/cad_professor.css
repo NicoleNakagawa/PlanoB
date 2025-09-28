@@ -61,7 +61,7 @@ input {
 }
 
 .botao-principal {
-  background-color: #1d2d3d;
+  background-color: #214CCE;
   color: white;
   padding: 15px 20px;
   width: 100%;
@@ -74,12 +74,12 @@ input {
 }
 
 .botao-principal:hover {
-  background-color: #2e425a;
+  background-color: #214CCE;
 }
 
 
 .caixa-direita {
-  background-color: #1d2d3d; 
+  background-color: #214CCE; 
   color: white;
   width: 50%;
   padding: 40px;
@@ -108,7 +108,7 @@ input {
   color: white;
   padding: 15px 20px;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   text-align: center;
   text-decoration: none;
@@ -131,15 +131,16 @@ input {
   top: 30px;
   left: 30px;
   font-size: 40px;
-  color: black;
+  color: #214CCE;
   text-decoration: none;
 }
 
 .voltar:hover {
-  color: #333;
+  color: #214CCE;
 }
 
-@media (max-width: 480px) {
+
+@media (max-width: 375px) {
   html, body { overflow-x: hidden; } /* evita scroll horizontal */
 
   .container {
