@@ -15,7 +15,7 @@ body {
   font-family: 'Nunito', sans-serif;
   background-color: #e6e6e6;
   min-height: 100vh;
-  padding: 0px 0px; /* Espaço no topo e embaixo */
+  padding: 0px 0px;
   display: flex;
   justify-content: center;
 }
@@ -136,7 +136,7 @@ input {
   }
 
   .popup-content {
-    background-color: #2a57f7; /* azul como na imagem */
+    background-color: #2a57f7; 
     color: white;
     padding: 2rem;
     border-radius: 15px;
@@ -197,7 +197,7 @@ input {
 
 
 @media (max-width: 375px) {
-  html, body { overflow-x: hidden; } /* evita scroll horizontal */
+  html, body { overflow-x: hidden; }
 
   .container {
     display: flex;
