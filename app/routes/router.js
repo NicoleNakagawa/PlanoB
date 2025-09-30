@@ -21,4 +21,8 @@ router.get('/planofree', function(req,res){
     res.render('pages/planofree')
 })
 
+router.get('/nossosplanos', function(req,res){
+    res.render('pages/nossosplanos')
+})
+
 module.exports = router
