@@ -1,0 +1,111 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f8ff;
+  color: white;
+}
+
+.planos {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.planos h1 {
+  color: #1d3fd6;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.cartoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  text-align: center;
+}
+
+.cartao {
+  background: #1d3fd6;
+  border-radius: 12px;
+  padding: 25px 20px;
+  width: 280px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+.cartao h2 {
+  color: white;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.cartao ul {
+  text-align: left;
+  margin-bottom: 20px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.cartao ul li {
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.inativo {
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+.preco {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.preco strong {
+  font-size: 1.4rem;
+  color: white;
+}
+
+.preco span {
+  font-size: 0.9rem;
+  color: white;
+}
+
+.ou {
+  font-size: 1rem;
+  margin: 10px 0;
+  font-weight: bold;
+  color: white;
+}
+
+button {
+  background-color: white;
+  color: #1d3fd6;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/*button:hover {
+  background-color: #1d3fd6;
+  color: white;
+}*/
+
+.notas {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: #333;
+  text-align: center;
+}
+
+.notas p {
+  margin: 5px 0;
+}
