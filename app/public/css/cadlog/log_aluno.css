@@ -214,17 +214,17 @@ input {
 }
 
   .botao-principal {
+    margin-top: 12px;
+    width: 150px;
+    padding: 10px 16px;
+    border-radius: 16px;
     background-color: #214CCE;
-    color: white;
-    padding: 10px;
-    font-size: 14px;
-    width: 80%;
-    max-width: 120px;
+    color: #fff;
     border: none;
-    border-radius: 6px;
-    font-weight: normal;
+    font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
-    margin-top: 5px;
+    box-shadow: none;
   }
 
   .caixa-esquerda h2 {
