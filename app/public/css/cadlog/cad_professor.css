@@ -196,7 +196,7 @@ input {
 }
 
 
-@media (max-width: 375px) {
+@media (max-width: 1440px) {
   html, body { overflow-x: hidden; }
 
   .container {
