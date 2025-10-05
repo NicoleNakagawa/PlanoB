@@ -138,33 +138,80 @@ input {
   background-color: #214CCE;
 }
 
-@media (max-width: 1440px)
- {html, body { overflow-x: hidden; }
-  body {
-    background-color: #e6e6e6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
+@media (max-width: 1000px) {
+  html, body { overflow-x: hidden; } /* evita scroll horizontal */
 
   .container {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
     width: 100%;
-    max-width: 400px;
-    text-align: center;
-    padding: 0 15px;
-    margin-top: 20px;
+    padding: 0;
+    margin: 0;
+    position: relative;
   }
+
+  .voltar {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 40px;
+  color: #214CCE;
+  text-decoration: none;
+}
 
   .caixa-direita {
-    order: 1; 
-    background-color: transparent;
+    order: 1;
+    width: 100%;
+    padding: 70px 16px 18px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
     border-radius: 0;
+    box-sizing: border-box;
   }
 
+  .caixa-direita h2 {
+    font-size: 45px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+  }
+
+  .form-input {
+    width: 86%;
+    max-width: 360px;
+    margin-bottom: 12px;
+  }
+
+  .form-input input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: none;
+    background-color: #cfd8dd; 
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  .botao-principal {
+    margin-top: 12px;
+    width: 150px;
+    padding: 10px 16px;
+    border-radius: 16px;
+    background-color: #214CCE;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: none;
+  }
+
+ 
   .caixa-esquerda {
     order: 2;
     position: relative;
@@ -184,57 +231,17 @@ input {
     border-bottom-right-radius: 0;
   }
 
-  .caixa-direita h2 {
-    font-size: 45px;
-    font-weight: bold;
-    margin: 40px 0 20px;
-    color: #000;
-  }
-
-  input {
-    margin-bottom: 12px;
-    padding: 10px;
-    font-size: 14px;
-    border: none;
-    border-radius: 8px;
-    background-color: #cfd8dc;
-    width: 80%;
-    max-width: 250px;
-    outline: none;
-    text-align: left;
-  }
-
-  .voltar {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  font-size: 40px;
-  color: #214CCE;
-  text-decoration: none;
-}
-
-  .botao-principal {
-    margin-top: 12px;
-    width: 150px;
-    padding: 10px 16px;
-    border-radius: 16px;
-    background-color: #214CCE;
-    color: #fff;
-    border: none;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: none;
-  }
-
   .caixa-esquerda h2 {
-    font-size: 45px;
-    margin-bottom: 10px;
+    font-size: 40px;
+    margin: 6px 0 8px;
+    font-weight: 700;
+    line-height: 1.3;
   }
 
-  .caixa-esquerda p {
-    font-size: 25px;
-    margin: 10px 0;
+  .caixa-direita .sub {
+    font-size: 13px;
+    margin-bottom: 10px;
+    opacity: 0.95;
   }
 
   .botao-secundario {
@@ -251,4 +258,15 @@ input {
     text-align: center;
     box-sizing: border-box;
   }
+
+  .caixa-direita .ou {
+    margin: 6px 0;
+    color: rgba(255,255,255,0.9);
+    font-size: 13px;
+  }
+
+  .caixa-direita > * { max-width: 360px; margin-left: auto; margin-right: auto; }
+
+  .container { padding-left: 0; padding-right: 0; }
 }
+
