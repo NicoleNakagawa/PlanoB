@@ -17,6 +17,19 @@ body {
   margin-bottom: 20px;
 }
 
+.seta-voltar {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 40px;
+  color: #1d3fd6;
+  text-decoration: none;
+}
+
+.seta-voltar:hover {
+  color: #ccc;
+}
+
 .cartoes {
   display: flex;
   flex-wrap: wrap;
