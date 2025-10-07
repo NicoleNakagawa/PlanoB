@@ -5,10 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Planos PlanoB</title>
   <link rel="stylesheet" href="../css/planos/nossosplanos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap" rel="stylesheet">
+
 </head>
 <body>
-  <a href="/" class="seta-voltar">
-  &#8592;</a>
+
+<header class="head">
+  <img src="../img/logo plano b.png" alt="Logo PlanoB"/>
+
+  <button class="menu-toggle" aria-label="Abrir menu" onclick="toggleMenu()">&#9776;</button>
+
+  <nav id="menu">
+    <ul>
+      <li><a href="/">Início</a></li>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/cadastroaluno">Cadastro</a></li>
+      <li><a href="/planofree">Planos</a></li>
+      <li><a href="/sobre">Sobre nós</a></li>
+    </ul>
+  </nav>
+</header>
 
   <section class="planos">
     <h1>Nossos Planos</h1>
@@ -21,8 +39,10 @@
           <li><strong>Treinos gravados:</strong><br> Vídeos de exercícios práticos para fazer onde quiser.</li>
           <li><strong>Novos vídeos:</strong><br> Novos vídeos semanais na plataforma.</li>
           <li class="inativo"><s><strong>Tabelas de Treinos:</strong><br> Tabela de anotações.<br> (Elaborada por personais)</s></li>
-        </ul>
+        </ul> 
+        <br><br><br>
         <p class="preco">PLANO MENSAL<br><strong>R$29,90</strong><span>/mês</span></p>
+
         <button>ASSINAR</button>
       </div>
 
@@ -65,5 +85,21 @@
       <p>***Plano Semestral: 12x de R$53,30 = R$1260,00</p>
     </div>
   </section>
+
+  <footer class="sitefooter">
+<small>© 2025 PLANOB<br/>TODOS OS DIREITOS RESERVADOS.</small>
+<a href="#conteudo" class="to-top" aria-label="Voltar ao topo">
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<path d="M12 7l7 7H5l7-7z"/>
+</svg>
+</a>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("open");
+  }
+</script>
+
+</footer>
 </body>
 </html>

@@ -1,8 +1,76 @@
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   margin: 0;
   background: #f5f8ff;
   color: white;
+}
+
+.head {
+  background-color: #214CCE;
+  display: flex;
+  justify-content: space-between; /* separa menu e logo */
+  align-items: center;
+  padding: 0 20px;
+  height: 60px;
+}
+
+.head img {
+  height: 130px;   /* aumenta a logo */
+  width: auto;    /* mantém proporção */
+  object-fit: contain;
+}
+
+/* BOTÃO MENU HAMBÚRGUER (agora <button>) */
+button.menu-toggle {
+  font-size: 30px;
+  color: #fafbff;
+  background: none;    /* remove estilo padrão de botão */
+  border: none;        /* remove borda */
+  cursor: pointer;
+  z-index: 1100;       /* fica acima do menu */
+}
+
+/* MENU LATERAL */
+nav#menu {
+  position: fixed;
+  top: 0;
+  right: -250px; /* escondido */
+  width: 250px;
+  height: 100%;
+  background-color: #214CCE;
+  padding-top: 80px;
+  transition: right 0.3s ease; /* animação suave */
+  z-index: 1000;
+}
+
+nav#menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav#menu ul li {
+  margin: 20px 0;
+  text-align: left;
+}
+
+nav#menu ul li a {
+  color: #fafbff;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 10px 20px;
+  display: block;
+  transition: background 0.3s;
+}
+
+nav#menu ul li a:hover {
+  background: #1565c0;
+  border-radius: 5px;
+}
+
+/* QUANDO O MENU ESTÁ ABERTO */
+nav#menu.open {
+  right: 0;
 }
 
 .planos {
@@ -12,22 +80,24 @@ body {
 
 .planos h1 {
   color: #1d3fd6;
-  font-size: 3.5rem;
+  font-size: 4.5rem;
   font-weight: bolder;
+  font-family: 'Nunito';
   margin-bottom: 20px;
 }
 
-.seta-voltar {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  font-size: 40px;
-  color: #1d3fd6;
-  text-decoration: none;
-}
+.pagehead .back{
 
-.seta-voltar:hover {
-  color: #ccc;
+  width: 36px; height: 36px;
+
+  display: inline-flex;
+
+  align-items: center; justify-content: center;
+
+  color: var(--blue-700);
+
+  text-decoration: none;
+
 }
 
 .cartoes {
@@ -123,4 +193,66 @@ button {
 
 .notas p {
   margin: 5px 0;
+}
+
+
+.sitefooter{
+
+  left: 0; right: 0; bottom: 0;
+  background-color: #214CCE;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+  padding: 18px 16px 26px;
+  text-align: center;
+
+}
+
+.sitefooter small{
+
+  display: block;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+
+  letter-spacing: .3px;
+
+  opacity: .95;
+
+}
+
+.to-top{
+
+  position: absolute;
+
+  right: 16px;
+
+  top: -18px;
+
+  background: var(--blue-700);
+
+  width: 32px; height: 32px;
+
+  border-radius: 10px 10px 0 0;
+
+  display: inline-flex; align-items: center; justify-content: center;
+
+  color: #fff; text-decoration: none;
+
+  box-shadow: var(--shadow);
+
+}
+
+.to-top svg{ width: 18px; height: 18px; fill: #fff; }
+
+@media (min-width: 480px){
+
+  main{ max-width: 440px; margin: 0 auto 96px; }
+
+  .pagehead{ max-width: 440px; margin: 0 auto; }
+
+  .sitefooter{ padding-left: max(calc((100vw - 440px)/2),16px); padding-right: max(calc((100vw - 440px)/2),16px); }
+
 }
