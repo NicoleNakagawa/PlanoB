@@ -42,22 +42,72 @@ body {
 
 }
 
-/* Barra superior */
+.head {
+  background-color: #214CCE;
+  display: flex;
+  justify-content: space-between; /* separa menu e logo */
+  align-items: center;
+  padding: 0 20px;
+  height: 60px;
+}
 
-.topbar {
+.head img {
+  height: 130px;   /* aumenta a logo */
+  width: auto;    /* mantém proporção */
+  object-fit: contain;
+}
 
-  background: var(--blue-700);
+/* BOTÃO MENU HAMBÚRGUER (agora <button>) */
+button.menu-toggle {
+  font-size: 30px;
+  color: white;
+  background: none;    /* remove estilo padrão de botão */
+  border: none;        /* remove borda */
+  cursor: pointer;
+  z-index: 1100;       /* fica acima do menu */
+}
 
-  color: #fff;
-
-  position: sticky;
-
+/* MENU LATERAL */
+nav#menu {
+  position: fixed;
   top: 0;
+  right: -250px; /* escondido */
+  width: 250px;
+  height: 100%;
+  background-color: #214CCE;
+  padding-top: 80px;
+  transition: right 0.3s ease; /* animação suave */
+  z-index: 1000;
+}
 
-  z-index: 10;
+nav#menu ul {
+  list-style: none;
+  padding: 0;
+}
 
-  box-shadow: var(--shadow);
+nav#menu ul li {
+  margin: 20px 0;
+  text-align: left;
+}
 
+nav#menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 10px 20px;
+  display: block;
+  transition: background 0.3s;
+}
+
+nav#menu ul li a:hover {
+  background: #1565c0;
+  border-radius: 5px;
+}
+
+/* QUANDO O MENU ESTÁ ABERTO */
+nav#menu.open {
+  right: 0;
 }
 
 .topbar__nav{
@@ -232,16 +282,13 @@ main{
 
 .sitefooter{
 
-  position: fixed;
-
   left: 0; right: 0; bottom: 0;
-
-  background: var(--blue-700);
-
-  color: #fff;
-
+  background-color: #214CCE;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
   padding: 18px 16px 26px;
-
   text-align: center;
 
 }

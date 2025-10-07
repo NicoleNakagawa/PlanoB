@@ -4,25 +4,27 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Sobre Nós PlanoB</title>
-<link rel="stylesheet" href="oi.css" />
+<link rel="stylesheet" href="../../css/sobre.css" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
-<!-- Barra superior -->
-<header class="topbar" role="banner">
-<nav aria-label="Principal" class="topbar__nav">
-<a href="#" aria-label="Início" class="brand">
-<!-- logotipo simples -->
-<svg viewBox="0 0 64 24" class="brand__logo" aria-hidden="true">
-<path d="M8 4c-3 0-6 2.7-6 6s3 6 6 6h10c1.1 0 2 .9 2 2v2H8C3.6 20 0 16.4 0 12S3.6 4 8 4h12v4H8zM56 4h-10c-1.1 0-2-.9-2-2V0h12c4.4 0 8 3.6 8 8s-3.6 8-8 8H44v-4h12c3.3 0 6-2.7 6-6s-2.7-6-6-6z" />
-</svg>
-<strong class="brand__name">PlanoB</strong>
-</a>
-<button class="hamburger" aria-label="Abrir menu">
-<span></span><span></span><span></span>
-</button>
-</nav>
+
+<header class="head">
+  <img src="../img/logo plano b.png" alt="Logo PlanoB"/>
+
+  <button class="menu-toggle" aria-label="Abrir menu" onclick="toggleMenu()">&#9776;</button>
+
+  <nav id="menu">
+    <ul>
+      <li><a href="/">Início</a></li>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/cadastroaluno">Cadastro</a></li>
+      <li><a href="/planofree">Planos</a></li>
+      <li><a href="#">Sobre nós</a></li>
+    </ul>
+  </nav>
 </header>
+
 <!-- Cabeçalho da página -->
 <header class="pagehead">
 <a href="#" class="back" aria-label="Voltar">
@@ -62,6 +64,13 @@
 <path d="M12 7l7 7H5l7-7z"/>
 </svg>
 </a>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("open");
+  }
+</script>
+
 </footer>
 </body>
 </html>

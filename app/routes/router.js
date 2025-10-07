@@ -25,4 +25,8 @@ router.get('/nossosplanos', function(req,res){
     res.render('pages/nossosplanos')
 })
 
+router.get('/sobre', function(req,res){
+    res.render('pages/sobre')
+})
+
 module.exports = router
