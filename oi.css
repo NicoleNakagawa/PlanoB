@@ -1,0 +1,298 @@
+
+*,
+
+*::before,
+
+*::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+
+  margin: 0;
+
+  font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  color: #1c1f27;
+
+  background: #ffffff;
+
+  line-height: 1.6;
+
+}
+
+
+:root{
+
+  --blue-700: #1a4bd8;
+
+  --blue-800: #153fb5;
+
+  --blue-50:  #eef3ff;
+
+  --ink-900:  #0d1220;
+
+  --muted:    #5b647a;
+
+  --radius:   16px;
+
+  --shadow:   0 10px 20px rgba(0,0,0,.06);
+
+  --gap:      20px;
+
+}
+
+/* Barra superior */
+
+.topbar {
+
+  background: var(--blue-700);
+
+  color: #fff;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 10;
+
+  box-shadow: var(--shadow);
+
+}
+
+.topbar__nav{
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 12px 16px;
+
+}
+
+.brand{
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #fff;
+
+  text-decoration: none;
+
+}
+
+.brand__logo{
+
+  width: 36px;
+
+  height: 14px;
+
+  fill: #fff;
+
+}
+
+.brand__name{
+
+  font-weight: 800;
+
+  letter-spacing: .2px;
+
+}
+
+.hamburger{
+
+  background: transparent;
+
+  border: 0;
+
+  padding: 6px 4px;
+
+  display: inline-flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  cursor: pointer;
+
+}
+
+.hamburger span{
+
+  width: 22px;
+
+  height: 2px;
+
+  background: #fff;
+
+  display: block;
+
+  border-radius: 2px;
+
+}
+
+/* Cabeçalho da página */
+
+.pagehead{
+
+  display: grid;
+
+  grid-template-columns: 36px 1fr;
+
+  align-items: center;
+
+  gap: 4px;
+
+  padding: 18px 18px 8px;
+
+}
+
+.pagehead .back{
+
+  width: 36px; height: 36px;
+
+  display: inline-flex;
+
+  align-items: center; justify-content: center;
+
+  color: var(--blue-700);
+
+  text-decoration: none;
+
+}
+
+.pagehead .icon{ width: 24px; height: 24px; }
+
+.pagehead h1{
+
+  margin: 0;
+
+  font-size: 28px;
+
+  color: var(--blue-800);
+
+  font-weight: 800;
+
+}
+
+/* Conteúdo */
+
+main{
+
+  padding: 8px 18px 96px;
+
+}
+
+.card{
+
+  background: #fff;
+
+  border-radius: var(--radius);
+
+  padding: 6px 2px 2px; /* para o header se destacar visualmente */
+
+}
+
+.card + .card{ margin-top: 8px; }
+
+.card header h2{
+
+  margin: 10px 0 8px;
+
+  color: var(--blue-700);
+
+  font-weight: 800;
+
+  font-size: 20px;
+
+  text-align: center;
+
+}
+
+.card p{
+
+  color: var(--ink-900);
+
+  margin: 0;
+
+  font-size: 15.5px;
+
+  text-align: center;
+
+  padding: 0 6px;
+
+}
+
+/* Rodapé */
+
+.sitefooter{
+
+  position: fixed;
+
+  left: 0; right: 0; bottom: 0;
+
+  background: var(--blue-700);
+
+  color: #fff;
+
+  padding: 18px 16px 26px;
+
+  text-align: center;
+
+}
+
+.sitefooter small{
+
+  display: block;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+
+  letter-spacing: .3px;
+
+  opacity: .95;
+
+}
+
+.to-top{
+
+  position: absolute;
+
+  right: 16px;
+
+  top: -18px;
+
+  background: var(--blue-700);
+
+  width: 32px; height: 32px;
+
+  border-radius: 10px 10px 0 0;
+
+  display: inline-flex; align-items: center; justify-content: center;
+
+  color: #fff; text-decoration: none;
+
+  box-shadow: var(--shadow);
+
+}
+
+.to-top svg{ width: 18px; height: 18px; fill: #fff; }
+
+/* Responsividade pequena melhoria em telas largas */
+
+@media (min-width: 480px){
+
+  main{ max-width: 440px; margin: 0 auto 96px; }
+
+  .pagehead{ max-width: 440px; margin: 0 auto; }
+
+  .sitefooter{ padding-left: max(calc((100vw - 440px)/2),16px); padding-right: max(calc((100vw - 440px)/2),16px); }
+
+}
+ 
