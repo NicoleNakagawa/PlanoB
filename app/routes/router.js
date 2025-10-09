@@ -29,4 +29,8 @@ router.get('/sobre', function(req,res){
     res.render('pages/sobre')
 })
 
+router.get('/confpag', function(req,res){
+    res.render('pages/confpag')
+})
+
 module.exports = router
