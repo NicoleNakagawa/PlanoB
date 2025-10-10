@@ -353,14 +353,14 @@ button.next { right: 10px; }
   }
 
   .hero h1 {
-    font-size: 2.1rem;
+    font-size: 2.5rem;
     line-height: 1.4;
     text-align: left;
   }
 
   .hero strong {
   /*display: block;*/
-    font-size: 5.4rem;
+    font-size: 7rem;
     margin-bottom: 10px;
   }
 
@@ -397,7 +397,7 @@ button.next { right: 10px; }
   }
 
   li.card {
-    flex: 0 0 100%;
+    /*flex: 0 0 100%;*/
     margin: 0 5px;
     padding: 20px;
     font-size: 1rem;
