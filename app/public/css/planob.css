@@ -336,7 +336,7 @@ button.next { right: 10px; }
 
 .to-top svg{ width: 18px; height: 18px; fill: #fff; }
  
-@media (max-width: 400px)  {
+@media (max-width: 1000px)  {
 
   /* HEADER */
   header {

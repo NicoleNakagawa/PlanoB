@@ -73,6 +73,19 @@ nav#menu.open {
   right: 0;
 }
 
+.voltar {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 40px;
+  color: #214CCE;
+  text-decoration: none;
+}
+
+.voltar:hover {
+  color: #ccc;
+}
+
 .planos {
   padding: 40px 20px;
   text-align: center;
@@ -199,7 +212,7 @@ button {
 .sitefooter{
 
   left: 0; right: 0; bottom: 0;
-  background-color: #214CCE;
+  background-color: #1d3fd6;
   color: white;
   text-align: center;
   padding: 15px 0;
