@@ -1,0 +1,164 @@
+* /* Reset básico */
+
+* {
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+body {
+
+  background-color: #fff;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: flex-start;
+
+  min-height: 100vh;
+
+}
+
+.container {
+
+  width: 360px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  min-height: 100vh;
+
+}
+
+/* Header */
+
+.header {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  padding: 12px 10px;
+
+}
+
+.back {
+
+  font-size: 22px;
+
+  color: #1f70d1;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  margin-right: 8px;
+
+}
+
+.header h1 {
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+}
+
+/* Botão Editar (fica escondido igual no print) */
+
+.edit-btn {
+
+  margin-left: auto;
+
+  background: none;
+
+  border: none;
+
+  color: #1f70d1;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  display: none; /* escondi porque na foto não aparece */
+
+}
+
+/* Imagem */
+
+.image-box {
+
+  margin: 10px 0;
+
+  display: flex;
+
+  justify-content: center;
+
+}
+
+.image-box img {
+
+  width: 95%;
+
+  border-radius: 12px;
+
+  object-fit: cover;
+
+}
+
+/* Informações */
+
+.info {
+
+  padding: 10px 15px;
+
+  font-size: 14px;
+
+  color: #333;
+
+}
+
+.info p {
+
+  margin-bottom: 10px;
+
+  line-height: 1.4em;
+
+}
+
+/* Rodapé */
+
+.footer {
+
+  margin-top: auto;
+
+  background-color: #1f70d1;
+
+  color: white;
+
+  text-align: center;
+
+  padding: 12px;
+
+  font-size: 12px;
+
+  border-top-left-radius: 8px;
+
+  border-top-right-radius: 8px;
+
+}
+ 

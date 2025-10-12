@@ -1,0 +1,133 @@
+/* Reset */
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: Arial, Helvetica, sans-serif;
+}
+body {
+ background: #e5e5e5;
+ display: flex;
+ justify-content: center;
+ min-height: 100vh;
+}
+/* Estrutura principal */
+.app {
+ width: 100%;
+ max-width: 375px;
+ background: #fff;
+ display: flex;
+ flex-direction: column;
+ min-height: 100vh;
+ overflow: hidden;
+}
+/* Header */
+.header {
+ background: #2c6fff;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 12px 16px;
+}
+.logo {
+ font-size: 22px;
+ font-weight: bold;
+ color: #fff;
+}
+.menu {
+ font-size: 24px;
+ color: #fff;
+ cursor: pointer;
+}
+/* Saudação */
+.saudacao {
+ padding: 15px;
+}
+.saudacao h1 {
+ font-size: 18px;
+ font-weight: normal;
+ line-height: 1.4;
+ color: #444;
+}
+.saudacao h1 span {
+ color: #2c6fff;
+ font-weight: bold;
+}
+/* Seções */
+section {
+ padding: 15px;
+}
+h2 {
+ font-size: 16px;
+ font-weight: bold;
+ margin-bottom: 10px;
+}
+/* Card de vídeo */
+.video-card {
+ border-radius: 8px;
+ overflow: hidden;
+ margin-bottom: 8px;
+}
+.video-card img {
+ width: 100%;
+ display: block;
+}
+.video-card p {
+ font-size: 14px;
+ font-weight: bold;
+ margin: 8px 0;
+}
+.meus-videos a {
+ display: block;
+ text-align: left;
+ font-size: 14px;
+ font-weight: bold;
+ color: #2c6fff;
+ text-decoration: none;
+ margin-top: 5px;
+}
+/* Lista de alunos */
+.aluno {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ background: #f2f8ff;
+ border: 1px solid #dce6f7;
+ border-radius: 6px;
+ padding: 10px;
+ margin-bottom: 8px;
+}
+.aluno p {
+ font-size: 14px;
+ font-weight: bold;
+}
+.status {
+ font-size: 13px;
+ font-weight: bold;
+}
+.status.online {
+ color: green;
+}
+.status.offline {
+ color: red;
+}
+.meus-alunos a {
+ display: block;
+ text-align: left;
+ margin-top: 10px;
+ font-size: 14px;
+ font-weight: bold;
+ text-decoration: none;
+ color: #2c6fff;
+}
+/* Rodapé */
+footer {
+ margin-top: auto;
+ background: #2c6fff;
+ text-align: center;
+ padding: 15px;
+ color: #fff;
+ font-size: 12px;
+ font-weight: bold;
+ line-height: 1.4;
+}
