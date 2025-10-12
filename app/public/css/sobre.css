@@ -188,18 +188,17 @@ nav#menu.open {
 
 }
 
-.pagehead .back{
-
-  width: 36px; height: 36px;
-
-  display: inline-flex;
-
-  align-items: center; justify-content: center;
-
-  color: var(--blue-700);
-
-  text-decoration: none;
-
+.btn-voltar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 36px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
 }
 
 
@@ -228,7 +227,6 @@ main{
 
   border-radius: var(--radius);
 
-  padding: 10px 2px 2px; /* para o header se destacar visualmente */
 
 }
 
@@ -326,14 +324,22 @@ main{
 
 /* Responsividade pequena melhoria em telas largas */
 
-@media (min-width: 480px){
+@media (max-width: 1000px){
 
   
-  main{ max-width: 440px; margin: 0 auto 96px; }
+ 
 
   .pagehead{ max-width: 440px; margin: 0 auto; }
 
   .sitefooter{ padding-left: max(calc((100vw - 440px)/2),16px); padding-right: max(calc((100vw - 440px)/2),16px); }
 
+    header {
+    height: 60px;
+    padding: 0 10px;
+  }
+
+  header img {
+    height: 90px;
+  }
 }
  

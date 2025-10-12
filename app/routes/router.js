@@ -33,4 +33,13 @@ router.get('/confpag', function(req,res){
     res.render('pages/confpag')
 })
 
+
+router.get('/pagamento', function(req,res){
+    res.render('pages/pagamento')
+})
+
+router.get('/professor', function(req,res){
+    res.render('pages/professor')
+})
+
 module.exports = router
