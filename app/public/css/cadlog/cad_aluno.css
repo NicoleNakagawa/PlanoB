@@ -1,24 +1,16 @@
-@font-face {
-  font-family: 'Nunito';
-  src: url('../fonts/Nunito-VariableFont_wght.ttf') format('truetype');
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
   background-color: #e6e6e6;
   min-height: 100vh;
   padding: 0px 0px;
   display: flex;
   justify-content: center;
 }
-
 
 .container {
   display: flex;
@@ -47,19 +39,9 @@ body {
   margin-bottom: 20px;
 }
 
-input {
-  margin-bottom: 15px;
-  padding: 8px;
-  font-size: 14px;
-  border: none;
-  border-radius: 5px;
-  background-color: #e9f0f7;
-  width: 100%;
-  max-width: 200px;
-  outline: none;
-}
-
 .botao-principal {
+  text-align: center;
+  align-items: center;
   background-color: #214CCE;
   color: white;
   padding: 15px 20px;
@@ -75,7 +57,6 @@ input {
 .botao-principal:hover {
   background-color: #214CCE;
 }
-
 
 .caixa-direita {
   background-color: #214CCE; 
@@ -138,7 +119,111 @@ input {
   color: #214CCE;
 }
 
+.input-group{
+  align-items: center;
+  border: none;
+  padding: 0;
+}
 
+.form-group{
+  align-items: center;
+  border: none;
+  padding: 0;
+}
+
+input {
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 8px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e9f0f7;
+  width: 100%;
+  max-width: 200px;
+  outline: none;
+}
+
+label{
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: bold;
+    border: none;
+}
+
+input[type="text"], input[type="email"]{
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e6e6e6;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="email"]:focus{
+    border-color: #214CCE;
+    outline: none;
+}
+
+input[type="password"], input[type="senha"]{
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e6e6e6;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="password"]:focus, input[type="senha"]:focus{
+    border-color: #214CCE;
+    outline: none;
+}
+
+input[type="password"], input[type="conf_senha"]{
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e6e6e6;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="password"]:focus, input[type="conf_senha"]:focus{
+    border-color: #214CCE;
+    outline: none;
+}
+
+input.error{
+    border-color: #e74c3c;
+}
+
+input.success{
+    border-color: #27ea60;
+}
+
+.error-message{
+    display: block;
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 5px;
+    min-height: 20px;
+}
+
+#senha-requisitos {
+    margin-top: 2px;
+    margin-bottom: 0;
+    padding: 0;
+    font-size: 13px;
+    line-height: 1.2;
+}  
+
+#cadastroForm {
+    flex-direction: column;
+    align-items: center;
+}
+
+/*Responsividade*/
 @media (max-width: 1000px) {
   html, body { overflow-x: hidden; } /* evita scroll horizontal */
 
@@ -212,7 +297,6 @@ input {
     box-shadow: none;
   }
 
- 
   .caixa-direita {
     order: 2;
     position: relative;
