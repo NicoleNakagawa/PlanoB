@@ -42,4 +42,8 @@ router.get('/professor', function(req,res){
     res.render('pages/professor')
 })
 
+router.get('/videosfree', function(req,res){
+    res.render('pages/videosfree')
+})
+
 module.exports = router

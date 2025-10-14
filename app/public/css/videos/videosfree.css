@@ -1,4 +1,18 @@
-/* Reset simples */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+}
+ 
+@font-face {
+  font-family: 'Nunito';
+  src: url('../../fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -10,7 +24,7 @@ img { max-width: 100%; display: block; }
 
 :root{
 
-  --bg-page:#eef0f3;
+  --bg-page:#DFDFDF;
 
   --text:#0b1320;
 
@@ -40,6 +54,10 @@ header{
 
   padding: clamp(12px, 3.5vw, 20px);
 
+}
+
+.h1 strong{
+  font-size: 2.5rem;
 }
 
 nav .back{
@@ -89,6 +107,22 @@ main{
   gap: clamp(14px, 3.8vw, 22px);
 
 }
+
+.btn-voltar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 36px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.pagehead .icon{ width: 24px; height: 24px; }
+
 
 /* Card */
 
@@ -174,53 +208,52 @@ main{
 
 /* Footer fixo tipo barra */
 
-footer{
-
-  position: fixed;
-
+.sitefooter{
   left: 0; right: 0; bottom: 0;
-
-  background: #1f55d9;
-
-  color: #fff;
-
-  border-top-left-radius: 14px;
-
-  border-top-right-radius: 14px;
-
-  box-shadow: 0 -6px 30px rgba(0,0,0,.18);
-
-}
-
-footer .brand{
-
-  padding: 18px 22px 24px;
-
+  background-color: #214CCE;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+  padding: 18px 16px 26px;
   text-align: center;
 
 }
 
-footer small{
+.sitefooter small{
 
-  display: inline-block;
+  display: block;
 
-  letter-spacing: .5px;
+  font-size: 12px;
 
-  line-height: 1.35;
+  line-height: 1.4;
 
-  font-weight: 700;
+  letter-spacing: .3px;
+
+  opacity: .95;
+
+}
+
+.to-top{
+
+  position: absolute;
+
+  right: 16px;
+
+  top: -18px;
+
+  background: var(--blue-700);
+
+  width: 32px; height: 32px;
+
+  border-radius: 10px 10px 0 0;
+
+  display: inline-flex; align-items: center; justify-content: center;
+
+  color: #fff; text-decoration: none;
+
+  box-shadow: var(--shadow);
 
 }
 
-/* Acessibilidade: foco visível */
-
-a:focus{
-
-  outline: 3px solid #fff;
-
-  outline-offset: 2px;
-
-  border-radius: 10px;
-
-}
- 
+.to-top svg{ width: 18px; height: 18px; fill: #fff; }
