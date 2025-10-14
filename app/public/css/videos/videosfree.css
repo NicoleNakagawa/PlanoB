@@ -132,13 +132,13 @@ main{
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 40px;
 }
 
 .card {
   position: relative;
   width: 100%;
-  height: 140px; /* ajuste se quiser mais alto */
+  height: 240px; /* ajuste se quiser mais alto */
   border-radius: 12px;
   overflow: hidden;
   background-size: cover;
@@ -330,3 +330,9 @@ main{
 }
 
 .to-top svg{ width: 18px; height: 18px; fill: #fff; }
+
+@media (max-width: 1000px) {
+  .card{
+    height: 140px;
+  }
+}
