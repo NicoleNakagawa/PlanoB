@@ -1,62 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro Professor PlanoB</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../css/cadlog/cad_professor.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro PlanoB</title>
+    <link rel="stylesheet" href="\css\cadlog\cad_professor.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="\js\verificacao\front_cad-prof.js" defer></script>
 </head>
 
 <body>
   <main class="container">
     <a href="/" class="voltar"><i class="fas fa-arrow-left"></i></a>
-
+    
+    <!-- Lado esquerdo -->
     <section class="caixa-esquerda">
-      <h2>CADASTRO</h2>
-      <input type="text" placeholder="Usuário">
-      <input type="email" placeholder="E-mail">
-      <input type="password" placeholder="Senha">
-      <input type="text" placeholder="CREF">
-
-    <button class="botao-principal" id="cadastrarBtn">Criar</button>
+        <form id="cadastroForm" role="form" aria-label="Formulário de Login do Usuário">
+            <fieldset class="input-group">
+                <h2>CADASTRO</h2>
+                <section>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" aria-describedby="email-error" placeholder="email@emai.com" required>
+                    <span class="error-message" id="email-error" role="alert" aria-live="polite"></span>
+                </section>
+            </fieldset>
+            <fieldset class="form-group">
+                <section class="input-goup">
+                    <label for="senha">Senha:</label> 
+                    <input type="password" id="senha" name="senha" aria-describedby="senha-error" required>
+                    <button type="button" id="toggleSenha" tabindex="-1" style="margin-left:-36px; background:none; border:none; cursor:pointer;">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                    <span class="error-message" id="senha-error" role="alert" aria-live="polite"></span> 
+                    <h6 id="senha-requisitos"></h6>
+                    <br>
+                </section>
+                <section class="input-goup">
+                    <label for="conf_senha">Confirmar senha:</label> 
+                    <input type="password" id="conf_senha" name="conf_senha" aria-describedby="conf_senha-error" required>
+                    <button type="button" id="toggleConfSenha" tabindex="-1" style="margin-left:-36px; background:none; border:none; cursor:pointer;">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                    <span class="error-message" id="conf_senha-error" role="alert" aria-live="polite"></span>
+                </section>
+                <section class="input-goup">
+                    <label for="cref">CREF:</label> 
+                    <input type="text" id="cref" name="cref" aria-describedby="cref-error" placeholder="000000-G/UF" maxlength="12" required>
+                    <span class="error-message" id="cref-error" role="alert" aria-live="polite"></span>
+                </section>
+            </fieldset>
+            <button type="button" class="botao-principal" aria-describedby="form-help" onclick="javascript:bSubmit()">Cadastrar </button>
+        </form>
     </section>
 
-<section id="popup" class="popup">
-  <button class="close-btn" id="closePopup">&#x276E;</button>
-  <div class="popup-content">
-    <img src="../img/logo plano b.png" alt="Logo PlanoB" class="popup-logo">
-    <h2>Obrigado por se inscrever no PlanoB!</h2>
-    <p>Estamos verificando seus dados!</p>
-    <small>Aguarde! Entraremos em contato.</small>
-  </div>
-</section>
-
+    <!-- Lado direito -->
     <aside class="caixa-direita">
-      <h2>Faça parte da gente!</h2>
+      <h2>Faça parte <br> da gente!</h2>
+      <br> <br>
       <p>Já tem uma conta?</p>
       <a href="/login" class="botao-secundario">Entrar</a>
+      <p>ou</p>
+      <a href="/cadastroprofessor" class="botao-secundario">Vire Afiliado</a>
     </aside>
 
-  <script>
-  const popup = document.getElementById('popup');
-  const cadastrarBtn = document.getElementById('cadastrarBtn');
-  const closePopup = document.getElementById('closePopup');
-
-  cadastrarBtn.addEventListener('click', () => {
-    popup.style.display = 'flex';
-  });
-
-  closePopup.addEventListener('click', () => {
-    popup.style.display = 'none';
-  });
-
-  window.addEventListener('click', (e) => {
-    if(e.target === popup) {
-      popup.style.display = 'none';
-    }
-  });
-</script>
   </main>
 </body>
 </html>

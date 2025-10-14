@@ -6,13 +6,11 @@
   font-style: normal;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
 
 body {
   font-family: 'Nunito', sans-serif;
@@ -22,7 +20,6 @@ body {
   display: flex;
   justify-content: center;
 }
-
 
 .container {
   display: flex;
@@ -51,19 +48,9 @@ body {
   margin-bottom: 20px;
 }
 
-input {
-  margin-bottom: 15px;
-  padding: 8px;
-  font-size: 14px;
-  border: none;
-  border-radius: 5px;
-  background-color: #e9f0f7;
-  width: 100%;
-  max-width: 200px;
-  outline: none;
-}
-
 .botao-principal {
+  text-align: center;
+  align-items: center;
   background-color: #214CCE;
   color: white;
   padding: 15px 20px;
@@ -79,7 +66,6 @@ input {
 .botao-principal:hover {
   background-color: #214CCE;
 }
-
 
 .caixa-direita {
   background-color: #214CCE; 
@@ -125,62 +111,6 @@ input {
   color: #1d2d3d;
 }
 
-  .popup {
-    display: none; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .popup-content {
-    background-color: #2a57f7; 
-    color: white;
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-    width: 80%;
-    max-width: 350px;
-    position: relative;
-    font-family: 'Nunito', sans-serif;
-  }
-
-  .popup-logo {
-    width: 150px;
-    margin-bottom: 1rem;
-  }
-
-  .popup h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-family: 'Baumans';
-  }
-
-  .popup p {
-    margin-bottom: 1rem;
-    font-size: 1rem;
-  }
-  
-  .popup small {
-    font-size: 1rem;
-  }
-
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: none;
-    border: none;
-    color: transparent;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-
 .logo {
   width: 200px;
 }
@@ -198,9 +128,113 @@ input {
   color: #214CCE;
 }
 
+.input-group{
+  align-items: center;
+  border: none;
+  padding: 0;
+}
 
+.form-group{
+  align-items: center;
+  border: none;
+  padding: 0;
+}
+
+input {
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 8px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e9f0f7;
+  width: 100%;
+  max-width: 200px;
+  outline: none;
+}
+
+label{
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: bold;
+    border: none;
+}
+
+input[type="text"], input[type="email"]{
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e6e6e6;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="email"]:focus{
+    border-color: #214CCE;
+    outline: none;
+}
+
+input[type="password"], input[type="senha"]{
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e6e6e6;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="password"]:focus, input[type="senha"]:focus{
+    border-color: #214CCE;
+    outline: none;
+}
+
+input[type="password"], input[type="conf_senha"]{
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e6e6e6;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="password"]:focus, input[type="conf_senha"]:focus{
+    border-color: #214CCE;
+    outline: none;
+}
+
+input.error{
+    border-color: #e74c3c;
+}
+
+input.success{
+    border-color: #27ea60;
+}
+
+.error-message{
+    display: block;
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 5px;
+    min-height: 20px;
+}
+
+#senha-requisitos {
+    margin-top: 2px;
+    margin-bottom: 0;
+    padding: 0;
+    font-size: 13px;
+    line-height: 1.2;
+}  
+
+#cadastroForm {
+    flex-direction: column;
+    align-items: center;
+}
+
+/*Responsividade*/
 @media (max-width: 1000px) {
-  html, body { overflow-x: hidden; }
+  html, body { overflow-x: hidden; } /* evita scroll horizontal */
 
   .container {
     display: flex;
@@ -228,6 +262,7 @@ input {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background: transparent;
     border-radius: 0;
     box-sizing: border-box;
@@ -258,21 +293,20 @@ input {
     box-sizing: border-box;
   }
 
-  .botao-principal {
-    margin-top: 12px;
-    width: 150px;
-    padding: 10px 16px;
-    border-radius: 16px;
-    background-color: #214CCE;
-    color: #fff;
-    border: none;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: none;
-  }
+.botao-principal {
+  margin-top: 12px;
+  width: 150px;
+  padding: 10px 16px;
+  border-radius: 16px;
+  background-color: #214CCE;
+  color: #fff;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: none;
+}
 
- 
   .caixa-direita {
     order: 2;
     position: relative;
