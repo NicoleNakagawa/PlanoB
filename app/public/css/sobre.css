@@ -221,16 +221,17 @@ main{
 
 }
 
-.card{
-
+.card {
   background: #fafbff;
-
   border-radius: var(--radius);
-
-
+  margin: 0 20px; /* Adiciona espaço nas laterais */
 }
 
-.card + .card{ margin-top: 8px; }
+.card + .card { 
+  margin-top: 8px;
+  margin-left: 20px;
+  margin-right: 20px; 
+}
 
 .card header h2{
 
