@@ -85,8 +85,8 @@ router.get('/pagamento', function(req,res){
     res.render('pages/pagamento');
 });
 
-router.get('/professor', function(req,res){
-    res.render('pages/professor');
+router.get('/assistir', function(req,res){
+    res.render('pages/assistir');
 });
 
 router.get('/videosfree', function(req,res){

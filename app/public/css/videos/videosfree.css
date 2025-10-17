@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -13,133 +12,118 @@
   font-weight: normal;
   font-style: normal;
 }
-
+ 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
 html, body { height: 100%; }
-
+ 
 img { max-width: 100%; display: block; }
-
+ 
 /* Tema */
-
+ 
 :root{
-
   --bg-page:#DFDFDF;
-
-  --text:#0b1320;
-
   --muted:#5d6b86;
-
   --brand:#1b56ff;
-
   --card-radius:16px;
-
 }
-
+ 
 body{
-
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-
   background: var(--bg-page);
-
-  color: var(--text);
-
   line-height: 1.2;
-
 }
-
+ 
 /* Header */
-
+ 
 header{
-
   padding: clamp(12px, 3.5vw, 20px);
-
 }
-
+ 
 .h1 strong{
   font-size: 2.5rem;
 }
-
+ 
 nav .back{
-
   display: inline-flex;
-
   align-items: center;
-
   gap: 12px;
-
   text-decoration: none;
-
   color: var(--text);
-
   font-size: clamp(22px, 4.8vw, 34px);
-
   font-weight: 800;
-
   letter-spacing: 0.2px;
-
 }
-
+ 
 nav .back span{
-
   color: var(--brand);
-
   font-size: 1.1em;
-
   line-height: 1;
-
 }
-
+ 
 /* Lista */
-
+ 
 main{
-
   padding: 0 clamp(14px, 4.5vw, 22px) clamp(96px, 16vh, 140px);
-
 }
-
+ 
 .video-list{
-
   list-style: none;
-
   display: grid;
-
   gap: clamp(14px, 3.8vw, 22px);
-
 }
-
+ 
+.pagehead{
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  align-items: center;
+  gap: 4px;
+  padding: 18px 18px 8px;
+}
+ 
 .btn-voltar {
   position: absolute;
   left: 0;
   top: 0;
   background: none;
   border: none;
-  color: white;
-  font-size: 36px;
+  color: #214CCE;
+  font-size: 40px;
   cursor: pointer;
   padding: 0;
   line-height: 1;
+  font-weight: bolder;
 }
-
-.pagehead .icon{ width: 24px; height: 24px; }
-
-
+ 
+.pagehead .icon{
+  color: #214CCE;
+  width: 40px; 
+  height: 40px;
+}
+ 
+.pagehead h1{
+  margin: 0;
+  font-size: 2rem;
+  color: var(--blue-800);
+  font-weight: bolder;
+}
+ 
 /* Card */
-
+ 
 .video-list {
   list-style: none;
   padding: 0;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  max-width: 900px; /* controla a largura máxima da grade */
+  gap: 50px;
+  max-width: 900px;
 }
  
 .card {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9; /* mantém proporção de vídeo */
+  aspect-ratio: 16 / 9;
   border-radius: 12px;
   overflow: hidden;
   background-size: cover;
@@ -153,186 +137,118 @@ main{
   transform: scale(1.03);
 }
  
-.card a {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
-  text-align: center;
-  padding-bottom: 10px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
-}
- 
-.card h2,
-.card time {
-  display: inline;
-  font-size: 1rem;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-}
- 
-.card h2::after {
-  content: " - ";
-}
- 
-/* 🔹 Imagens de fundo */
+/* 🔹 Imagens de fundo CORRIGIDAS */
 .card:nth-child(1) {
-  background-image: url("https://blog.maxtitanium.com.br/wp-content/uploads/2023/06/homem-fazendo-musculacao.jpg");
+  background-image: url("https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80");
 }
  
 .card:nth-child(2) {
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDi9eLvaOxkuA8brLQFDrwvlRpQUvBbgOQky4l6kObO5M…
+  background-image: url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80");
 }
  
 .card:nth-child(3) {
-  background-image: url("https://blog.bt.fit/wp-content/uploads/2019/10/btfit_header-casa-1-560x420.png");
+  background-image: url("https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80");
 }
  
 .card:nth-child(4) {
-  background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSRdUlQ3hWKlRaomHoqOBDD9lVOJMfffhvqAwtw_j8VaWI…
+  background-image: url("https://images.unsplash.com/photo-1434682881908-b43d0467b798?w=800&q=80");
 }
  
 .card:nth-child(5) {
-  background-image: url("https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTQjFUL4ubLtN90v-zBwMlfHhRj5YoNiKtIkZ6GxG0nUAB…
+  background-image: url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80");
 }
  
 .card:nth-child(6) {
-  background-image: url("https://img.freepik.com/fotos-premium/mulher-feliz-se-alongando-na-esteira-de-ioga-antes-do-treino-…
+  background-image: url("https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&q=80");
 }
  
 .card:nth-child(7) {
-  background-image: url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR9B9ARTz3d20JwI3AvozApXacGXeYOP4SYXqJMgB6R_fZ…
+  background-image: url("https://images.unsplash.com/photo-1598266663439-2056a4829ca1?w=800&q=80");
 }
-
-
+ 
 /* overlay escuro */
-
+ 
 .card::before{
-
   content:"";
-
-  position:absolute; inset:0;
-
+  position:absolute; 
+  inset:0;
   background: linear-gradient(180deg, rgba(0,0,0,.15) 15%, rgba(0,0,0,.55) 75%);
-
 }
-
-.card img {
-  width: 100%;
-  height: 180px; /* ajuste conforme o tamanho desejado */
-  object-fit: cover;
-  border-radius: 8px 8px 0 0; /* canto arredondado opcional */
-  display: block;
-}
-
-
+ 
 /* Link de toque ocupa todo o card */
-
+ 
 .card > a{
-
   position: relative;
-
   z-index: 1;
-
   display: grid;
-
   align-content: end;
-
   gap: 6px;
-
   width: 100%;
-
   height: 100%;
-
   padding: 18px 20px;
-
   text-decoration: none;
-
   color: #fff;
-
 }
-
+ 
 /* Título e tempo */
-
+ 
 .card h2{
-
   font-size: clamp(18px, 4.5vw, 24px);
-
   font-weight: 800;
-
   text-shadow: 0 2px 4px rgba(0,0,0,.35);
-
 }
-
+ 
 .card time{
-
   font-size: clamp(14px, 3.7vw, 18px);
-
   font-weight: 700;
-
   opacity: .95;
-
   text-shadow: 0 2px 4px rgba(0,0,0,.35);
-
 }
-
+ 
 /* Footer fixo tipo barra */
-
+ 
 .sitefooter{
-  left: 0; right: 0; bottom: 0;
+  left: 0; 
+  right: 0; 
+  bottom: 0;
   background-color: #214CCE;
   color: white;
   text-align: center;
   padding: 15px 0;
   margin-top: 40px;
- /* padding: 18px 16px 26px;*/
   text-align: center;
-
 }
-
-.sitefooter small{
-
-  display: block;
-
-  font-size: 12px;
-
-  line-height: 1.4;
-
-  letter-spacing: .3px;
-
-  opacity: .95;
-
-}
-
-.to-top{
-
-  position: absolute;
-
-  right: 16px;
-
-  top: -18px;
-
-  background: var(--blue-700);
-
-  width: 32px; height: 32px;
-
-  border-radius: 10px 10px 0 0;
-
-  display: inline-flex; align-items: center; justify-content: center;
-
-  color: #fff; text-decoration: none;
-
-  box-shadow: var(--shadow);
-
-}
-
-.to-top svg{ width: 18px; height: 18px; fill: #fff; }
  
-
-
+.sitefooter small{
+  display: block;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: .3px;
+  opacity: .95;
+}
+ 
+.to-top{
+  position: absolute;
+  right: 16px;
+  top: -18px;
+  background: var(--blue-700);
+  width: 32px; 
+  height: 32px;
+  border-radius: 10px 10px 0 0;
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center;
+  color: #fff; 
+  text-decoration: none;
+  box-shadow: var(--shadow);
+}
+ 
+.to-top svg{ 
+  width: 18px; 
+  height: 18px; 
+  fill: #fff; 
+}
+ 
 @media (max-width: 1000px) {
   .video-list {
     grid-template-columns: 1fr;
