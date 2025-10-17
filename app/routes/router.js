@@ -93,6 +93,22 @@ router.get('/videosfree', function(req,res){
     res.render('pages/videosfree');
 });
 
+router.get('/professoredita', function(req,res){
+    res.render('pages/professoredita');
+});
+
+router.get('/videosprofessor', function(req,res){
+    res.render('pages/videosprofessor');
+});
+
+router.get('/todosvideos', function(req,res){
+    res.render('pages/todosvideos');
+});
+
+router.get('/professormain', function(req,res){
+    res.render('pages/professormain');
+});
+
 // ========== NOVAS ROTAS POST (BACK-END) ==========
 
 // POST LOGIN

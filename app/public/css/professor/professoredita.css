@@ -1,10 +1,17 @@
-/* Reset básico */
+@font-face {
+  font-family: 'Nunito';
+  src: url('../../fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
  margin: 0;
  padding: 0;
  box-sizing: border-box;
- font-family: Arial, Helvetica, sans-serif;
+ font-family: 'Nunito', Helvetica, sans-serif;
 }
+
 body {
  background-color: #ffffff;
  display: flex;
@@ -23,30 +30,62 @@ body {
  align-items: center;
  padding: 10px 0;
 }
-.header .back {
- font-size: 20px;
- color: #1f70d1;
- font-weight: bold;
- cursor: pointer;
+.pagehead{
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  align-items: center;
+  gap: 4px;
+  padding: 18px 18px 8px;
 }
+ 
+.btn-voltar {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  background: none;
+  border: none;
+  color: #214CCE;
+  font-size: 50px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  font-weight: bolder;
+}
+ 
+.pagehead .icon{
+  color: #214CCE;
+  width: 40px; 
+  height: 40px;
+}
+ 
+.pagehead h1{
+  margin: 0;
+  font-size: 2rem;
+  color: var(--blue-800);
+  font-weight: bolder;
+}
+
 .header h1 {
  font-size: 20px;
  font-weight: bold;
  text-align: center;
  flex: 1;
 }
+
 /* Imagem */
 .image-box {
  margin: 15px 0;
  display: flex;
  justify-content: center;
 }
+
 .image-box img {
  width: 100%;
  height: auto;
  border-radius: 12px;
  object-fit: cover;
 }
+
 /* Formulário */
 .form {
  margin-top: 10px;
