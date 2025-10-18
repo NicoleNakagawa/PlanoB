@@ -219,7 +219,6 @@ input.success{
   min-height: 20px;
 }
 
-
 /*Responsividade*/
 @media (max-width: 600px){
   .form-wrapper{

@@ -35,7 +35,6 @@ body{
 }
  
 /* Header */
- 
 header{
   padding: clamp(12px, 3.5vw, 20px);
 }
@@ -206,7 +205,6 @@ main{
 }
  
 /* Footer fixo tipo barra */
- 
 .sitefooter{
   left: 0; 
   right: 0; 

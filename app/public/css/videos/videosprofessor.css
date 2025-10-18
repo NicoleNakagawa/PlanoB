@@ -62,7 +62,6 @@ nav .back span{
 }
  
 /* Lista */
- 
 main{
   padding: 0 clamp(14px, 4.5vw, 22px) clamp(96px, 16vh, 140px);
 }
@@ -139,7 +138,6 @@ main{
 }
 
 /* Card */
- 
 .video-list {
   list-style: none;
   padding: 0;
@@ -197,7 +195,6 @@ main{
 }
  
 /* overlay escuro */
- 
 .card::before{
   content:"";
   position:absolute; 
@@ -206,7 +203,6 @@ main{
 }
  
 /* Link de toque ocupa todo o card */
- 
 .card > a{
   position: relative;
   z-index: 1;
@@ -221,7 +217,6 @@ main{
 }
  
 /* Título e tempo */
- 
 .card h2{
   font-size: clamp(18px, 4.5vw, 24px);
   font-weight: 800;
@@ -236,7 +231,6 @@ main{
 }
  
 /* Footer fixo tipo barra */
- 
 .sitefooter{
   left: 0; 
   right: 0; 

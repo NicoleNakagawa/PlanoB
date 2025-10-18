@@ -154,7 +154,6 @@ nav a {
   width: 100%;
 }
 
-
 /* SEÇÃO DE DESTAQUE (antes .caixa-azul) */
 section.caixa-azul {
     padding: 100px 150px; 
@@ -221,7 +220,6 @@ li.card {
   border-radius: 5px;
 }
 
-
 li.card h3 {
   color: #1d4ed8;
   margin-bottom: 10px;
@@ -280,11 +278,9 @@ button.prev, button.next {
 button.prev { left: 10px; }
 button.next { right: 10px; }
 
-
 .card button{
   font-size: 25px;
 }
-
 
 .sitefooter{
   left: 0; right: 0; bottom: 0;
@@ -299,51 +295,33 @@ button.next { right: 10px; }
 }
 
 .sitefooter small{
-
   display: block;
-
   font-size: 12px;
-
   line-height: 1.4;
-
   letter-spacing: .3px;
-
   opacity: .95;
-
 }
 
 .to-top{
-
   position: absolute;
-
   right: 16px;
-
   top: -18px;
-
   background: var(--blue-700);
-
   width: 32px; height: 32px;
-
   border-radius: 10px 10px 0 0;
-
   display: inline-flex; align-items: center; justify-content: center;
-
   color: #fff; text-decoration: none;
-
   box-shadow: var(--shadow);
-
 }
 
 .to-top svg{ width: 18px; height: 18px; fill: #fff; }
  
 @media (max-width: 1000px)  {
-
   /* HEADER */
   header {
     height: 60px;
     padding: 0 10px;
   }
-
   header img {
     height: 90px;
   }
@@ -355,13 +333,11 @@ button.next { right: 10px; }
     text-align: left;
     justify-content: left;
   }
-
   .hero h1 {
     font-size: 2.5rem;
     line-height: 1.4;
     text-align: left;
   }
-
   .hero strong {
   /*display: block;*/
     font-size: 5rem;
@@ -374,7 +350,6 @@ button.next { right: 10px; }
     font-size: 1.2rem;
     text-align: center;
   }
-
   section.caixa-azul h2 {
     font-size: 2.4rem;
     font-weight: bold;
@@ -384,49 +359,39 @@ button.next { right: 10px; }
   .planos {
     padding: 40px 15px;
   }
-
   .planos h3 {
     font-size: 1.8rem;
     margin-bottom: 20px;
   }
-
   section.carousel {
     width: 100%;
     margin: 0 auto;
   }
-
   ul.track {
     display: flex;
     width: 100%;
   }
-
   li.card {
     /*flex: 0 0 100%;*/
     margin: 0 5px;
     padding: 20px;
     font-size: 1rem;
   }
-
   li.card h3 {
     font-size: 2rem;
   }
-
   li.card p {
     font-size: 1.2rem;
   }
-
   li.card button {
     font-size: 0.9rem;
     padding: 8px 14px;
   }
-
-  button.prev,
-  button.next {
+  button.prev, button.next {
     width: 40px;
     height: 40px;
     font-size: 1rem;
   }
-
   .footer {
     font-size: 0.7rem;
     padding: 10px;

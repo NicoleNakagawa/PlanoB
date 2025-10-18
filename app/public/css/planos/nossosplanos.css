@@ -100,17 +100,11 @@ nav#menu.open {
 }
 
 .pagehead .back{
-
   width: 36px; height: 36px;
-
   display: inline-flex;
-
   align-items: center; justify-content: center;
-
   color: var(--blue-700);
-
   text-decoration: none;
-
 }
 
 .cartoes {
@@ -132,7 +126,6 @@ nav#menu.open {
   align-items: center;
   text-align: center;
 }
-
 
 .cartao h2 {
   color: white;
@@ -208,9 +201,7 @@ button {
   margin: 5px 0;
 }
 
-
 .sitefooter{
-
   left: 0; right: 0; bottom: 0;
   background-color: #1d3fd6;
   color: white;
@@ -223,39 +214,23 @@ button {
 }
 
 .sitefooter small{
-
   display: block;
-
   font-size: 12px;
-
   line-height: 1.4;
-
   letter-spacing: .3px;
-
   opacity: .95;
-
 }
 
 .to-top{
-
   position: absolute;
-
   right: 16px;
-
   top: -18px;
-
   background: var(--blue-700);
-
   width: 32px; height: 32px;
-
   border-radius: 10px 10px 0 0;
-
   display: inline-flex; align-items: center; justify-content: center;
-
   color: #fff; text-decoration: none;
-
   box-shadow: var(--shadow);
-
 }
 
 .to-top svg{ width: 18px; height: 18px; fill: #fff; }
@@ -267,6 +242,4 @@ button {
   .pagehead{ max-width: 440px; margin: 0 auto; }
 
   .sitefooter{ padding-left: max(calc((100vw - 440px)/2),16px); padding-right: max(calc((100vw - 440px)/2),16px); }
-
-  
 }

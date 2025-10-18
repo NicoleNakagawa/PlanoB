@@ -109,43 +109,26 @@ body {
 }
 
 .sitefooter small{
-
   display: block;
-
   font-size: 12px;
-
   line-height: 1.4;
-
   letter-spacing: .3px;
-
   opacity: .95;
-
 }
 
 .to-top{
-
   position: absolute;
-
   right: 16px;
-
   top: -18px;
-
   background: var(--blue-700);
-
   width: 32px; height: 32px;
-
   border-radius: 10px 10px 0 0;
-
   display: inline-flex; align-items: center; justify-content: center;
-
   color: #fff; text-decoration: none;
-
   box-shadow: var(--shadow);
-
 }
 
 .to-top svg{ width: 18px; height: 18px; fill: #fff; }
- 
 
 /* Responsivo */
 @media (max-width: 1000px) {
