@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlanoB</title>
+  <link rel="stylesheet" href="prata.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header>
+  <img src="../img/logo plano b.png" alt="Logo PlanoB"/>
+
+  <button class="menu-toggle" aria-label="Abrir menu" onclick="toggleMenu()">&#9776;</button>
+  <nav id="menu">
+    <ul>
+      <li><a href="/">Início</a></li>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/cadastroaluno">Cadastro</a></li>
+      <li><a href="/planofree">Planos</a></li>
+      <li><a href="#">Sobre nós</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <main>
+<section class="boas-vindas">
+  <h1><strong>Olá, <span class="nome">Fulano!</span></h1>
+  <p>Pronto para treinar hoje?</p></strong>
+</section>
+
+<section class="planos">
+  <div class="meu-plano">
+    <h2>MEU PLANO</h2>
+    <div class="conteudo-plano">
+      <p class="titulo-plano">Plano<br>Mova-se</p>
+      <span class="check">✔</span>
+    </div>
+    <button class="btn-mais">Mais</button>
+  </div>
+
+  <div class="outros-planos">
+    <h2>OUTROS PLANOS</h2>
+    <p class="titulo-outro">Plano<br>Consistência</p>
+    <button class="btn-saiba">Saiba Mais</button>
+  </div>
+</section>
+
+<section class="videos">
+  <h2>VÍDEOS DO DIA</h2>
+
+  <div class="video-card">
+    <span class="badge">Novo hoje</span>
+    <img src="c:\Users\daian\OneDrive\Documentos\Arthur\foto-exercicio.jpg" alt="Treino de braço">
+    <div class="video-info">
+      <p>Treino de braço - 15 min</p>
+    </div>
+  </div>
+</section>
+
+<section class="calendario">
+  <h2>TABELA DA SEMANA</h2>
+  <br>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="7" class="mes">Agosto</th>
+      </tr>
+      <tr>
+        <th>Seg</th>
+        <th>Ter</th>
+        <th>Qua</th>
+        <th>Qui</th>
+        <th>Sex</th>
+        <th>Sáb</th>
+        <th>Dom</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="passado">30</td>
+        <td class="passado">31</td>
+        <td>01</td>
+        <td class="dia-ativo">02</td>
+        <td>03</td>
+        <td class="sabado">04</td>
+        <td class="domingo">05</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+  </main>
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("open");
+  }
+</script>
+
+<script>
+  const track = document.querySelector('.track');
+  const nextBtn = document.querySelector('.next');
+  const prevBtn = document.querySelector('.prev');
+  let index = 0;
+
+  nextBtn.addEventListener('click', () => {
+    if (index < track.children.length - 1) {
+      index++;
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (index > 0) {
+      index--;
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+  });
+</script>
+
+<footer class="footer">
+  <p>© 2025 PLANOB<br/>TODOS OS DIREITOS RESERVADOS.</p>
+</footer>
+
+</body>
+</html>

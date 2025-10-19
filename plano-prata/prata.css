@@ -1,0 +1,386 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+  }
+   
+  @font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+   
+  @font-face {
+    font-family: 'Baumans';
+    src: url('../fonts/Baumans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Viga';
+    src: url('../fonts/Viga-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+   
+  body {
+    background-color: #f0f2f5;
+  }
+   
+  header {
+    background-color: #214CCE;
+    display: flex;
+    justify-content: space-between; /* separa menu e logo */
+    align-items: center;
+    padding: 0 20px;
+    height: 60px;
+  }
+  
+  header img {
+    height: 130px;   /* aumenta a logo */
+    width: auto;    /* mantém proporção */
+    object-fit: contain;
+  }
+  
+  /* BOTÃO MENU HAMBÚRGUER*/
+  button.menu-toggle {
+    font-size: 30px;
+    color: white;
+    background: none;    /* remove estilo padrão de botão */
+    border: none;        /* remove borda */
+    cursor: pointer;
+    z-index: 1100;       /* fica acima do menu */
+  }
+  
+  /* MENU LATERAL */
+  nav#menu {
+    position: fixed;
+    top: 0;
+    right: -250px; /* escondido */
+    width: 250px;
+    height: 100%;
+    background-color: #214CCE;
+    padding-top: 80px;
+    transition: right 0.3s ease; /* animação suave */
+    z-index: 1000;
+  }
+  
+  nav#menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  nav#menu ul li {
+    margin: 20px 0;
+    text-align: left;
+  }
+  
+  nav#menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    padding: 10px 20px;
+    display: block;
+    transition: background 0.3s;
+  }
+  
+  nav#menu ul li a:hover {
+    background: #1565c0;
+    border-radius: 5px;
+  }
+  
+  /* QUANDO O MENU ESTÁ ABERTO */
+  nav#menu.open {
+    right: 0;
+  }
+  
+  nav a {
+     margin: 0 10px;
+     text-decoration: none;
+     color: #ffffff;
+     font-weight: bold;
+     font-size: 21px;
+  }
+  
+  /* Seção Boas-vindas */
+  .boas-vindas {
+    margin: 20px;
+  }
+  
+  .h1 strong{
+    font-size: 70px;
+    font-weight: bold;
+  }
+  
+  .boas-vindas .nome {
+    color: #174bd6;
+    font-weight: bolder;
+  }
+  
+  .boas-vindas strong {
+    font-size: 50px;
+    color: #333;
+    font-weight: bolder;
+  }
+  
+  /* Planos */
+  .planos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 20px;
+  }
+  
+  .meu-plano, .outros-planos {
+    border-radius: 16px;
+    padding: 25px;
+    width: 800px;   /* largura maior */
+    height: 400px;  /* altura maior */
+    text-align: left;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* distribui melhor dentro */
+  }
+  
+  /* Meu Plano */
+  .meu-plano {
+    background: #1e6eff;
+    color: white;
+    position: relative;
+  }
+  
+  .meu-plano h2 {
+    font-size: 46px;
+    margin-bottom: 10px;
+  }
+  
+  .conteudo-plano {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .titulo-plano {
+    font-size: 60px;
+    font-weight: bold;
+  }
+  
+  .check {
+    background: #00c77f;
+    color: white;
+    font-size: 76px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Botão "Mais" */
+  .btn-mais {
+    margin-top: 12px;
+    padding: 4px 10px;
+    border: none;
+    background: #fff;
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 80px;
+  }
+  
+  /* Outros Planos */
+  .outros-planos {
+    background: #e4e6eb;
+    color: black;
+  }
+  
+  .outros-planos h2 {
+    font-size: 46px;
+    margin-bottom: 10px;
+  }
+  
+  .titulo-outro {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  /* Botão Saiba Mais */
+  .btn-saiba {
+    padding: 8px 18px;
+    border: none;
+    background: #d0d0d0;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100px;
+  }
+  
+  /* Vídeos */
+  /* Seção de vídeos */
+  .videos {
+    margin: 20px;
+  }
+  
+  .videos h2 {
+    font-size: 60px;
+    font-weight: 800;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  /* Card de vídeo */
+  .video-card {
+    position: relative;
+    width: 100%;             
+    max-width: 100%;         
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  
+  .video-card img {
+    width: 100%;
+    height: 550px;          
+    object-fit: cover;  
+    display: block;
+    border-radius: 10px;
+  
+  }
+  
+  /*verde "Novo hoje" */
+  .badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #00c77f;
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+    padding: 4px 10px;
+    border-radius: 12px;
+  }
+  
+  /* Texto do vídeo */
+  .video-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+  }
+  
+  .video-info p {
+    color: white;
+    font-size: 55px;
+    font-family: 'Nunito';
+    font-weight: bold;
+  }
+  
+  
+  /* Calendário */
+  .calendario {
+    margin: 20px;
+  }
+  
+  .calendario h2 {
+    font-size: 60px;
+    font-weight: 800;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .calendario table {
+    width: auto;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 30px;
+    text-align: center;
+    background: white;
+  }
+  
+  /* Cabeçalho do mês */
+  .calendario .mes {
+    background: #1e6eff;
+    color: white;
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+    padding: 8px 0;
+    border: none;
+  }
+  
+  /* Dias da semana */
+  .calendario th {
+    border: 1px solid #999;
+    padding: 6px 12px;
+    background: #f7f7f7;
+    font-weight: 700;
+    color: #333;
+  }
+  
+  /* Cores especiais */
+  .calendario th:nth-child(6) {
+    color: #d32f2f; /* sábado em vermelho */
+  }
+  
+  .calendario th:nth-child(7) {
+    color: #b71c1c; /* domingo em vermelho escuro */
+  }
+  
+  /* Células normais */
+  .calendario td {
+    border: 1px solid #999;
+    padding: 10px;
+    font-weight: 600;
+    color: #111;
+  }
+  
+  /* Dias passados (cinza) */
+  .calendario .passado {
+    color: #90a4ae;
+  }
+  
+  /* Dia ativo (hoje) */
+  .calendario .dia-ativo {
+    background: #1e6eff;
+    color: white;
+    font-weight: 700;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Sábado */
+  .calendario .sabado {
+    color: #d32f2f;
+    font-weight: 700;
+  }
+  
+  /* Domingo */
+  .calendario .domingo {
+    color: #b71c1c;
+    font-weight: 700;
+  }
+  
+  
+  .footer {
+    background-color: #214CCE;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+  }
