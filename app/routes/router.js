@@ -22,6 +22,8 @@ function verificaLogin(req, res, next) {
     if (req.session && req.session.user) {
         return next();
     }
+    // Salva a URL que o usuário tentou acessar
+    req.session.redirectTo = req.originalUrl;
     return res.redirect('/login?erro=login_necessario');
 }
 
@@ -29,6 +31,10 @@ function verificaLogin(req, res, next) {
 function verificaAluno(req, res, next) {
     if (req.session && req.session.user && req.session.user.tipo === 'aluno') {
         return next();
+    }
+    // Salva a URL que o usuário tentou acessar
+    if (!req.session.user) {
+        req.session.redirectTo = req.originalUrl;
     }
     return res.redirect('/login?erro=acesso_negado');
 }
@@ -234,6 +240,10 @@ router.post('/login',
             tipo: tipo
         };
 
+        // Pega o destino salvo (se houver)
+        const redirectTo = req.session.redirectTo || null;
+        delete req.session.redirectTo; // Limpa o destino
+
         // Salva a sessão e redireciona
         req.session.save((err) => {
             if (err) {
@@ -241,7 +251,12 @@ router.post('/login',
                 return res.redirect('/login?erro=erro_sistema');
             }
             
-            // Redireciona para a página inicial correspondente
+            // Se tem destino específico, vai para lá
+            if (redirectTo) {
+                return res.redirect(redirectTo);
+            }
+            
+            // Senão, redireciona para a página inicial correspondente
             if (tipo === 'aluno') {
                 return res.redirect('/videosfree'); // Página inicial do aluno
             } else {
