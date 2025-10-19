@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro PlanoB</title>
+    <title>Cadastro Professor PlanoB</title>
     <link rel="stylesheet" href="\css\cadlog\cad_professor.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -16,41 +16,82 @@
     
     <!-- Lado esquerdo -->
     <section class="caixa-esquerda">
-        <form id="cadastroForm" role="form" aria-label="Formulário de Login do Usuário">
+        <form action="/cadastroprofessor" method="POST" id="cadastroForm" role="form" aria-label="Formulário de Cadastro do Professor">
             <fieldset class="input-group">
                 <h2>CADASTRO</h2>
                 <section>
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" aria-describedby="email-error" placeholder="email@emai.com" required>
-                    <span class="error-message" id="email-error" role="alert" aria-live="polite"></span>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        value="<%= typeof values !== 'undefined' ? values.email || '' : '' %>"
+                        aria-describedby="email-error" 
+                        placeholder="email@email.com" 
+                        required
+                    >
+                    <% if (typeof errors !== 'undefined' && errors.email) { %>
+                        <span class="error-message" id="email-error" role="alert" aria-live="polite">
+                            <%= errors.email %>
+                        </span>
+                    <% } else { %>
+                        <span class="error-message" id="email-error" role="alert" aria-live="polite"></span>
+                    <% } %>
                 </section>
             </fieldset>
             <fieldset class="form-group">
                 <section class="input-goup">
                     <label for="senha">Senha:</label> 
-                    <input type="password" id="senha" name="senha" aria-describedby="senha-error" required>
+                    <input type="password" id="senha" name="password" aria-describedby="senha-error" required>
                     <button type="button" id="toggleSenha" tabindex="-1" style="margin-left:-36px; background:none; border:none; cursor:pointer;">
                         <i class="fas fa-eye"></i>
                     </button>
-                    <span class="error-message" id="senha-error" role="alert" aria-live="polite"></span> 
+                    <% if (typeof errors !== 'undefined' && errors.password) { %>
+                        <span class="error-message" id="senha-error" role="alert" aria-live="polite">
+                            <%= errors.password %>
+                        </span>
+                    <% } else { %>
+                        <span class="error-message" id="senha-error" role="alert" aria-live="polite"></span>
+                    <% } %>
                     <h6 id="senha-requisitos"></h6>
                     <br>
                 </section>
                 <section class="input-goup">
                     <label for="conf_senha">Confirmar senha:</label> 
-                    <input type="password" id="conf_senha" name="conf_senha" aria-describedby="conf_senha-error" required>
+                    <input type="password" id="conf_senha" name="confirmPassword" aria-describedby="conf_senha-error" required>
                     <button type="button" id="toggleConfSenha" tabindex="-1" style="margin-left:-36px; background:none; border:none; cursor:pointer;">
                         <i class="fas fa-eye"></i>
                     </button>
-                    <span class="error-message" id="conf_senha-error" role="alert" aria-live="polite"></span>
+                    <% if (typeof errors !== 'undefined' && errors.confirmPassword) { %>
+                        <span class="error-message" id="conf_senha-error" role="alert" aria-live="polite">
+                            <%= errors.confirmPassword %>
+                        </span>
+                    <% } else { %>
+                        <span class="error-message" id="conf_senha-error" role="alert" aria-live="polite"></span>
+                    <% } %>
                 </section>
                 <section class="input-goup">
                     <label for="cref">CREF:</label> 
-                    <input type="text" id="cref" name="cref" aria-describedby="cref-error" placeholder="000000-G/UF" maxlength="12" required>
-                    <span class="error-message" id="cref-error" role="alert" aria-live="polite"></span>
+                    <input 
+                        type="text" 
+                        id="cref" 
+                        name="cref" 
+                        value="<%= typeof values !== 'undefined' ? values.cref || '' : '' %>"
+                        aria-describedby="cref-error" 
+                        placeholder="000000-G/UF" 
+                        maxlength="12" 
+                        required
+                    >
+                    <% if (typeof errors !== 'undefined' && errors.cref) { %>
+                        <span class="error-message" id="cref-error" role="alert" aria-live="polite">
+                            <%= errors.cref %>
+                        </span>
+                    <% } else { %>
+                        <span class="error-message" id="cref-error" role="alert" aria-live="polite"></span>
+                    <% } %>
                 </section>
             </fieldset>
-            <button type="button" class="botao-principal" aria-describedby="form-help" onclick="javascript:bSubmit()">Cadastrar </button>
+            <button type="submit" class="botao-principal" aria-describedby="form-help">Cadastrar</button>
         </form>
     </section>
 
@@ -61,7 +102,7 @@
       <p>Já tem uma conta?</p>
       <a href="/login" class="botao-secundario">Entrar</a>
       <p>ou</p>
-      <a href="/cadastroprofessor" class="botao-secundario">Vire Afiliado</a>
+      <a href="/cadastroaluno" class="botao-secundario">Sou Aluno</a>
     </aside>
 
   </main>

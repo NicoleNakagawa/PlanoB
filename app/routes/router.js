@@ -2,6 +2,45 @@ var express = require('express');
 var router = express.Router();
 const { body, validationResult } = require('express-validator');
 
+// ========== USUÁRIOS FIXOS (PARA TESTE) ==========
+// IMPORTANTE: Em produção, use banco de dados com senhas criptografadas!
+const USUARIOS = {
+    alunos: [
+        { id: 1, email: 'aluno@teste.com', senha: '12345678', nome: 'João Aluno' },
+        { id: 2, email: 'maria@teste.com', senha: 'senha123', nome: 'Maria Silva' }
+    ],
+    professores: [
+        { id: 1, email: 'professor@teste.com', senha: '12345678', nome: 'Carlos Professor', cref: '12345-G/SP' },
+        { id: 2, email: 'ana@professor.com', senha: 'prof1234', nome: 'Ana Santos', cref: '67890-G/RJ' }
+    ]
+};
+
+// ========== MIDDLEWARES DE AUTENTICAÇÃO ==========
+
+// Verifica se o usuário está logado
+function verificaLogin(req, res, next) {
+    if (req.session && req.session.user) {
+        return next();
+    }
+    return res.redirect('/login?erro=login_necessario');
+}
+
+// Verifica se é aluno
+function verificaAluno(req, res, next) {
+    if (req.session && req.session.user && req.session.user.tipo === 'aluno') {
+        return next();
+    }
+    return res.redirect('/login?erro=acesso_negado');
+}
+
+// Verifica se é professor
+function verificaProfessor(req, res, next) {
+    if (req.session && req.session.user && req.session.user.tipo === 'professor') {
+        return next();
+    }
+    return res.redirect('/login?erro=acesso_negado');
+}
+
 // ========== HELPERS E VALIDADORES ==========
 
 const UF_LIST = [
@@ -47,71 +86,100 @@ function isValidCREF(v) {
   return !!(m && UF_LIST.includes(m[1]));
 }
 
-// ========== ROTAS GET (MANTIDAS EXATAMENTE COMO ESTAVAM) ==========
+// ========== ROTAS PÚBLICAS ==========
 
 router.get('/', function(req,res){
     res.render('pages/index');
 });
 
 router.get('/login', function(req,res){
-    res.render('pages/login');
+    const erro = req.query.erro;
+    let mensagemErro = '';
+    
+    if (erro === 'credenciais_invalidas') {
+        mensagemErro = 'E-mail ou senha incorretos.';
+    } else if (erro === 'login_necessario') {
+        mensagemErro = 'Você precisa fazer login para acessar esta página.';
+    } else if (erro === 'acesso_negado') {
+        mensagemErro = 'Acesso negado. Você não tem permissão para acessar esta área.';
+    }
+    
+    res.render('pages/login', { 
+        errors: {},
+        values: {},
+        mensagemErro
+    });
 });
 
 router.get('/cadastroaluno', function(req,res){
-    res.render('pages/cadastroaluno');
+    res.render('pages/cadastroaluno', { errors: {}, values: {} });
 });
 
 router.get('/cadastroprofessor', function(req,res){
-    res.render('pages/cadastroprofessor');
-});
-
-router.get('/planofree', function(req,res){
-    res.render('pages/planofree');
-});
-
-router.get('/nossosplanos', function(req,res){
-    res.render('pages/nossosplanos');
+    res.render('pages/cadastroprofessor', { errors: {}, values: {} });
 });
 
 router.get('/sobre', function(req,res){
     res.render('pages/sobre');
 });
 
-router.get('/confpag', function(req,res){
+// ========== ROTAS PROTEGIDAS - ALUNO ==========
+
+router.get('/planofree', verificaAluno, function(req,res){
+    res.render('pages/planofree');
+});
+
+router.get('/nossosplanos', verificaAluno, function(req,res){
+    res.render('pages/nossosplanos');
+});
+
+router.get('/confpag', verificaAluno, function(req,res){
     res.render('pages/confpag');
 });
 
-router.get('/pagamento', function(req,res){
-    res.render('pages/pagamento');
+router.get('/pagamento', verificaAluno, function(req,res){
+    res.render('pages/pagamento', { errors: {}, values: {} });
 });
 
-router.get('/assistir', function(req,res){
+router.get('/assistir', verificaLogin, function(req,res){
     res.render('pages/assistir');
 });
 
-router.get('/videosfree', function(req,res){
+router.get('/videosfree', verificaAluno, function(req,res){
     res.render('pages/videosfree');
 });
 
-router.get('/professoredita', function(req,res){
-    res.render('pages/professoredita');
-});
-
-router.get('/videosprofessor', function(req,res){
-    res.render('pages/videosprofessor');
-});
-
-router.get('/todosvideos', function(req,res){
+router.get('/todosvideos', verificaAluno, function(req,res){
     res.render('pages/todosvideos');
 });
 
-router.get('/professormain', function(req,res){
+// ========== ROTAS PROTEGIDAS - PROFESSOR ==========
+
+router.get('/professoredita', verificaProfessor, function(req,res){
+    res.render('pages/professoredita');
+});
+
+router.get('/videosprofessor', verificaProfessor, function(req,res){
+    res.render('pages/videosprofessor');
+});
+
+router.get('/professormain', verificaProfessor, function(req,res){
     res.render('pages/professormain');
 });
 
-// ========== NOVAS ROTAS POST (BACK-END) ==========
+// ========== ROTA DE LOGOUT ==========
 
-// POST LOGIN
+router.get('/logout', function(req, res) {
+    req.session.destroy((err) => {
+        if (err) {
+            console.error('Erro ao fazer logout:', err);
+        }
+        res.redirect('/login');
+    });
+});
+
+// ========== POST LOGIN ==========
+
 router.post('/login',
     [
         body('email')
@@ -121,7 +189,6 @@ router.post('/login',
             .normalizeEmail(),
         body('password')
             .notEmpty().withMessage('Senha é obrigatória.')
-            .isLength({ min: 8 }).withMessage('Senha deve ter no mínimo 8 caracteres.')
     ],
     (req, res) => {
         const result = validationResult(req);
@@ -132,11 +199,55 @@ router.post('/login',
             }, {});
             return res.status(422).render('pages/login', {
                 errors,
-                values: { email: req.body.email || '' }
+                values: { email: req.body.email || '' },
+                mensagemErro: ''
             });
         }
-        // >>> Implemente sua autenticação aqui
-        return res.send('Login válido!');
+
+        const { email, password, tipoUsuario } = req.body;
+
+        // Busca o usuário baseado no tipo selecionado
+        let usuarioEncontrado = null;
+        let tipo = '';
+
+        if (tipoUsuario === 'aluno') {
+            usuarioEncontrado = USUARIOS.alunos.find(u => 
+                u.email === email && u.senha === password
+            );
+            tipo = 'aluno';
+        } else if (tipoUsuario === 'professor') {
+            usuarioEncontrado = USUARIOS.professores.find(u => 
+                u.email === email && u.senha === password
+            );
+            tipo = 'professor';
+        }
+
+        if (!usuarioEncontrado) {
+            return res.redirect('/login?erro=credenciais_invalidas');
+        }
+
+        // Cria a sessão do usuário
+        req.session.user = {
+            id: usuarioEncontrado.id,
+            email: usuarioEncontrado.email,
+            nome: usuarioEncontrado.nome,
+            tipo: tipo
+        };
+
+        // Salva a sessão e redireciona
+        req.session.save((err) => {
+            if (err) {
+                console.error('Erro ao salvar sessão:', err);
+                return res.redirect('/login?erro=erro_sistema');
+            }
+            
+            // Redireciona para a página inicial correspondente
+            if (tipo === 'aluno') {
+                return res.redirect('/videosfree'); // Página inicial do aluno
+            } else {
+                return res.redirect('/professormain'); // Página inicial do professor
+            }
+        });
     }
 );
 
@@ -170,8 +281,9 @@ router.post('/cadastroaluno',
                 values: { email: req.body.email || '' }
             });
         }
-        // >>> Salvar no banco aqui
-        return res.send('Cadastro de aluno válido!');
+        // >>> Salvar no banco aqui (quando tiver)
+        // Por enquanto, apenas redireciona para login
+        return res.redirect('/login');
     }
 );
 
@@ -209,13 +321,14 @@ router.post('/cadastroprofessor',
                 values: { email: req.body.email || '', cref: req.body.cref || '' }
             });
         }
-        // >>> Salvar no banco aqui
-        return res.send('Cadastro de professor válido!');
+        // >>> Salvar no banco aqui (quando tiver)
+        return res.redirect('/login');
     }
 );
 
 // POST PAGAMENTO
 router.post('/pagamento',
+    verificaAluno,
     [
         body('fullName').trim().notEmpty().withMessage('Nome completo é obrigatório.'),
         body('cpf').trim().notEmpty().withMessage('CPF é obrigatório.')
@@ -242,7 +355,6 @@ router.post('/pagamento',
             }, {});
             return res.status(422).render('pages/pagamento', { errors, values: req.body });
         }
-        // >>> Processar pagamento aqui
         return res.redirect('/confpag');
     }
 );

@@ -16,36 +16,61 @@
     
     <!-- Lado esquerdo -->
     <section class="caixa-esquerda">
-        <form id="cadastroForm" role="form" aria-label="Formulário de Login do Usuário">
+        <form action="/cadastroaluno" method="POST" id="cadastroForm" role="form" aria-label="Formulário de Cadastro do Aluno">
             <fieldset class="input-group">
                 <h2>CADASTRO</h2>
                 <section>
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" aria-describedby="email-error" required>
-                    <span class="error-message" id="email-error" role="alert" aria-live="polite"></span>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        value="<%= typeof values !== 'undefined' ? values.email || '' : '' %>"
+                        aria-describedby="email-error" 
+                        required
+                    >
+                    <% if (typeof errors !== 'undefined' && errors.email) { %>
+                        <span class="error-message" id="email-error" role="alert" aria-live="polite">
+                            <%= errors.email %>
+                        </span>
+                    <% } else { %>
+                        <span class="error-message" id="email-error" role="alert" aria-live="polite"></span>
+                    <% } %>
                 </section>
             </fieldset>
             <fieldset class="form-group">
                 <section class="input-goup">
                     <label for="senha">Senha:</label> 
-                    <input type="password" id="senha" name="senha" aria-describedby="senha-error" required>
+                    <input type="password" id="senha" name="password" aria-describedby="senha-error" required>
                     <button type="button" id="toggleSenha" tabindex="-1" style="margin-left:-36px; background:none; border:none; cursor:pointer;">
                         <i class="fas fa-eye"></i>
                     </button>
-                    <span class="error-message" id="senha-error" role="alert" aria-live="polite"></span> 
+                    <% if (typeof errors !== 'undefined' && errors.password) { %>
+                        <span class="error-message" id="senha-error" role="alert" aria-live="polite">
+                            <%= errors.password %>
+                        </span>
+                    <% } else { %>
+                        <span class="error-message" id="senha-error" role="alert" aria-live="polite"></span>
+                    <% } %>
                     <h6 id="senha-requisitos"></h6>
                     <br>
                 </section>
                 <section class="input-goup">
                     <label for="conf_senha">Confirmar senha:</label> 
-                    <input type="password" id="conf_senha" name="conf_senha" aria-describedby="conf_senha-error" required>
+                    <input type="password" id="conf_senha" name="confirmPassword" aria-describedby="conf_senha-error" required>
                     <button type="button" id="toggleConfSenha" tabindex="-1" style="margin-left:-36px; background:none; border:none; cursor:pointer;">
                         <i class="fas fa-eye"></i>
                     </button>
-                    <span class="error-message" id="conf_senha-error" role="alert" aria-live="polite"></span>
+                    <% if (typeof errors !== 'undefined' && errors.confirmPassword) { %>
+                        <span class="error-message" id="conf_senha-error" role="alert" aria-live="polite">
+                            <%= errors.confirmPassword %>
+                        </span>
+                    <% } else { %>
+                        <span class="error-message" id="conf_senha-error" role="alert" aria-live="polite"></span>
+                    <% } %>
                 </section>
             </fieldset>
-            <button type="button" class="botao-principal" aria-describedby="form-help" onclick="javascript:bSubmit()">Cadastrar </button>
+            <button type="submit" class="botao-principal" aria-describedby="form-help">Cadastrar</button>
         </form>
     </section>
 
