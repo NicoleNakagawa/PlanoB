@@ -1,0 +1,233 @@
+@font-face {
+  font-family: 'Nunito';
+  src: url('../../fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+}
+
+body {
+  background-color: #f0f2f5;
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #1e1e1e;
+}
+
+/* ===== HEADER ===== */
+header {
+  background-color: #214CCE;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 70px;
+}
+
+header img {
+  height: 130px;   /* aumenta a logo */
+  width: auto;    /* mantém proporção */
+  object-fit: contain;
+}
+
+button.menu-toggle {
+  font-size: 32px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* ===== MENU LATERAL ===== */
+nav#menu {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #214CCE;
+  padding-top: 90px;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+nav#menu.open {
+  right: 0;
+}
+
+nav#menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav#menu ul li {
+  margin: 20px 0;
+  text-align: left;
+}
+
+nav#menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  padding: 10px 20px;
+  display: block;
+  transition: background 0.3s;
+}
+
+nav#menu ul li a:hover {
+  background: #1565c0;
+  border-radius: 5px;
+}
+
+nav a {
+   margin: 0 10px;
+   text-decoration: none;
+   color: #ffffff;
+   font-weight: bold;
+   font-size: 21px;
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+main {
+  max-width: 380px;
+  margin: 0 auto;
+  padding: 25px 20px;
+}
+
+h1 {
+  font-size: 2.9rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 10px;
+  position: left;
+}
+
+.ola {
+  color: #214CCE;
+  text-align: left;
+  position: left;
+}
+
+small {
+  color: #555;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 2.3rem;
+  font-weight: 800;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+/* ===== CARD DE VÍDEO ===== */
+/* CARD DE VÍDEO (agora é um botão grande e clicável) */
+button.video-card {
+  position: relative;
+  display: block;
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 580px;
+  margin: 20px auto;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button.video-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+button.video-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+button.video-card .legenda {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: #fff;
+  padding: 14px;
+  font-weight: 600;
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+
+.link { display: inline-block; 
+    margin: 15px 0; 
+    text-decoration: none; 
+    color: #000; 
+    font-weight: 700; 
+    border-bottom: 2px solid #000; 
+    padding-bottom: 3px; 
+    font-size: 30px; }
+
+
+/* BOTÕES DOS ALUNOS */
+button.aluno {
+  background-color: #214CCE;
+  color: white;
+  border: none;
+  padding: 15px 18px;
+  border-radius: 10px;
+  font-family: 'Nunito';
+  font-size: 1.05rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  max-width: 480px;
+  margin: 12px auto;
+  transition: all 0.25s ease;
+}
+
+button.aluno.ativo {
+  background-color: #1e3fc6;
+  box-shadow: 0 4px 14px rgba(33, 76, 206, 0.3);
+}
+
+button.aluno.ativo:hover {
+  background-color: #345cff;
+  transform: translateY(-3px);
+}
+
+button.aluno.inativo {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+.status {
+  font-size: 0.9rem;
+}
+
+.online {
+  color: #2ecc71;
+}
+
+.offline {
+  color: #e74c3c;
+}
+
+
+/* ===== RODAPÉ ===== */
+footer {
+  background-color: #214CCE;
+  color: white;
+  padding: 15px 0;
+  font-size: 0.8rem;
+  margin-top: 35px;
+  line-height: 1.5;
+  font-weight: 600;
+}

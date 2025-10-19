@@ -1,38 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel do Professor</title>
-    <link rel="stylesheet" href="../../css/professormain.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel do Professor</title>
+  <link rel="stylesheet" href="../../css/professor/professormain.css">
 </head>
 <body>
+<header>
+  <img src="../img/logo plano b.png" alt="Logo PlanoB"/>
+  <button class="menu-toggle" aria-label="Abrir menu" onclick="toggleMenu()">&#9776;</button>
+  <nav id="menu">
+    <ul>
+      <li><a href="/login">Meus Dados</a></li>
+      <li><a href="/cadastroaluno">Informações</a></li>
+      <li><a href="/sobre">Sobre nós</a></li>
+    </ul>
+  </nav>
+</header>
+
 <main>
-    <header>
-        <h1><span class="ola">Olá, professor!</span><br><small>Pronto para treinar hoje?</small></h1>
-    </header>
- 
-    <section>
-        <h2>MEUS VÍDEOS</h2>
-        <figure class="video-card">
-            <img src="https://blog.maxtitanium.com.br/wp-content/uploads/2023/06/homem-fazendo-musculacao.jpg" alt="Treino de braço">
-            <figcaption>Treino de braço - <span>15 min</span></figcaption>
-        </figure>
- 
-        <a href="#" class="link">Acessar todos os vídeos</a>
-    </section>
- 
-    <section>
-        <h2>MEUS ALUNOS</h2>
-        <button>Aluno da Silva <span class="status online">● online</span></button>
-        <button>Aluno da Silva <span class="status online">● online</span></button>
-        <button>Aluno da Silva <span class="status offline">● off-line</span></button>
-        <a href="#" class="link">Acessar todos os alunos</a>
-    </section>
+  <h1><span class="ola">Olá, professor!</span><br><small>Pronto para treinar hoje?</small></h1>
+
+  <section>
+    <h2>MEUS VÍDEOS</h2>
+    <button class="video-card" onclick="window.location.href='assistir'">
+      <img src="https://blog.maxtitanium.com.br/wp-content/uploads/2023/06/homem-fazendo-musculacao.jpg" alt="Treino de braço">
+      <span class="legenda">Treino de braço - <strong>15 min</strong></span>
+    </button>
+
+    <a href="videosprofessor" class="link">Acessar todos os vídeos</a>
+  </section>
+
+  <section>
+    <h2>MEUS ALUNOS</h2>
+    <button class="aluno ativo">Aluno da Silva <span class="status online">● online</span></button>
+    <button class="aluno ativo">Aluno da Silva <span class="status online">● online</span></button>
+    <button class="aluno inativo">Aluno da Silva <span class="status offline">● off-line</span></button>
+    <a href="#" class="link">Acessar todos os alunos</a>
+  </section>
 </main>
- 
-    <footer>
-        <p>© 2025 PLANOB<br>TODOS OS DIREITOS RESERVADOS.</p>
-    </footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("open");
+  }
+</script>
+
+<footer>
+  <p>© 2025 PLANOB<br>TODOS OS DIREITOS RESERVADOS.</p>
+</footer>
 </body>
 </html>
