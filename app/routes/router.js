@@ -125,11 +125,11 @@ router.get('/sobre', function(req,res){
 
 // ========== ROTAS PROTEGIDAS - ALUNO ==========
 
-router.get('/planofree', verificaAluno, function(req,res){
+router.get('/planofree', function(req,res){
     res.render('pages/planofree');
 });
 
-router.get('/nossosplanos', verificaAluno, function(req,res){
+router.get('/nossosplanos', function(req,res){
     res.render('pages/nossosplanos');
 });
 
