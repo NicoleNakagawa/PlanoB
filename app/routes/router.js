@@ -3,7 +3,7 @@ var router = express.Router();
 const { body, validationResult } = require('express-validator');
 
 // ========== USUÁRIOS FIXOS (PARA TESTE) ==========
-// IMPORTANTE: Em produção, use banco de dados com senhas criptografadas!
+
 const USUARIOS = {
     alunos: [
         { id: 1, email: 'aluno@teste.com', senha: '12345678', nome: 'João Aluno' },
@@ -258,7 +258,7 @@ router.post('/login',
             
             // Senão, redireciona para a página inicial correspondente
             if (tipo === 'aluno') {
-                return res.redirect('/videosfree'); // Página inicial do aluno
+                return res.redirect('/diamante'); // CORRIGIDO: caminho absoluto
             } else {
                 return res.redirect('/professormain'); // Página inicial do professor
             }
@@ -373,5 +373,24 @@ router.post('/pagamento',
         return res.redirect('/confpag');
     }
 );
+
+// Adicione esta rota (rotas protegidas - aluno)
+router.get('/diamante', verificaAluno, function(req, res){
+    // opcional: passe dados do usuário para a view
+    res.render('pages/diamante', { user: req.session.user || {} });
+});
+
+// Novas rotas para os templates de planos
+router.get('/free', verificaAluno, function(req, res){
+    res.render('pages/free', { user: req.session.user || {} });
+});
+
+router.get('/lazuli', verificaAluno, function(req, res){
+    res.render('pages/lazuli', { user: req.session.user || {} });
+});
+
+router.get('/prata', verificaAluno, function(req, res){
+    res.render('pages/prata', { user: req.session.user || {} });
+});
 
 module.exports = router;

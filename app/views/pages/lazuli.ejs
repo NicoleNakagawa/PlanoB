@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlanoB</title>
+  <link rel="stylesheet" href="css/alunos/diamante.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header>
+  <img src="../img/logo plano b.png" alt="Logo PlanoB"/>
+  <button class="menu-toggle" aria-label="Abrir menu" onclick="toggleMenu()">&#9776;</button>
+  <nav id="menu">
+    <ul>
+      <li><a href="/login">Meus Dados</a></li>
+      <li><a href="/cadastroaluno">Meu Personal</a></li>
+      <li><a href="/nossosplanos">Planos</a></li>
+      <li><a href="/sobre">Sobre nós</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="boas-vindas">
+    <h1><strong>Olá, <span class="nome">Fulano!</span></strong></h1>
+    <p><strong>Pronto para treinar hoje?</strong></p>
+  </section>
+
+  <section class="planos">
+    <div class="meu-plano">
+      <h2>MEU PLANO</h2>
+      <div class="conteudo-plano">
+        <p class="titulo-plano">Plano<br>Diamante</p>
+        <span class="check">✔</span>
+      </div>
+      <button class="btn-mais">Mais</button>
+    </div>
+
+    <div class="outros-planos">
+      <h2>OUTROS PLANOS</h2>
+      <p class="titulo-outro">Plano<br>Lazuli</p>
+      <button class="btn-saiba">Saiba Mais</button>
+    </div>
+  </section>
+
+  <section class="videos">
+    <h2>VÍDEO DO DIA</h2>
+
+    <!-- Card de vídeo clicável -->
+    <div class="video-card" onclick="abrirVideo()">
+      <span class="badge">Novo hoje</span>
+      <img src="img/img_vídeos/imagem2.jpg" alt="Treino de braço">
+      <div class="video-info">
+        <p>Treino de braço - 15 min</p>
+      </div>
+    </div>
+
+    <!-- Botão "Acessar todos os vídeos" -->
+  <a href="todosvideos" class="link">Acessar todos os vídeos</a>
+  </section>
+
+  <section class="calendario">
+    <h2>TABELA DO MÊS</h2>
+    <br>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="7" class="mes">Outubro</th>
+        </tr>
+        <tr>
+          <th>Seg</th>
+          <th>Ter</th>
+          <th>Qua</th>
+          <th>Qui</th>
+          <th>Sex</th>
+          <th>Sáb</th>
+          <th>Dom</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="passado">30</td>
+          <td class="passado">01</td>
+          <td onclick="abrirDia(2)">02</td>
+          <td onclick="abrirDia(3)">03</td>
+          <td onclick="abrirDia(4)">04</td>
+          <td class="sabado" onclick="abrirDia(5)">05</td>
+          <td class="domingo" onclick="abrirDia(6)">06</td>
+        </tr>
+        <tr>
+          <td onclick="abrirDia(7)">07</td>
+          <td onclick="abrirDia(8)">08</td>
+          <td onclick="abrirDia(9)">09</td>
+          <td onclick="abrirDia(10)">10</td>
+          <td onclick="abrirDia(11)">11</td>
+          <td class="sabado" onclick="abrirDia(12)">12</td>
+          <td class="domingo" onclick="abrirDia(13)">13</td>
+        </tr>
+        <tr>
+          <td onclick="abrirDia(14)">14</td>
+          <td onclick="abrirDia(15)">15</td>
+          <td onclick="abrirDia(16)">16</td>
+          <td onclick="abrirDia(17)">17</td>
+          <td onclick="abrirDia(18)">18</td>
+          <td class="sabado dia-ativo" onclick="abrirDia(19)">19</td>
+          <td class="domingo" onclick="abrirDia(20)">20</td>
+        </tr>
+        <tr>
+          <td onclick="abrirDia(21)">21</td>
+          <td onclick="abrirDia(22)">22</td>
+          <td onclick="abrirDia(23)">23</td>
+          <td onclick="abrirDia(24)">24</td>
+          <td onclick="abrirDia(25)">25</td>
+          <td class="sabado" onclick="abrirDia(26)">26</td>
+          <td class="domingo" onclick="abrirDia(27)">27</td>
+        </tr>
+        <tr>
+          <td onclick="abrirDia(28)">28</td>
+          <td onclick="abrirDia(29)">29</td>
+          <td onclick="abrirDia(30)">30</td>
+          <td onclick="abrirDia(31)">31</td>
+          <td class="futuro">01</td>
+          <td class="futuro sabado">02</td>
+          <td class="futuro domingo">03</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("open");
+  }
+
+  function abrirVideo() {
+    // Redireciona para a página do vídeo
+    window.location.href = 'assistir';
+  }
+
+  function abrirDia(dia) {
+    // Verifica se não é dia passado ou futuro
+    const elemento = event.target;
+    if (!elemento.classList.contains('passado') && !elemento.classList.contains('futuro')) {
+      // Redireciona para a página do dia específico
+      window.location.href = `/treino-dia-${dia}`;
+    }
+  }
+</script>
+
+<footer class="sitefooter">
+  <small>© 2025 PLANOB<br/>TODOS OS DIREITOS RESERVADOS.</small>
+  <a href="#" class="to-top" aria-label="Voltar ao topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 7l7 7H5l7-7z"/>
+    </svg>
+  </a>
+</footer>
+</body>
+</html>
