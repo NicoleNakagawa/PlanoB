@@ -6,12 +6,16 @@ const { body, validationResult } = require('express-validator');
 
 const USUARIOS = {
     alunos: [
-        { id: 1, email: 'aluno@teste.com', senha: '12345678', nome: 'João Aluno' },
-        { id: 2, email: 'maria@teste.com', senha: 'senha123', nome: 'Maria Silva' }
+        { id: 1, email: 'aluno@teste.com', senha: 'senha1234', nome: 'João Aluno', plano: 'free' },
+        { id: 2, email: 'maria@teste.com', senha: 'senha1234', nome: 'Maria Silva', plano: 'free' },
+        { id: 3, email: 'alunofree@teste.com', senha: 'senha1234', nome: 'Aluno Free', plano: 'free' },
+        { id: 4, email: 'alunoprata@teste.com', senha: 'senha1234', nome: 'Aluno Prata', plano: 'prata' },
+        { id: 5, email: 'alunolazuli@teste.com', senha: 'senha1234', nome: 'Aluno Lazuli', plano: 'lazuli' },
+        { id: 6, email: 'alunodiamante@teste.com', senha: 'senha1234', nome: 'Aluno Diamante', plano: 'diamante' }
     ],
     professores: [
-        { id: 1, email: 'professor@teste.com', senha: '12345678', nome: 'Carlos Professor', cref: '12345-G/SP' },
-        { id: 2, email: 'ana@professor.com', senha: 'prof1234', nome: 'Ana Santos', cref: '67890-G/RJ' }
+        { id: 1, email: 'professor@teste.com', senha: 'senha1234', nome: 'Carlos Professor', cref: '12345-G/SP' },
+        { id: 2, email: 'ana@professor.com', senha: 'senha1234', nome: 'Ana Santos', cref: '67890-G/RJ' }
     ]
 };
 
@@ -159,6 +163,15 @@ router.get('/todosvideos', verificaAluno, function(req,res){
     res.render('pages/todosvideos');
 });
 
+router.get('/dados', verificaAluno, function(req,res){
+    res.render('pages/dados');
+});
+
+router.get('/editar', verificaAluno, function(req,res){
+    res.render('pages/editar');
+});
+
+
 // ========== ROTAS PROTEGIDAS - PROFESSOR ==========
 
 router.get('/professoredita', verificaProfessor, function(req,res){
@@ -171,6 +184,18 @@ router.get('/videosprofessor', verificaProfessor, function(req,res){
 
 router.get('/professormain', verificaProfessor, function(req,res){
     res.render('pages/professormain');
+});
+
+router.get('/upload', verificaProfessor, function(req,res){
+    res.render('pages/upload');
+});
+
+router.get('/infoprof', verificaProfessor, function(req,res){
+    res.render('pages/infoprof');
+});
+
+router.get('/dadosprofessor', verificaProfessor, function(req,res){
+    res.render('pages/dadosprofessor');
 });
 
 // ========== ROTA DE LOGOUT ==========
@@ -237,7 +262,8 @@ router.post('/login',
             id: usuarioEncontrado.id,
             email: usuarioEncontrado.email,
             nome: usuarioEncontrado.nome,
-            tipo: tipo
+            tipo: tipo,
+            plano: usuarioEncontrado.plano || null
         };
 
         // Pega o destino salvo (se houver)
@@ -258,7 +284,8 @@ router.post('/login',
             
             // Senão, redireciona para a página inicial correspondente
             if (tipo === 'aluno') {
-                return res.redirect('/diamante'); // CORRIGIDO: caminho absoluto
+                const destinoPlano = usuarioEncontrado.plano || 'diamante';
+                return res.redirect('/' + destinoPlano);
             } else {
                 return res.redirect('/professormain'); // Página inicial do professor
             }
@@ -336,8 +363,41 @@ router.post('/cadastroprofessor',
                 values: { email: req.body.email || '', cref: req.body.cref || '' }
             });
         }
-        // >>> Salvar no banco aqui (quando tiver)
-        return res.redirect('/login');
+
+        // Cria usuário "temporário" e inicia sessão como professor
+        const { email, password, cref } = req.body;
+        const newId = USUARIOS.professores.length ? Math.max(...USUARIOS.professores.map(u => u.id)) + 1 : 1;
+        const novoProfessor = {
+            id: newId,
+            email,
+            senha: password,
+            nome: email,
+            cref: cref || ''
+        };
+        USUARIOS.professores.push(novoProfessor);
+
+        // Cria sessão
+        req.session.user = {
+            id: novoProfessor.id,
+            email: novoProfessor.email,
+            nome: novoProfessor.nome,
+            tipo: 'professor'
+        };
+
+        req.session.save((err) => {
+            if (err) {
+                console.error('Erro ao salvar sessão após cadastro:', err);
+                return res.status(500).send('Erro no servidor');
+            }
+
+            // 👇 SE o envio for AJAX, responde JSON
+            if (req.xhr || req.headers['accept'] === 'application/json') {
+                return res.json({ success: true, redirect: '/professormain' });
+            }
+
+            // 👇 SE for formulário comum, faz redirecionamento direto
+            return res.redirect('/professormain');
+        });
     }
 );
 
@@ -346,20 +406,15 @@ router.post('/pagamento',
     verificaAluno,
     [
         body('fullName').trim().notEmpty().withMessage('Nome completo é obrigatório.'),
-        body('cpf').trim().notEmpty().withMessage('CPF é obrigatório.')
-            .custom(isValidCPF).withMessage('CPF inválido.'),
-        body('phone').trim().notEmpty().withMessage('Telefone é obrigatório.')
-            .custom(isValidPhoneBR).withMessage('Telefone inválido.'),
-        body('cep').trim().notEmpty().withMessage('CEP é obrigatório.')
-            .custom(isValidCEP).withMessage('CEP inválido.'),
-        body('state').trim().notEmpty().withMessage('Estado é obrigatório.')
-            .custom(isValidUF).withMessage('UF inválida.'),
+        body('cpf').trim().notEmpty().withMessage('CPF é obrigatório.').custom(isValidCPF).withMessage('CPF inválido.'),
+        body('phone').trim().notEmpty().withMessage('Telefone é obrigatório.').custom(isValidPhoneBR).withMessage('Telefone inválido.'),
+        body('cep').trim().notEmpty().withMessage('CEP é obrigatório.').custom(isValidCEP).withMessage('CEP inválido.'),
+        body('state').trim().notEmpty().withMessage('Estado é obrigatório.').custom(isValidUF).withMessage('UF inválida.'),
         body('city').trim().notEmpty().withMessage('Cidade é obrigatória.'),
         body('district').trim().notEmpty().withMessage('Bairro é obrigatório.'),
         body('street').trim().notEmpty().withMessage('Rua é obrigatória.'),
         body('number').trim().notEmpty().withMessage('Número é obrigatório.'),
-        body('paymentMethod').isIn(['pix','debit','credit'])
-            .withMessage('Método de pagamento inválido.')
+        body('paymentMethod').isIn(['pix','debit','credit']).withMessage('Método de pagamento inválido.')
     ],
     (req, res) => {
         const result = validationResult(req);
@@ -370,17 +425,16 @@ router.post('/pagamento',
             }, {});
             return res.status(422).render('pages/pagamento', { errors, values: req.body });
         }
+        // Processar pagamento / salvar no banco (a implementar)
         return res.redirect('/confpag');
     }
 );
 
-// Adicione esta rota (rotas protegidas - aluno)
+// Rotas dos templates de planos (protegidas)
 router.get('/diamante', verificaAluno, function(req, res){
-    // opcional: passe dados do usuário para a view
     res.render('pages/diamante', { user: req.session.user || {} });
 });
 
-// Novas rotas para os templates de planos
 router.get('/free', verificaAluno, function(req, res){
     res.render('pages/free', { user: req.session.user || {} });
 });

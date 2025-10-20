@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carregar Vídeos</title>
+    <style>
+       
+       @font-face {
+            font-family: 'Nunito';
+            src: url('../../fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+  }
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #e8e8ed;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+          .pagehead{
+        display: grid;
+        grid-template-columns: 36px 1fr;
+        align-items: center;
+        gap: 4px;
+        padding: 18px 18px 8px;
+      }
+
+      .btn-voltar {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 36px;
+        cursor: pointer;
+        padding: 0;
+        line-height: 1;
+      }
+
+      .pagehead .icon{ width: 24px; height: 24px; }
+
+      .pagehead h1{
+        margin: 0;
+        font-size: 40px;
+        color: var(--blue-800);
+        font-weight: 800;
+      }
+
+        /* Desktop: aumenta o tamanho */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 800px;
+                margin: 40px auto;
+            }
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .header {
+                margin-bottom: 50px;
+            }
+        }
+
+        .back-button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+            padding: 5px;
+        }
+
+        .back-button:hover {
+            opacity: 0.7;
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        @media (min-width: 768px) {
+            .title {
+                font-size: 42px;
+            }
+        }
+
+        .content {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        @media (min-width: 768px) {
+            .content {
+                padding: 50px;
+                border-radius: 16px;
+            }
+        }
+
+        .label {
+            display: block;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        @media (min-width: 768px) {
+            .label {
+                font-size: 16px;
+                margin-bottom: 15px;
+            }
+        }
+
+        .upload-area {
+            width: 100%;
+            max-width: 180px;
+            height: 180px;
+            background: #e8ecf7;
+            border: 2px dashed #c5d0e8;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0 auto 30px;
+        }
+
+        @media (min-width: 768px) {
+            .upload-area {
+                max-width: 280px;
+                height: 280px;
+                margin: 0 auto 50px;
+            }
+        }
+
+        .upload-area:hover {
+            background: #dce3f4;
+            border-color: #a8b8dc;
+        }
+
+        .upload-icon {
+            font-size: 48px;
+            color: #4c6ef5;
+            margin-bottom: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .upload-icon {
+                font-size: 64px;
+                margin-bottom: 15px;
+            }
+        }
+
+        .upload-text {
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        @media (min-width: 768px) {
+            .upload-text {
+                font-size: 16px;
+            }
+        }
+
+        .upload-subtext {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        @media (min-width: 768px) {
+            .upload-subtext {
+                font-size: 14px;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        @media (min-width: 768px) {
+            .form-group {
+                margin-bottom: 35px;
+            }
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        @media (min-width: 768px) {
+            .input-field {
+                padding: 15px 18px;
+                font-size: 16px;
+            }
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #4c6ef5;
+        }
+
+        .input-field::placeholder {
+            color: #999;
+        }
+
+        textarea.input-field {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        @media (min-width: 768px) {
+            textarea.input-field {
+                min-height: 150px;
+            }
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        @media (min-width: 768px) {
+            .btn {
+                padding: 15px 40px;
+                font-size: 16px;
+            }
+        }
+
+        .btn-cancel {
+            background: #e8e8ed;
+            color: #333;
+        }
+
+        .btn-cancel:hover {
+            background: #d5d5da;
+        }
+
+        .btn-publish {
+            background: #4c6ef5;
+            color: white;
+        }
+
+        .btn-publish:hover {
+            background: #3b5bdb;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<nav class="pagehead">
+  <a href="javascript:window.history.back()" class="back" aria-label="Voltar">
+    <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+      <path d="M15.5 4.5 7 12l8.5 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+  <h1 id="h1">Carregar Vídeos</h1>
+</nav>
+
+        <section class="content">
+            <article class="form-group">
+                <label class="label">Vídeo:</label>
+                <label for="video-upload" class="upload-area">
+                    <span class="upload-icon">+</span>
+                    <span class="upload-text">Carregar vídeo</span>
+                    <span class="upload-subtext">clique ou arraste o arquivo</span>
+                </label>
+                <input type="file" id="video-upload" accept="video/*">
+            </article>
+
+            <article class="form-group">
+                <label class="label" for="title">Título:</label>
+                <input type="text" id="title" class="input-field" placeholder="Digite o título">
+            </article>
+
+            <article class="form-group">
+                <label class="label" for="description">Descrição (opcional):</label>
+                <textarea id="description" class="input-field" placeholder="Digite uma descrição..."></textarea>
+            </article>
+
+            <footer class="button-group">
+                <button class="btn btn-cancel">Cancelar</button>
+                <button class="btn btn-publish">Publicar</button>
+            </footer>
+        </section>
+    </main>
+
+    <script>
+        const uploadArea = document.querySelector('.upload-area');
+        const fileInput = document.getElementById('video-upload');
+
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.style.background = '#dce3f4';
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.style.background = '#e8ecf7';
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.style.background = '#e8ecf7';
+            
+            const files = e.dataTransfer.files;
+            if (files.length > 0 && files[0].type.startsWith('video/')) {
+                handleFile(files[0]);
+            }
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                handleFile(e.target.files[0]);
+            }
+        });
+
+        function handleFile(file) {
+            console.log('Arquivo selecionado:', file.name);
+            uploadArea.querySelector('.upload-text').textContent = file.name;
+        }
+    </script>
+</body>
+</html>

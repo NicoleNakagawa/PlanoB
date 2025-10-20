@@ -12,7 +12,7 @@ $('#motivo').on('blur', function() {
     validateMotivo();
 });
 
-//Intercepta o envio do formulário para validação
+//Intercepta o envio do formulário para validação e salvamento
 $('#cadastroForm').on('submit', function(e) {
     e.preventDefault(); // Impede o envio padrão do formulário
     let isValid = true;
@@ -21,8 +21,20 @@ $('#cadastroForm').on('submit', function(e) {
     if (!validatePeso()) isValid = false;
     if (!validateMotivo()) isValid = false;
     if (isValid) {
-        alert('Formulário enviado com sucesso!');
-        // Aqui você pode adicionar o código para realmente enviar o formulário, se necessário
+        // Salva os dados no localStorage
+        const dados = {
+            nome: $('#nome').val().trim(),
+            dataNascimento: $('#data').val().trim(),
+            peso: $('#peso').val().trim(),
+            motivo: $('#motivo').val().trim()
+        };
+        try {
+            localStorage.setItem('meusDados', JSON.stringify(dados));
+        } catch (err) {
+            console.error('Erro ao salvar no localStorage', err);
+        }
+        // Retorna para a tela anterior
+        window.history.back();
     }
 });
 

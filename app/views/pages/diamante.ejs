@@ -6,6 +6,225 @@
   <title>PlanoB</title>
   <link rel="stylesheet" href="css/alunos/diamante.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Modal Overlay */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    /* Modal Content */
+    .modal-content {
+      background: #E8E8ED;
+      width: 90%;
+      max-width: 320px;
+      border-radius: 16px;
+      padding: 0;
+      position: relative;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Modal Header */
+    .modal-header {
+      background: #214CCE;
+      color: white;
+      padding: 20px;
+      border-radius: 16px 16px 0 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .modal-header i {
+      font-size: 24px;
+    }
+
+    .modal-header h3 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 5px;
+      line-height: 1;
+    }
+
+    /* Modal Body */
+    .modal-body {
+      padding: 20px;
+    }
+
+    .day-info {
+      background: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    /* Exercise List */
+    .exercise-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .exercise-item {
+      background: white;
+      border-radius: 12px;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 2px solid transparent;
+    }
+
+    .exercise-item:hover {
+      background: #f5f5f5;
+    }
+
+    .exercise-item.checked {
+      border-color: #214CCE;
+      background: #e8ecf7;
+    }
+
+    .exercise-checkbox {
+      width: 24px;
+      height: 24px;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.2s;
+    }
+
+    .exercise-item.checked .exercise-checkbox {
+      background: #214CCE;
+      border-color: #214CCE;
+    }
+
+    .exercise-checkbox i {
+      color: white;
+      font-size: 14px;
+      display: none;
+    }
+
+    .exercise-item.checked .exercise-checkbox i {
+      display: block;
+    }
+
+    .exercise-info {
+      flex: 1;
+    }
+
+    .exercise-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 2px;
+    }
+
+    .exercise-reps {
+      font-size: 13px;
+      color: #666;
+    }
+
+    /* Modal Actions */
+    .modal-actions {
+      display: flex;
+      gap: 10px;
+      padding: 0 20px 20px;
+    }
+
+    .modal-btn {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .modal-btn-secondary {
+      background: #B0B0B0;
+      color: white;
+    }
+
+    .modal-btn-secondary:hover {
+      background: #999;
+    }
+
+    .modal-btn-primary {
+      background: #214CCE;
+      color: white;
+    }
+
+    .modal-btn-primary:hover {
+      background: #1a3da3;
+    }
+
+    /* Action Buttons */
+    .action-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .action-btn {
+      flex: 1;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: white;
+      font-size: 13px;
+      color: #666;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .action-btn:hover {
+      background: #f5f5f5;
+      border-color: #214CCE;
+      color: #214CCE;
+    }
+
+    .action-btn i {
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
 <header>
@@ -13,8 +232,7 @@
   <button class="menu-toggle" aria-label="Abrir menu" onclick="toggleMenu()">&#9776;</button>
   <nav id="menu">
     <ul>
-      <li><a href="/login">Meus Dados</a></li>
-      <li><a href="/cadastroaluno">Meu Personal</a></li>
+      <li><a href="/dados">Meus Dados</a></li>
       <li><a href="/nossosplanos">Planos</a></li>
       <li><a href="/sobre">Sobre nós</a></li>
     </ul>
@@ -27,34 +245,34 @@
     <p><strong>Pronto para treinar hoje?</strong></p>
   </section>
 
-  <section class="planos">
-    <div class="meu-plano">
-      <h2>MEU PLANO</h2>
-      <div class="conteudo-plano">
-        <p class="titulo-plano">Plano<br>Diamante</p>
-        <span class="check">✔</span>
-      </div>
-      <button class="btn-mais">Mais</button>
-    </div>
+<section class="planos">
+  <article class="meu-plano">
+    <h2>MEU PLANO</h2>
+    <figure class="conteudo-plano">
+      <p class="titulo-plano">Plano<br>Lazuli</p>
+      <span class="check">✔</span>
+    </figure>
+    <button class="btn-mais" onclick="window.location.href='nossosplanos'">Mais</button>
+  </article>
 
-    <div class="outros-planos">
-      <h2>OUTROS PLANOS</h2>
-      <p class="titulo-outro">Plano<br>Lazuli</p>
-      <button class="btn-saiba">Saiba Mais</button>
-    </div>
-  </section>
+  <article class="outros-planos">
+    <h2>OUTROS PLANOS</h2>
+    <p class="titulo-outro">Plano<br>Diamante</p>
+    <button class="btn-saiba" onclick="window.location.href='nossosplanos'">Saiba Mais</button>
+  </article>
+</section>
 
   <section class="videos">
     <h2>VÍDEO DO DIA</h2>
 
     <!-- Card de vídeo clicável -->
-    <div class="video-card" onclick="abrirVideo()">
+    <article class="video-card" onclick="abrirVideo()">
       <span class="badge">Novo hoje</span>
       <img src="img/img_vídeos/imagem2.jpg" alt="Treino de braço">
-      <div class="video-info">
+      <figcaption class="video-info">
         <p>Treino de braço - 15 min</p>
-      </div>
-    </div>
+      </figcaption>
+    </article>
 
     <!-- Botão "Acessar todos os vídeos" -->
   <a href="todosvideos" class="link">Acessar todos os vídeos</a>
@@ -130,24 +348,163 @@
 
 </main>
 
+<!-- Modal de Exercícios -->
+<aside class="modal-overlay" id="exerciseModal">
+  <article class="modal-content">
+    <header class="modal-header">
+      <i class="fas fa-dumbbell"></i>
+      <h3>Exercícios</h3>
+      <button class="close-modal" onclick="fecharModal()" aria-label="Fechar">&times;</button>
+    </header>
+    
+    <section class="modal-body">
+      <p class="day-info">
+        <strong>Dia <span id="modalDay">01</span></strong> • <span id="modalDate">Outubro</span>
+      </p>
+      
+      <article class="exercise-list" id="exerciseList">
+        <!-- Exercícios serão adicionados aqui via JavaScript -->
+      </article>
+
+      <section class="action-buttons">
+        <button class="action-btn" onclick="adicionarExercicio()">
+          <i class="fas fa-plus"></i>
+          Adicionar exercício
+        </button>
+        <button class="action-btn" onclick="removerExercicio()">
+          <i class="fas fa-trash"></i>
+          Remover exercício
+        </button>
+      </section>
+    </section>
+
+    <footer class="modal-actions">
+      <button class="modal-btn modal-btn-secondary" onclick="fecharModal()">Cancelar</button>
+      <button class="modal-btn modal-btn-primary" onclick="salvarExercicios()">Salvar</button>
+    </footer>
+  </article>
+</aside>
+
 <script>
+  // Dados dos exercícios por dia
+  const exerciciosPorDia = {
+    2: [
+      { nome: '50 flexões', tipo: 'T', completado: true },
+      { nome: '50 abdominais', tipo: 'Q', completado: false },
+      { nome: '50 polichinelos', tipo: 'S', completado: false }
+    ],
+    3: [
+      { nome: '40 flexões', tipo: 'T', completado: false },
+      { nome: '60 abdominais', tipo: 'Q', completado: false },
+      { nome: '30 burpees', tipo: 'S', completado: false }
+    ],
+    // Adicione mais dias conforme necessário
+  };
+
+  // Dados padrão para dias sem exercícios específicos
+  const exerciciosPadrao = [
+    { nome: '50 flexões', tipo: 'T', completado: false },
+    { nome: '50 abdominais', tipo: 'Q', completado: false },
+    { nome: '50 polichinelos', tipo: 'S', completado: false }
+  ];
+
+  let diaAtual = null;
+
   function toggleMenu() {
     document.getElementById("menu").classList.toggle("open");
   }
 
   function abrirVideo() {
-    // Redireciona para a página do vídeo
     window.location.href = 'assistir';
   }
 
   function abrirDia(dia) {
-    // Verifica se não é dia passado ou futuro
     const elemento = event.target;
     if (!elemento.classList.contains('passado') && !elemento.classList.contains('futuro')) {
-      // Redireciona para a página do dia específico
-      window.location.href = `/treino-dia-${dia}`;
+      diaAtual = dia;
+      mostrarModal(dia);
     }
   }
+
+  function mostrarModal(dia) {
+    const modal = document.getElementById('exerciseModal');
+    const modalDay = document.getElementById('modalDay');
+    const modalDate = document.getElementById('modalDate');
+    const exerciseList = document.getElementById('exerciseList');
+
+    // Atualizar informações do dia
+    modalDay.textContent = dia.toString().padStart(2, '0');
+    modalDate.textContent = 'Outubro';
+
+    // Obter exercícios do dia ou usar padrão
+    const exercicios = exerciciosPorDia[dia] || [...exerciciosPadrao];
+
+    // Renderizar lista de exercícios
+    exerciseList.innerHTML = exercicios.map((ex, index) => `
+      <article class="exercise-item ${ex.completado ? 'checked' : ''}" onclick="toggleExercise(${index})">
+        <span class="exercise-checkbox">
+          <i class="fas fa-check"></i>
+        </span>
+        <span class="exercise-info">
+          <span class="exercise-name">${ex.nome}</span>
+        </span>
+      </article>
+    `).join('');
+
+    // Mostrar modal
+    modal.classList.add('active');
+  }
+
+  function fecharModal() {
+    const modal = document.getElementById('exerciseModal');
+    modal.classList.remove('active');
+  }
+
+  function toggleExercise(index) {
+    const exercicios = exerciciosPorDia[diaAtual] || exerciciosPadrao;
+    exercicios[index].completado = !exercicios[index].completado;
+    
+    // Atualizar visualmente
+    const items = document.querySelectorAll('.exercise-item');
+    items[index].classList.toggle('checked');
+  }
+
+  function salvarExercicios() {
+    // Aqui você pode adicionar lógica para salvar no backend
+    console.log('Exercícios salvos para o dia', diaAtual);
+    fecharModal();
+  }
+
+  function adicionarExercicio() {
+    const nome = prompt('Nome do exercício:');
+    if (nome) {
+      if (!exerciciosPorDia[diaAtual]) {
+        exerciciosPorDia[diaAtual] = [...exerciciosPadrao];
+      }
+      exerciciosPorDia[diaAtual].push({ nome, tipo: 'T', completado: false });
+      mostrarModal(diaAtual);
+    }
+  }
+
+  function removerExercicio() {
+    if (!exerciciosPorDia[diaAtual]) return;
+    
+    const exercicios = exerciciosPorDia[diaAtual];
+    const nomes = exercicios.map((ex, i) => `${i + 1}. ${ex.nome}`).join('\n');
+    const index = prompt(`Qual exercício remover?\n\n${nomes}\n\nDigite o número:`);
+    
+    if (index && index > 0 && index <= exercicios.length) {
+      exercicios.splice(index - 1, 1);
+      mostrarModal(diaAtual);
+    }
+  }
+
+  // Fechar modal ao clicar fora
+  document.getElementById('exerciseModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+      fecharModal();
+    }
+  });
 </script>
 
 <footer class="sitefooter">

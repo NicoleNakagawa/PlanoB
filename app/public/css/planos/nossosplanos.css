@@ -2,7 +2,7 @@ body {
   font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   margin: 0;
   background: #f5f8ff;
-  color: white;
+
 }
 
 .head {
@@ -73,17 +73,33 @@ nav#menu.open {
   right: 0;
 }
 
-.voltar {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  font-size: 40px;
-  color: #214CCE;
-  text-decoration: none;
+.pagehead {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
-.voltar:hover {
-  color: #ccc;
+.pagehead a {
+  position: absolute;
+  left: 20px;
+  color: #214CCE;
+}
+
+.pagehead .icon {
+  width: 33px;
+  height: 33px;
+  color:#214CCE;
+}
+
+.pagehead h1 {
+  margin: 0;
+  font-size: 2.6rem;
+  color: #214CCE;
+  font-weight: 800;
+  text-align: center;
 }
 
 .planos {
@@ -113,6 +129,7 @@ nav#menu.open {
   justify-content: center;
   gap: 30px;
   text-align: center;
+  color:white
 }
 
 .cartao {
@@ -235,7 +252,15 @@ button {
 
 .to-top svg{ width: 18px; height: 18px; fill: #fff; }
 
-@media (min-width: 480px){
+@media (max-width: 1000px){
+
+  header {
+    height: 60px;
+    padding: 0 10px;
+  }
+  header img {
+    height: 90px;
+  }
 
   main{ max-width: 440px; margin: 0 auto 96px; }
 

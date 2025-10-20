@@ -1,0 +1,137 @@
+@font-face {
+  font-family: 'Nunito';
+  src: url('../../fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ===== Base ===== */
+body {
+  background-color: #fafbff;
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+fieldset {
+  border: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* ===== Cabeçalho ===== */
+.pagehead {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.pagehead a {
+  position: absolute;
+  left: 20px;
+  color: #214CCE;
+}
+
+.pagehead .icon {
+  width: 33px;
+  height: 33px;
+}
+
+.pagehead h1 {
+  margin: 0;
+  font-size: 2.6rem;
+  color: #214CCE;
+  font-weight: 800;
+  text-align: center;
+}
+
+/* ===== Inputs ===== */
+form {
+  width: 85%;
+  max-width: 300px; /* diminui largura da caixa */
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #222;
+}
+
+input[type="text"], 
+input[type="date"], 
+input[type="number"], 
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #b8c7f0;
+  margin-bottom: 14px;
+  font-size: 1rem;
+  color: #000;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  height: 70px;
+}
+
+/* ===== Botões ===== */
+.salvar, 
+.editar {
+  border: none;
+  border-radius: 15px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin: 8px;
+  background-color: #d0d0d0;
+  color: #000;
+  transition: background-color 0.3s ease;
+  width: 110px; /* largura reduzida */
+}
+
+.salvar:hover, 
+.editar:hover {
+  background-color: #c0c0c0;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 480px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  body {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  form {
+    width: 90%;
+    max-width: 280px;
+  }
+
+  .pagehead h1 {
+    font-size: 1.4rem;
+  }
+
+  .salvar, .editar {
+    width: 100px;
+  }
+}

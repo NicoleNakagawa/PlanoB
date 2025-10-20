@@ -206,14 +206,14 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <main class="container">
     <header class="header">
-      <a href="/videosfree"><button class="btn-voltar" aria-label="Voltar">&#8249;</button></a>
+      <a href="javascript:window.history.back()"><button class="btn-voltar" aria-label="Voltar">&#8249;</button></a>
       <h1>Treino de Braço</h1>
     </header>
 
-    <main class="video-section">
-      <div class="video-player" id="videoPlayer">
+    <article class="video-section">
+      <figure class="video-player" id="videoPlayer">
         <!-- Vídeo -->
         <video id="video" poster="/img/img_vídeos/imagem2.jpg">
           <source src="/videos/treino-braco.mp4" type="video/mp4">
@@ -222,42 +222,42 @@
         </video>
 
         <!-- Botão de play central -->
-        <div class="play-overlay" id="playOverlay">
+        <button class="play-overlay" id="playOverlay" aria-label="Play">
           <i class="fas fa-play"></i>
-        </div>
+        </button>
 
         <!-- Controles do vídeo -->
-        <div class="video-controls" id="videoControls">
+        <aside class="video-controls" id="videoControls">
           <!-- Barra de progresso -->
-          <div class="progress-bar" id="progressBar">
-            <div class="progress-filled" id="progressFilled"></div>
-          </div>
+          <progress class="progress-bar" id="progressBar" value="0" max="100">
+            <span class="progress-filled" id="progressFilled"></span>
+          </progress>
 
           <!-- Controles -->
-          <div class="controls-wrapper">
-            <div class="controls-left">
+          <nav class="controls-wrapper">
+            <menu class="controls-left">
               <!-- Play/Pause -->
               <button class="control-btn play-pause" id="playPauseBtn" aria-label="Play/Pause">
                 <i class="fas fa-play"></i>
               </button>
 
               <!-- Volume -->
-              <div class="volume-control">
+              <fieldset class="volume-control">
                 <button class="control-btn" id="volumeBtn" aria-label="Volume">
                   <i class="fas fa-volume-up"></i>
                 </button>
-                <div class="volume-slider" id="volumeSlider">
-                  <div class="volume-filled" id="volumeFilled"></div>
-                </div>
-              </div>
+                <output class="volume-slider" id="volumeSlider">
+                  <span class="volume-filled" id="volumeFilled"></span>
+                </output>
+              </fieldset>
 
               <!-- Tempo -->
-              <span class="time-display">
+              <time class="time-display">
                 <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
-              </span>
-            </div>
+              </time>
+            </menu>
 
-            <div class="controls-right">
+            <menu class="controls-right">
               <!-- Velocidade -->
               <button class="control-btn" id="speedBtn" title="Velocidade de reprodução">
                 <span style="font-size: 14px; font-weight: 600;">1x</span>
@@ -267,17 +267,17 @@
               <button class="control-btn" id="fullscreenBtn" aria-label="Tela cheia">
                 <i class="fas fa-expand"></i>
               </button>
-            </div>
-          </div>
-        </div>
-      </div>
+            </menu>
+          </nav>
+        </aside>
+      </figure>
 
       <section class="info-section">
         <p><strong>Professor:</strong> Kaio Berlim</p>
         <p><strong>Descrição:</strong> Séries de exercícios simples focados para os braços com duração de apenas 15 minutos.</p>
       </section>
-    </main>
-  </div>
+    </article>
+  </main>
 
   <footer class="sitefooter">
     <small>© 2025 PLANOB<br/>TODOS OS DIREITOS RESERVADOS.</small>

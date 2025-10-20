@@ -6,13 +6,11 @@
     <title>Cadastro Professor PlanoB</title>
     <link rel="stylesheet" href="\css\cadlog\cad_professor.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="\js\verificacao\front_cad-prof.js" defer></script>
 </head>
 
 <body>
   <main class="container">
-    <a href="/" class="voltar"><i class="fas fa-arrow-left"></i></a>
+    <a href="javascript:window.history.back()" class="voltar"><i class="fas fa-arrow-left"></i></a>
     
     <!-- Lado esquerdo -->
     <section class="caixa-esquerda">
@@ -25,50 +23,31 @@
                         type="email" 
                         id="email" 
                         name="email" 
-                        value="<%= typeof values !== 'undefined' ? values.email || '' : '' %>"
                         aria-describedby="email-error" 
                         placeholder="email@email.com" 
                         required
                     >
-                    <% if (typeof errors !== 'undefined' && errors.email) { %>
-                        <span class="error-message" id="email-error" role="alert" aria-live="polite">
-                            <%= errors.email %>
-                        </span>
-                    <% } else { %>
-                        <span class="error-message" id="email-error" role="alert" aria-live="polite"></span>
-                    <% } %>
+                    <span class="error-message" id="email-error" role="alert" aria-live="polite"></span>
                 </section>
             </fieldset>
             <fieldset class="form-group">
                 <section class="input-goup">
                     <label for="senha">Senha:</label> 
                     <input type="password" id="senha" name="password" aria-describedby="senha-error" required>
-                    <button type="button" id="toggleSenha" tabindex="-1" style="margin-left:-36px; background:none; border:none; cursor:pointer;">
-                        <i class="fas fa-eye"></i>
+                    <button type="button" id="toggleSenha" class="toggle-senha" tabindex="-1">
+    
                     </button>
-                    <% if (typeof errors !== 'undefined' && errors.password) { %>
-                        <span class="error-message" id="senha-error" role="alert" aria-live="polite">
-                            <%= errors.password %>
-                        </span>
-                    <% } else { %>
-                        <span class="error-message" id="senha-error" role="alert" aria-live="polite"></span>
-                    <% } %>
+                    <span class="error-message" id="senha-error" role="alert" aria-live="polite"></span>
                     <h6 id="senha-requisitos"></h6>
                     <br>
                 </section>
                 <section class="input-goup">
                     <label for="conf_senha">Confirmar senha:</label> 
                     <input type="password" id="conf_senha" name="confirmPassword" aria-describedby="conf_senha-error" required>
-                    <button type="button" id="toggleConfSenha" tabindex="-1" style="margin-left:-36px; background:none; border:none; cursor:pointer;">
-                        <i class="fas fa-eye"></i>
+                    <button type="button" id="toggle-conf-senha" class="toggle-senha" tabindex="-1">
+
                     </button>
-                    <% if (typeof errors !== 'undefined' && errors.confirmPassword) { %>
-                        <span class="error-message" id="conf_senha-error" role="alert" aria-live="polite">
-                            <%= errors.confirmPassword %>
-                        </span>
-                    <% } else { %>
-                        <span class="error-message" id="conf_senha-error" role="alert" aria-live="polite"></span>
-                    <% } %>
+                    <span class="error-message" id="conf_senha-error" role="alert" aria-live="polite"></span>
                 </section>
                 <section class="input-goup">
                     <label for="cref">CREF:</label> 
@@ -76,19 +55,12 @@
                         type="text" 
                         id="cref" 
                         name="cref" 
-                        value="<%= typeof values !== 'undefined' ? values.cref || '' : '' %>"
                         aria-describedby="cref-error" 
                         placeholder="000000-G/UF" 
                         maxlength="12" 
                         required
                     >
-                    <% if (typeof errors !== 'undefined' && errors.cref) { %>
-                        <span class="error-message" id="cref-error" role="alert" aria-live="polite">
-                            <%= errors.cref %>
-                        </span>
-                    <% } else { %>
-                        <span class="error-message" id="cref-error" role="alert" aria-live="polite"></span>
-                    <% } %>
+                    <span class="error-message" id="cref-error" role="alert" aria-live="polite"></span>
                 </section>
             </fieldset>
             <button type="submit" class="botao-principal" aria-describedby="form-help">Cadastrar</button>
@@ -106,5 +78,11 @@
     </aside>
 
   </main>
+
+  <!-- Pop-up removido -->
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="\js\verificacao\front_cad-prof.js"></script>
+  <!-- Inline popup script removido para permitir envio normal ao servidor -->
 </body>
 </html>

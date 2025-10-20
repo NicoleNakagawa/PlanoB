@@ -27,7 +27,8 @@ $('#conf_senha').on('blur', function() {
         if (!validateSenha()) isValid = false;
         if (!validateConf_senha()) isValid = false;
         if (isValid) {
-            // Aqui você pode adicionar o código para realmente enviar o formulário, se necessário
+            // Redireciona para a tela do professor sem enviar o formulário ao servidor
+            window.location.href = 'professormain';
         }
     });
 
@@ -164,7 +165,7 @@ $('#toggleConfSenha').on('click', function() {
 });
 
 // Atualize também o evento de submit do formulário:
-$('#cadastroForm').on('submit', function(e) {
+$('#cadastroForm').off('submit').on('submit', function(e) {
     e.preventDefault();
     bSubmit();
 });
