@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #214CCE;
+  display: flex;
+  justify-content: space-between; /* separa menu e logo */
+  align-items: center;
+  padding: 0 20px;
+  height: 60px;
+}
+
+header img {
+  height: 130px;   /* aumenta a logo */
+  width: auto;    /* mantém proporção */
+  object-fit: contain;
+}
+
+/* BOTÃO MENU HAMBÚRGUER (agora <button>) */
+button.menu-toggle {
+  font-size: 30px;
+  color: white;
+  background: none;    /* remove estilo padrão de botão */
+  border: none;        /* remove borda */
+  cursor: pointer;
+  z-index: 1100;       /* fica acima do menu */
+}
+
+/* MENU LATERAL */
+nav#menu {
+  position: fixed;
+  top: 0;
+  right: -250px; /* escondido */
+  width: 250px;
+  height: 100%;
+  background-color: #214CCE;
+  padding-top: 80px;
+  transition: right 0.3s ease; /* animação suave */
+  z-index: 1000;
+}
+
+nav#menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav#menu ul li {
+  margin: 20px 0;
+  text-align: left;
+}
+
+nav#menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  padding: 10px 20px;
+  display: block;
+  transition: background 0.3s;
+}
+
+nav#menu ul li a:hover {
+  background: #1565c0;
+  border-radius: 5px;
+}
+
+/* QUANDO O MENU ESTÁ ABERTO */
+nav#menu.open {
+  right: 0;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 21px;
+}
+
+body {
+  background: #f0f2f5;
+  margin: 0;
+  color: #222;
+}
+               
+main {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #f0f2f5;
+  min-height: calc(100vh - 120px);
+}
+        
+.info-header {
+  background: #f0f2f5;
+  padding: 20px;
+  border-bottom: 1px solid #f0f2f5;
+}
+        
+.info-header h1 {
+  text-align: center;
+  color: #214CCE;
+  font-size: 22px;
+  margin-bottom: 10px;
+  align-items: center;
+  gap: 10px;
+}
+        
+.info-header p {
+  text-align: center;
+  color: #666;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.voltar {
+  top: 30px;
+  left: 30px;
+  font-size: 30px;
+  color: #214CCE;
+  text-decoration: none;
+}
+
+.voltar:hover {
+  color: #ccc;
+}
+       
+fieldset{
+  border: none;
+}
+
+.content {
+  padding: 25px;
+  background-color: #f0f2f5;
+}
+        
+.section{
+  background-color: white;
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+section .section{
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+} 
+        
+.section h2 {
+  color: #000;
+  font-size: 16px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.h3{
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+p{
+  color: #333;
+  font-size: 13px;
+  line-height: 1.8;
+  padding-left: 15px;
+  position: relative;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+}
+        
+.info-list li {
+  color: #333;
+  font-size: 13px;
+  line-height: 1.8;
+  padding-left: 15px;
+  position: relative;
+}
+        
+.info-list li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #1d3fd6;
+}
+        
+.sitefooter{
+  left: 0; right: 0; bottom: 0;
+  background-color: #214CCE;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+  padding: 18px 16px 26px;
+  text-align: center;
+
+}
+
+.sitefooter small{
+  display: block;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: .3px;
+  opacity: .95;
+}
+
+.to-top svg{ width: 18px; height: 18px; fill: #fff; }

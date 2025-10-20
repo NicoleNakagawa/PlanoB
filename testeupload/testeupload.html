@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload de Vídeo - Academia em Casa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .upload-box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      width: 420px;
+      text-align: center;
+    }
+    .upload-box h2 {
+      margin-bottom: 20px;
+    }
+    input[type="file"],
+    input[type="text"],
+    textarea {
+      width: 100%;
+      margin: 10px 0;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    video {
+      width: 100%;
+      margin-top: 15px;
+      border-radius: 10px;
+      display: none; /* escondido até escolher vídeo */
+    }
+    button {
+      background: #2357e6;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 15px;
+      width: 100%;
+    }
+    button:hover {
+      background: #2357e6;
+    }
+  </style>
+</head>
+<body>
+  <div class="upload-box">
+    <h2>Enviar Vídeo</h2>
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+      <input type="text" name="titulo" placeholder="Título do vídeo" required>
+      <textarea name="descricao" placeholder="Descrição do vídeo" rows="3"></textarea>
+      
+      <input type="file" id="video" name="video" accept="video/*" required>
+      
+      <!-- pré-visualização -->
+      <video id="preview" controls></video>
+      
+      <button type="submit">Enviar Vídeo</button>
+    </form>
+  </div>
+
+  <script>
+    const inputVideo = document.getElementById("video");
+    const preview = document.getElementById("preview");
+
+    inputVideo.addEventListener("change", () => {
+      const file = inputVideo.files[0];
+      if (file) {
+        const url = URL.createObjectURL(file);
+        preview.src = url;
+        preview.style.display = "block";
+      }
+    });
+  </script>
+</body>
+</html>

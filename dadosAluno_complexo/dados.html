@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Dados</title>
+    <link rel="stylesheet" href="dados.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <script src="dados.js" defer></script>
+</head>
+
+<body>
+    <section id="container">
+    <header>
+        <a href=""><button class="close-btn">X</button></a><h1>Meus Dados</h1>
+    </header>
+    <main>
+        <form class="form-dados" role="form" aria-label="Formulário de Pagamento"></form>
+        <fieldset class="input-group">
+            <section class="form-group">
+                <br>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" aria-describedby="nome-error" required>
+                <span class="error-message" id="nome-error" role="alert" aria-live="polite"></span>
+            </section>
+            <br>
+            <section class="form-group">
+                <label for="data">Data de nascimento:</label>
+                <input type="text" id="data" name="data" aria-describedby="data-error" required>
+                <span class="error-message" id="data-error" role="alert" aria-live="polite"></span>
+            </section>
+            <br>
+            <section class="form-group">
+                <label for="peso">Peso:</label>
+                <input type="text" id="peso" name="peso" aria-describedby="peso-error" placeholder="00,00 kg" required>
+                <span class="error-message" id="peso-error" role="alert" aria-live="polite"></span>
+            </section>
+            <br>
+            <section class="form-group">
+                <label for="motivo">Motivo/Motivação para treinar:</label>
+                <input type="text" id="motivo" name="motivo" aria-describedby="motivo-error" required>
+                <span class="error-message" id="motivo-error" role="alert" aria-live="polite"></span>
+            </section>
+        </fieldset>
+        <section>
+            <button type="botao" class="salvar">Salvar</button>
+            <button type="botao" class="editar">Editar</button>
+        </section>
+        </form>
+        
+        
+    </main>
+</body>
+</html>

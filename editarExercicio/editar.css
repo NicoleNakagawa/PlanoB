@@ -1,0 +1,92 @@
+:root{
+    --bg:#e6e6e6;
+    --card:#c5cffd;   /* azul claro dos cards */
+    --text:#0d0d0d;
+    --muted:#cfcfd1;  /* cinza dos botões */
+    --brand:#2f56ff;  /* azul do X */
+    --radius:18px;
+    --pad:20px;
+   }
+   /* esconder visualmente, mas acessível no leitor de tela */
+   .sr-only{
+    position:absolute !important;
+    width:1px; height:1px;
+    padding:0; margin:-1px;
+    overflow:hidden; clip:rect(0,0,0,0);
+    white-space:nowrap; border:0;
+   }
+   html, body{ height:100%; margin:0; }
+   body{
+    background:var(--bg);
+    color:var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+    display:flex; flex-direction:column;
+   }
+   /* Header */
+   header{ position:relative; padding:12px var(--pad) 0; }
+   header h1{
+    margin:10px 0 0;
+    text-align:center;
+    font-weight:900;
+    font-size:clamp(24px, 5vw, 34px);
+   }
+   header nav{ position:absolute; inset-block-start:10px; inset-inline-start:14px; }
+   header nav button{
+    appearance:none; border:0; background:transparent;
+    font-size:36px; line-height:1; color:var(--brand); cursor:pointer;
+   }
+   header nav button:focus{ outline:2px solid var(--brand); outline-offset:2px; border-radius:8px; }
+   /* Main */
+   main{ max-width:680px; width:100%; margin-inline:auto; padding:18px var(--pad) 0; flex:1; }
+   .itens{ list-style:none; padding:0; margin:8px 0 0; display:grid; gap:20px; }
+   .card{
+    display:grid;
+    grid-template-columns: 44px 1fr;
+    align-items:center;
+    gap:12px;
+    background:var(--card);
+    border-radius:var(--radius);
+    padding:14px 18px;
+    cursor:pointer;
+   }
+   /* Checkbox grande estilo do mock */
+   .card input[type="checkbox"]{
+    appearance:none; -webkit-appearance:none; -moz-appearance:none;
+    width:32px; height:32px;
+    border:4px solid #111; border-radius:8px;
+    background:#fff0; display:grid; place-items:center; outline:none;
+   }
+   .card input[type="checkbox"]:checked{
+    background:#fff;
+    box-shadow: inset 0 0 0 6px var(--brand);
+   }
+   .card em{
+    font-style:normal;
+    font-size:20px;
+    letter-spacing:.2px;
+   }
+   /* Footer com botões */
+   footer{
+    max-width:680px; width:100%;
+    margin-inline:auto;
+    padding:26px var(--pad) 36px;
+   }
+   footer form{
+    display:flex; gap:16px; justify-content:space-between;
+   }
+   .pill{
+    flex:1;
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    appearance:none; border:0;
+    padding:16px 18px;
+    border-radius:999px;
+    background:var(--muted);
+    color:#222; font-weight:900; font-size:16px; letter-spacing:.5px;
+    cursor:default;  /* visual neutro como no mock */
+    opacity:.95;
+   }
+   .pill svg{ fill:#555; }
+   /* Responsivo */
+   @media (max-width: 420px){
+    .pill{ font-size:15px; }
+   }
