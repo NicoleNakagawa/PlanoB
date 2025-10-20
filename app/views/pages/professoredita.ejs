@@ -7,39 +7,37 @@
   <link rel="stylesheet" href="../../css/professor/professoredita.css">
 </head>
 <body>
-  <div class="container">
-<header>
- 
-<nav class="pagehead">
-  <a href="/" class="back" aria-label="Voltar">
-    <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
-      <path d="M15.5 4.5 7 12l8.5 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </a>
-  <h1 id="h1">Editar Vídeo</h1>
-</nav>
- 
-</header>
+  <main class="container">
+    <header>
+      <nav class="pagehead">
+        <a href="/" class="back" aria-label="Voltar">
+          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+            <path d="M15.5 4.5 7 12l8.5 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <h1 id="h1">Editar Vídeo</h1>
+      </nav>
+    </header>
 
     <!-- Imagem -->
-    <div class="image-box">
+    <figure class="image-box">
       <img src="https://images.pexels.com/photos/3837757/pexels-photo-3837757.jpeg" alt="Treino de braço">
-    </div>
+    </figure>
 
     <!-- Formulário -->
     <form class="form">
-      <div class="form-group">
+      <fieldset class="form-group">
         <input type="text" value="Título: Treino de Braço">
-      </div>
-      <div class="form-group">
+      </fieldset>
+      <fieldset class="form-group">
         <textarea rows="4">Descrição (opcional): Séries de exercícios simples focados para os braços com duração de apenas 15 minutos.</textarea>
-      </div>
-      <div class="botoes">
+      </fieldset>
+      <footer class="botoes">
         <button type="button" class="botao cancelar">Cancelar</button>
         <button type="submit" class="botao salvar">Salvar</button>
-      </div>
+      </footer>
     </form>
 
-  </div>
+  </main>
 </body>
 </html>
