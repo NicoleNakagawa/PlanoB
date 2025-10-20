@@ -1,386 +1,655 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Nunito', sans-serif;
-  font-weight: bold;
-}
- 
-@font-face {
-  font-family: 'Nunito';
-  src: url('../fonts/Nunito-VariableFont_wght.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
- 
-@font-face {
-  font-family: 'Baumans';
-  src: url('../fonts/Baumans-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+  }
+   
+  @font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+   
+  @font-face {
+    font-family: 'Baumans';
+    src: url('../fonts/Baumans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Viga';
+    src: url('../fonts/Viga-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+   
+  body {
+    background-color: #f0f2f5;
+  }
+   
+  header {
+    background-color: #214CCE;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 60px;
+  }
+  
+  header img {
+    height: 130px;
+    width: auto;
+    object-fit: contain;
+  }
+  
+  /* BOTÃO MENU HAMBÚRGUER*/
+  button.menu-toggle {
+    font-size: 30px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+  }
+  
+  /* MENU LATERAL */
+  nav#menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #214CCE;
+    padding-top: 80px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+  
+  nav#menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  nav#menu ul li {
+    margin: 20px 0;
+    text-align: left;
+  }
+  
+  nav#menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    padding: 10px 20px;
+    display: block;
+    transition: background 0.3s;
+  }
+  
+  nav#menu ul li a:hover {
+    background: #1565c0;
+    border-radius: 5px;
+  }
+  
+  /* QUANDO O MENU ESTÁ ABERTO */
+  nav#menu.open {
+    right: 0;
+  }
+  
+  nav a {
+     margin: 0 10px;
+     text-decoration: none;
+     color: #ffffff;
+     font-weight: bold;
+     font-size: 21px;
+  }
+  
+  /* Seção Boas-vindas */
+  .boas-vindas {
+    margin: 20px;
+  }
+  
+  .h1 strong{
+    font-size: 50px;
+    font-weight: bold;
+  }
+  
+  .boas-vindas .nome {
+    color: #174bd6;
+    font-weight: bolder;
+  }
+  
+  .boas-vindas strong {
+    font-size: 50px;
+    color: #333;
+    font-weight: bolder;
+  }
+  
+  /* Planos */
+  .planos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 20px;
+  }
+  
+  .meu-plano, .outros-planos {
+    border-radius: 16px;
+    padding: 25px;
+    width: 600px;
+    height: 400px;
+    text-align: left;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Meu Plano */
+  .meu-plano {
+    background: #1e6eff;
+    color: white;
+    position: relative;
+  }
+  
+  .meu-plano h2 {
+    font-size: 46px;
+    margin-bottom: 10px;
+  }
+  
+  .conteudo-plano {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .titulo-plano {
+    font-size: 60px;
+    font-weight: bold;
+  }
+  
+  .check {
+    background: #6CCF74;
+    color: white;
+    font-size: 76px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Botão "Mais" */
+  .btn-mais {
+    margin-top: 12px;
+    padding: 4px 10px;
+    border: none;
+    background: #fff;
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 80px;
+  }
+  
+  /* Outros Planos */
+  .outros-planos {
+    background: #B4CAE2;
+    color: black;
+  }
+  
+  .outros-planos h2 {
+    font-size: 46px;
+    margin-bottom: 10px;
+  }
+  
+  .titulo-outro {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  /* Botão Saiba Mais */
+  .btn-saiba {
+    padding: 8px 18px;
+    border: none;
+    background: white;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100px;
+  }
+  
+  /* Vídeos */
+  .videos {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .videos h2 {
+    font-size: 60px;
+    font-weight: 800;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  /* Card de vídeo - agora clicável */
+  .video-card {
+    position: relative;
+    width: 60%;
+    max-width: 900px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    margin: 0 auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  }
+  
+  .video-card img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+  }
+  
+  /* Verde "Novo hoje" */
+  .badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #6CCF74;
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+    padding: 4px 10px;
+    border-radius: 12px;
+  }
+  
+  /* Texto do vídeo */
+  .video-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+  }
+  
+  .video-info p {
+    color: white;
+    font-size: 35px;
+    font-family: 'Nunito';
+    font-weight: bold;
+  }
+  
+  /* Botão "Acessar todos os vídeos" */
+  .btn-todos-videos {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: transparent;
+    border: 2px solid #333;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+  }
+  
+.link { display: inline-block; 
+    margin: 15px 0; 
+    text-decoration: none; 
+    color: #000; 
+    font-weight: 700; 
+    border-bottom: 2px solid #000; 
+    padding-bottom: 3px; 
+    font-size: 30px; }
+  
+  /* Calendário */
+  .calendario {
+    margin: 20px;
+  }
+  
+  .calendario h2 {
+    font-size: 60px;
+    font-weight: 800;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .calendario table {
+    width: auto;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 30px;
+    text-align: center;
+    background: white;
+  }
+  
+  /* Cabeçalho do mês */
+  .calendario .mes {
+    background: #1e6eff;
+    color: white;
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+    padding: 8px 0;
+    border: none;
+  }
+  
+  /* Dias da semana */
+  .calendario th {
+    border: 1px solid #999;
+    padding: 6px 12px;
+    background: #f7f7f7;
+    font-weight: 700;
+    color: #333;
+  }
+  
+  /* Cores especiais */
+  .calendario th:nth-child(6) {
+    color: #d32f2f;
+  }
+  
+  .calendario th:nth-child(7) {
+    color: #b71c1c;
+  }
+  
+  /* Células normais - agora clicáveis */
+  .calendario td {
+    border: 1px solid #999;
+    padding: 10px;
+    font-weight: 600;
+    color: #111;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  /* Hover nos dias */
+  .calendario td:not(.passado):not(.futuro):hover {
+    background: #1e6eff;
+    color: white;
+    border-radius: 50%;
+  }
+  
+  /* Dias passados (cinza) */
+  .calendario .passado {
+    color: #90a4ae;
+    cursor: not-allowed;
+  }
+  
+  .calendario .passado:hover {
+    background: transparent;
+    color: #90a4ae;
+  }
 
-@font-face {
-  font-family: 'Viga';
-  src: url('../fonts/Viga-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
- 
-body {
-  background-color: #f0f2f5;
-}
- 
-header {
-  background-color: #214CCE;
-  display: flex;
-  justify-content: space-between; /* separa menu e logo */
-  align-items: center;
-  padding: 0 20px;
-  height: 60px;
-}
+  /* Dias futuros (cinza) */
+  .calendario .futuro {
+    color: #90a4ae;
+    cursor: not-allowed;
+  }
+  
+  .calendario .futuro:hover {
+    background: transparent;
+    color: #90a4ae;
+  }
+  
+  /* Remove o dia ativo fixo - agora só aparece no hover */
+  .calendario .dia-ativo {
+    font-weight: 700;
+  }
+  
+  /* Sábado */
+  .calendario .sabado {
+    color: #d32f2f;
+    font-weight: 700;
+  }
+  
+  /* Domingo */
+  .calendario .domingo {
+    color: #b71c1c;
+    font-weight: 700;
+  }
+  
+  .sitefooter{
+    left: 0; right: 0; bottom: 0;
+    background-color: #214CCE;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+    padding: 18px 16px 26px;
+    text-align: center;
+  }
 
-header img {
-  height: 130px;   /* aumenta a logo */
-  width: auto;    /* mantém proporção */
-  object-fit: contain;
-}
+  .sitefooter small{
+    display: block;
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: .3px;
+    opacity: .95;
+  }
 
-/* BOTÃO MENU HAMBÚRGUER*/
-button.menu-toggle {
-  font-size: 30px;
-  color: white;
-  background: none;    /* remove estilo padrão de botão */
-  border: none;        /* remove borda */
-  cursor: pointer;
-  z-index: 1100;       /* fica acima do menu */
-}
+  .to-top{
+    position: absolute;
+    right: 16px;
+    top: -18px;
+    background: var(--blue-700);
+    width: 32px; height: 32px;
+    border-radius: 10px 10px 0 0;
+    display: inline-flex; align-items: center; justify-content: center;
+    color: #fff; text-decoration: none;
+    box-shadow: var(--shadow);
+  }
 
-/* MENU LATERAL */
-nav#menu {
-  position: fixed;
-  top: 0;
-  right: -250px; /* escondido */
-  width: 250px;
-  height: 100%;
-  background-color: #214CCE;
-  padding-top: 80px;
-  transition: right 0.3s ease; /* animação suave */
-  z-index: 1000;
-}
-
-nav#menu ul {
-  list-style: none;
-  padding: 0;
-}
-
-nav#menu ul li {
-  margin: 20px 0;
-  text-align: left;
-}
-
-nav#menu ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 22px;
-  padding: 10px 20px;
-  display: block;
-  transition: background 0.3s;
-}
-
-nav#menu ul li a:hover {
-  background: #1565c0;
-  border-radius: 5px;
-}
-
-/* QUANDO O MENU ESTÁ ABERTO */
-nav#menu.open {
-  right: 0;
-}
-
-nav a {
-   margin: 0 10px;
-   text-decoration: none;
-   color: #ffffff;
-   font-weight: bold;
-   font-size: 21px;
-}
-
-/* Seção Boas-vindas */
-.boas-vindas {
-  margin: 20px;
-}
-
-.h1 strong{
-  font-size: 70px;
-  font-weight: bold;
-}
-
-.boas-vindas .nome {
-  color: #174bd6;
-  font-weight: bolder;
-}
-
-.boas-vindas strong {
-  font-size: 50px;
-  color: #333;
-  font-weight: bolder;
-}
-
-/* Planos */
-.planos {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 30px 20px;
-}
-
-.meu-plano, .outros-planos {
-  border-radius: 16px;
-  padding: 25px;
-  width: 800px;   /* largura maior */
-  height: 400px;  /* altura maior */
-  text-align: left;
-  font-weight: bold;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* distribui melhor dentro */
-}
-
-/* Meu Plano */
-.meu-plano {
-  background: #1e6eff;
-  color: white;
-  position: relative;
-}
-
-.meu-plano h2 {
-  font-size: 46px;
-  margin-bottom: 10px;
-}
-
-.conteudo-plano {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.titulo-plano {
-  font-size: 60px;
-  font-weight: bold;
-}
-
-.check {
-  background: #00c77f;
-  color: white;
-  font-size: 76px;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Botão "Mais" */
-.btn-mais {
-  margin-top: 12px;
-  padding: 4px 10px;
-  border: none;
-  background: #fff;
-  color: #333;
-  font-size: 20px;
-  font-weight: 600;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 80px;
-}
-
-/* Outros Planos */
-.outros-planos {
-  background: #e4e6eb;
-  color: black;
-}
-
-.outros-planos h2 {
-  font-size: 46px;
-  margin-bottom: 10px;
-}
-
-.titulo-outro {
-  font-size: 60px;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-/* Botão Saiba Mais */
-.btn-saiba {
-  padding: 8px 18px;
-  border: none;
-  background: #d0d0d0;
-  font-size: 15px;
-  font-weight: 600;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 100px;
-}
-
-/* Vídeos */
-/* Seção de vídeos */
-.videos {
-  margin: 20px;
-}
-
-.videos h2 {
-  font-size: 60px;
-  font-weight: 800;
-  color: #2c3e50;
-  margin-bottom: 10px;
-}
-
-/* Card de vídeo */
-.video-card {
-  position: relative;
-  width: 100%;             
-  max-width: 100%;         
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-
-.video-card img {
-  width: 100%;
-  height: 550px;          
-  object-fit: cover;  
-  display: block;
-  border-radius: 10px;
-
-}
-
-/*verde "Novo hoje" */
-.badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: #00c77f;
-  color: white;
-  font-size: 25px;
-  font-weight: bolder;
-  padding: 4px 10px;
-  border-radius: 12px;
-}
-
-/* Texto do vídeo */
-.video-info {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 10px;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
-}
-
-.video-info p {
-  color: white;
-  font-size: 55px;
-  font-family: 'Nunito';
-  font-weight: bold;
-}
+  .to-top svg{ width: 18px; height: 18px; fill: #fff; }
 
 
-/* Calendário */
-.calendario {
-  margin: 20px;
-}
+  @media (max-width: 600px) {
+    /* HEADER */
+    header {
+      height: 56px;
+      padding: 0 12px;
+    }
 
-.calendario h2 {
-  font-size: 60px;
-  font-weight: 800;
-  color: #2c3e50;
-  margin-bottom: 10px;
-}
+    header img {
+      height: 90px;
+    }
 
-.calendario table {
-  width: auto;
-  border-collapse: collapse;
-  margin: 0 auto;
-  font-size: 30px;
-  text-align: center;
-  background: white;
-}
+    button.menu-toggle {
+      font-size: 28px;
+    }
 
-/* Cabeçalho do mês */
-.calendario .mes {
-  background: #1e6eff;
-  color: white;
-  font-weight: 700;
-  font-size: 30px;
-  text-align: center;
-  padding: 8px 0;
-  border: none;
-}
+    /* BOAS-VINDAS */
+    .boas-vindas {
+      margin: 12px;
+      padding: 0 4px;
+    }
 
-/* Dias da semana */
-.calendario th {
-  border: 1px solid #999;
-  padding: 6px 12px;
-  background: #f7f7f7;
-  font-weight: 700;
-  color: #333;
-}
+    .h1 strong {
+      font-size: 27px;
+    }
 
-/* Cores especiais */
-.calendario th:nth-child(6) {
-  color: #d32f2f; /* sábado em vermelho */
-}
+    .boas-vindas strong {
+      font-size: 24px;
+    }
 
-.calendario th:nth-child(7) {
-  color: #b71c1c; /* domingo em vermelho escuro */
-}
+    /* PLANOS */
+    .planos {
+      flex-direction: row;
+      gap: 8px;
+      margin: 12px;
+      padding: 0 4px;
+    }
 
-/* Células normais */
-.calendario td {
-  border: 1px solid #999;
-  padding: 10px;
-  font-weight: 600;
-  color: #111;
-}
+    .meu-plano, .outros-planos {
+      width: 48%;
+      height: auto;
+      padding: 12px;
+      border-radius: 12px;
+    }
 
-/* Dias passados (cinza) */
-.calendario .passado {
-  color: #90a4ae;
-}
+    .meu-plano h2, .outros-planos h2 {
+      font-size: 19px;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
 
-/* Dia ativo (hoje) */
-.calendario .dia-ativo {
-  background: #1e6eff;
-  color: white;
-  font-weight: 700;
-  border-radius: 50%;
-  width: 55px;
-  height: 55px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
+    .titulo-plano, .titulo-outro {
+      font-size: 19px;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
 
-/* Sábado */
-.calendario .sabado {
-  color: #d32f2f;
-  font-weight: 700;
-}
+    .conteudo-plano {
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
-/* Domingo */
-.calendario .domingo {
-  color: #b71c1c;
-  font-weight: 700;
-}
+    .check {
+      width: 32px;
+      height: 32px;
+      font-size: 20px;
+      margin-top: 8px;
+    }
 
+    .btn-mais, .btn-saiba {
+      width: 100%;
+      font-size: 11px;
+      padding: 8px 10px;
+      margin-top: 10px;
+      font-weight: 700;
+    }
 
-.footer {
-  background-color: #214CCE;
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-  margin-top: 40px;
-}
+    /* VÍDEOS */
+    .videos {
+      margin: 12px;
+      padding: 0 4px;
+    }
+
+    .videos h2 {
+      font-size: 25px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .video-card {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 0;
+    }
+
+    .video-card img {
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .badge {
+      font-size: 10px;
+      padding: 3px 7px;
+      border-radius: 6px;
+      top: 8px;
+      left: 8px;
+    }
+
+    .video-info {
+      padding: 8px;
+    }
+
+    .video-info p {
+      font-size: 14px;
+      line-height: 1.3;
+    }
+
+    .btn-todos-videos {
+      font-size: 12px;
+      padding: 8px 16px;
+      margin-top: 8px;
+    }
+
+.link { font-size: 16px; margin: 10px 0; }
+
+    /* CALENDÁRIO */
+    .calendario {
+      margin: 12px;
+      padding: 0 4px;
+    }
+
+    .calendario h2 {
+      font-size: 25px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .calendario table {
+      width: 100%;
+      font-size: 11px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .calendario .mes {
+      font-size: 13px;
+      padding: 6px 0;
+      font-weight: 600;
+    }
+
+    .calendario th {
+      padding: 4px 2px;
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .calendario td {
+      padding: 8px 4px;
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    /* FOOTER */
+    .sitefooter {
+      padding: 12px 10px 20px;
+      margin-top: 20px;
+    }
+
+    .sitefooter small {
+      font-size: 9px;
+      line-height: 1.5;
+    }
+
+    .to-top {
+      right: 10px;
+      top: -16px;
+      width: 30px;
+      height: 30px;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .to-top svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
