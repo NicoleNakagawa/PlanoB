@@ -163,8 +163,8 @@ router.get('/todosvideos', verificaAluno, function(req,res){
     res.render('pages/todosvideos');
 });
 
-router.get('/dados', verificaAluno, function(req,res){
-    res.render('pages/dados');
+router.get('/dados', verificaLogin, function(req, res){
+    res.render('pages/dados', { user: req.session.user || {} });
 });
 
 router.get('/editar', verificaAluno, function(req,res){
@@ -196,6 +196,14 @@ router.get('/infoprof', verificaProfessor, function(req,res){
 
 router.get('/dadosprofessor', verificaProfessor, function(req,res){
     res.render('pages/dadosprofessor');
+});
+
+router.get('/todosalunos', verificaProfessor, function(req,res){
+    res.render('pages/todosalunos');
+});
+
+router.get('/dados', verificaProfessor, function(req,res){
+    res.render('pages/dados');
 });
 
 // ========== ROTA DE LOGOUT ==========

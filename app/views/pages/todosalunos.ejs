@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todos os Alunos</title>
+  <link rel="stylesheet" href="../../css/professor/todosalunos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* Modal styles (similar ao diamante.ejs) */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #E8E8ED;
+      width: 100%;
+      max-width: 420px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    }
+    .modal-header {
+      background: #214CCE;
+      color: #fff;
+      padding: 14px 16px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .modal-header h3 { margin:0; font-size:16px; }
+    .close-modal {
+      margin-left:auto;
+      background:none;
+      border:0;
+      color:#fff;
+      font-size:20px;
+      cursor:pointer;
+    }
+    .modal-body { padding:14px; }
+    .exercise-list { display:flex; flex-direction:column; gap:10px; margin-bottom:12px; }
+    .exercise-item {
+      background:#fff;
+      border-radius:10px;
+      padding:10px;
+      display:flex;
+      gap:12px;
+      align-items:center;
+      cursor:pointer;
+      border:2px solid transparent;
+    }
+    .exercise-item.checked { border-color:#214CCE; background:#e8ecf7; }
+    .exercise-checkbox {
+      width:24px; height:24px; border-radius:6px; border:2px solid #ccc; display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    }
+    .exercise-item.checked .exercise-checkbox { background:#214CCE; border-color:#214CCE; }
+    .exercise-checkbox i { color:#fff; display:none; font-size:12px; }
+    .exercise-item.checked .exercise-checkbox i { display:block; }
+    .modal-actions { display:flex; gap:10px; padding:12px; }
+    .modal-btn { flex:1; padding:10px; border-radius:8px; border:0; font-weight:600; cursor:pointer; }
+    .modal-btn-secondary { background:#B0B0B0; color:#fff; }
+    .modal-btn-primary { background:#214CCE; color:#fff; }
+    .action-buttons { display:flex; gap:10px; margin-top:8px; }
+    .action-btn { flex:1; padding:10px; border-radius:8px; border:1px solid #ccc; background:#fff; cursor:pointer; }
+  </style>
+</head>
+<body>
+
+<nav class="pagehead">
+  <a href="javascript:window.history.back()" class="back" aria-label="Voltar">
+    <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+      <path d="M15.5 4.5 7 12l8.5 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+  <h1 id="h1">Todos os Alunos</h1>
+</nav>
+
+<main>
+  <section class="aluno">
+    <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar" class="foto">
+    <article class="info">
+      <h2>Aluno da Silva</h2>
+      <span class="status online">● online</span>
+    </article>
+    <nav class="acoes">
+      <a href="dados" class="ficha">Ficha</a>
+      <a href="#" class="treino">Treino</a>
+    </nav>
+  </section>
+
+  <section class="aluno">
+    <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar" class="foto">
+    <article class="info">
+      <h2>Maria Oliveira</h2>
+      <span class="status online">● online</span>
+    </article>
+    <nav class="acoes">
+      <a href="dados" class="ficha">Ficha</a>
+      <a href="#" class="treino">Treino</a>
+    </nav>
+  </section>
+
+  <section class="aluno">
+    <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar" class="foto">
+    <article class="info">
+      <h2>Pedro Santos</h2>
+      <span class="status online">● online</span>
+    </article>
+    <nav class="acoes">
+      <a href="dados" class="ficha">Ficha</a>
+      <a href="#" class="treino">Treino</a>
+    </nav>
+  </section>
+
+  <section class="aluno">
+    <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar" class="foto">
+    <article class="info">
+      <h2>Ana Pereira</h2>
+      <span class="status offline">● offline</span>
+    </article>
+    <nav class="acoes">
+      <a href="dados" class="ficha">Ficha</a>
+      <a href="#" class="treino">Treino</a>
+    </nav>
+  </section>
+
+  <section class="aluno">
+    <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar" class="foto">
+    <article class="info">
+      <h2>Lucas Rocha</h2>
+      <span class="status offline">● offline</span>
+    </article>
+    <nav class="acoes">
+      <a href="dados" class="ficha">Ficha</a>
+      <a href="#" class="treino">Treino</a>
+    </nav>
+  </section>
+</main>
+
+<!-- Modal de Treino (comportamento inspirado no diamante.ejs) -->
+<aside class="modal-overlay" id="treinoModal" aria-hidden="true">
+  <article class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <header class="modal-header">
+      <i class="fas fa-dumbbell" aria-hidden="true"></i>
+      <h3 id="modalTitle">Treino - <span id="alunoNome">Aluno</span></h3>
+      <button class="close-modal" id="closeModal" aria-label="Fechar">&times;</button>
+    </header>
+
+    <section class="modal-body">
+      <p class="day-info"><strong>Rotina de treino</strong></p>
+
+      <article class="exercise-list" id="exerciseList">
+        <!-- itens gerados por JS -->
+      </article>
+
+      <section class="action-buttons">
+        <button class="action-btn" id="btnAdd"><i class="fas fa-plus" aria-hidden="true"></i> Adicionar</button>
+        <button class="action-btn" id="btnRemove"><i class="fas fa-trash" aria-hidden="true"></i> Remover</button>
+      </section>
+    </section>
+
+    <footer class="modal-actions">
+      <button class="modal-btn modal-btn-secondary" id="cancelBtn">Cancelar</button>
+      <button class="modal-btn modal-btn-primary" id="saveBtn">Salvar</button>
+    </footer>
+  </article>
+</aside>
+
+<script>
+  // Dados padrão de exercícios (pode ser adaptado para cada aluno)
+  const exerciciosPadrao = [
+    { nome: '10 minutos de aquecimento', completado: false },
+    { nome: '3 séries de agachamento - 12 rep', completado: false },
+    { nome: '3 séries de supino - 10 rep', completado: false }
+  ];
+
+  let exerciciosAtuais = [];
+  let alunoAtual = '';
+
+  function abrirModalTreino(aluno) {
+    alunoAtual = aluno || 'Aluno';
+    const alunoNomeEl = document.getElementById('alunoNome');
+    if (alunoNomeEl) alunoNomeEl.textContent = alunoAtual;
+
+    // usa cópia dos padrões para não mutar o original
+    exerciciosAtuais = exerciciosPadrao.map(e => ({ ...e }));
+
+    renderExerciseList();
+    const modal = document.getElementById('treinoModal');
+    if (modal) {
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+  }
+
+  function fecharModal() {
+    const modal = document.getElementById('treinoModal');
+    if (modal) {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+  }
+
+  function renderExerciseList() {
+    const list = document.getElementById('exerciseList');
+    if (!list) return;
+    list.innerHTML = exerciciosAtuais.map((ex, i) => `
+      <article class="exercise-item ${ex.completado ? 'checked' : ''}" data-index="${i}">
+        <span class="exercise-checkbox"><i class="fas fa-check" aria-hidden="true"></i></span>
+        <span class="exercise-info"><strong>${ex.nome}</strong></span>
+      </article>
+    `).join('');
+
+    // adicionar listeners nos itens
+    document.querySelectorAll('.exercise-item').forEach(item => {
+      item.removeEventListener('click', item._toggleHandler);
+      const handler = () => {
+        const idx = Number(item.getAttribute('data-index'));
+        if (Number.isFinite(idx)) {
+          exerciciosAtuais[idx].completado = !exerciciosAtuais[idx].completado;
+          item.classList.toggle('checked');
+        }
+      };
+      item._toggleHandler = handler;
+      item.addEventListener('click', handler);
+    });
+  }
+
+  // Add / Remove / Save handlers
+  document.addEventListener('DOMContentLoaded', () => {
+    const btnAdd = document.getElementById('btnAdd');
+    const btnRemove = document.getElementById('btnRemove');
+    const saveBtn = document.getElementById('saveBtn');
+    const cancelBtn = document.getElementById('cancelBtn');
+    const closeModalBtn = document.getElementById('closeModal');
+    const modal = document.getElementById('treinoModal');
+
+    if (btnAdd) {
+      btnAdd.addEventListener('click', () => {
+        const nome = prompt('Nome do exercício:');
+        if (nome && nome.trim()) {
+          exerciciosAtuais.push({ nome: nome.trim(), completado: false });
+          renderExerciseList();
+        }
+      });
+    }
+
+    if (btnRemove) {
+      btnRemove.addEventListener('click', () => {
+        if (!exerciciosAtuais.length) return alert('Nenhum exercício para remover.');
+        const nomes = exerciciosAtuais.map((e,i) => `${i+1}. ${e.nome}`).join('\n');
+        const index = parseInt(prompt(`Qual exercício remover?\n\n${nomes}\n\nDigite o número:`), 10);
+        if (!isNaN(index) && index > 0 && index <= exerciciosAtuais.length) {
+          exerciciosAtuais.splice(index - 1, 1);
+          renderExerciseList();
+        }
+      });
+    }
+
+    if (saveBtn) {
+      saveBtn.addEventListener('click', () => {
+        // Aqui pode enviar para backend via fetch se quiser
+        console.log('Exercícios salvos para', alunoAtual, exerciciosAtuais);
+        fecharModal();
+      });
+    }
+
+    if (cancelBtn) cancelBtn.addEventListener('click', fecharModal);
+    if (closeModalBtn) closeModalBtn.addEventListener('click', fecharModal);
+
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === e.currentTarget) fecharModal();
+      });
+    }
+
+    // Vincular botões "Treino" existentes
+    document.querySelectorAll('.treino').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const alunoEl = e.currentTarget.closest('.aluno');
+        const nome = alunoEl ? (alunoEl.querySelector('.info h2')?.textContent || 'Aluno') : 'Aluno';
+        abrirModalTreino(nome);
+      });
+    });
+  });
+</script>
+
+
+</body>
+</html>

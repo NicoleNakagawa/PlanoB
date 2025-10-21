@@ -1,0 +1,175 @@
+@font-face {
+  font-family: 'Nunito';
+  src: url('../../fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ===== Base ===== */
+body {
+  background-color: #fafbff;
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== Cabeçalho ===== */
+header {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+header h1 {
+  font-size: 1.8em;
+  font-weight: 800;
+  color: #2d2d2d;
+  margin: 0;
+}
+
+/* Cabeçalho da página */
+.pagehead{
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  align-items: center;
+  gap: 4px;
+  padding: 18px 18px 8px;
+}
+
+.btn-voltar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 36px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;  
+}
+
+.pagehead .icon{ width: 34px; height: 34px; }
+
+.pagehead h1{
+  margin: 0;
+  font-size: 40px;
+  color: var(--blue-800);
+  font-weight: 800;
+}
+
+/* ===== Lista de alunos ===== */
+main {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* ===== Cartão de aluno ===== */
+.aluno {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Foto ===== */
+.foto {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+/* ===== Info ===== */
+.info {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.info h2 {
+  font-size: 1em;
+  color: #2d2d2d;
+  font-weight: 700;
+  margin: 0;
+}
+
+.status {
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.online {
+  color: #09d32f;
+}
+
+.offline {
+  color: #ff4040;
+}
+
+/* ===== Botões ===== */
+.acoes {
+  display: flex;
+  gap: 8px;
+}
+
+.ficha, .treino {
+  font-size: 0.9em;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid #cfcfcf;
+  transition: 0.2s;
+}
+
+.ficha {
+  background-color: #3967ff;
+  color: #fff;
+}
+
+.treino {
+  background-color: #f3f3f3;
+  color: #2d2d2d;
+}
+
+.ficha:hover, .treino:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  header {
+    max-width: 100%;
+  }
+
+  main {
+    max-width: 100%;
+  }
+
+  .aluno {
+    padding: 10px;
+  }
+
+  .foto {
+    width: 40px;
+    height: 40px;
+  }
+
+  .ficha, .treino {
+    padding: 3px 8px;
+    font-size: 0.85em;
+  }
+}
