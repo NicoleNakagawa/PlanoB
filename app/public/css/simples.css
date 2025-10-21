@@ -1,136 +1,218 @@
-:root{
-    --bg:#e6e6e6;
-    --input:#c5cffd;      /* azul claro dos campos */
-    --text:#0d0d0d;
-    --muted:#8e8e93;      /* cinza dos botões inferiores */
-    --brand:#2f56ff;      /* azul do "X" */
-    --radius:18px;
-   }
-   /* utilitário para esconder só visualmente, mantendo acessível */
-   .sr-only{
-    position:absolute !important;
-    width:1px; height:1px;
-    padding:0; margin:-1px;
-    overflow:hidden;
-    clip:rect(0,0,0,0);
-    white-space:nowrap; border:0;
-   }
-   
-   html, body{
-    height:100%;
-    margin:0;
-   }
-   body{
-    background:var(--bg);
-    color:var(--text);
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-    display:flex;
-    flex-direction:column;
-   }
-   header{
-    position:relative;
-    padding:12px 20px 0;
-   }
-   header h1{
-    margin:10px 0 0;
-    text-align:center;
-    font-size:clamp(24px, 5vw, 36px);
-    font-weight:800;
-    letter-spacing:.3px;
-   }
-   /* Botão de fechar (X) */
-   header nav{
-    position:absolute;
-    inset-block-start:10px;   /* top */
-    inset-inline-start:14px;  /* left */
-   }
-   header nav button{
-    appearance:none;
-    border:none;
-    background:transparent;
-    font:inherit;
-    line-height:1;
-    font-size:36px;
-    color:var(--brand);
-    cursor:pointer;
-   }
-   header nav button:focus{
-    outline:2px solid var(--brand);
-    outline-offset:2px;
-    border-radius:8px;
-   }
-   main{
-    display:flex;
-    flex-direction:column;
-    gap:22px;
-    padding:28px 20px 0;
-    max-width:560px;
-    width:100%;
-    margin-inline:auto;
-    flex:1;
-   }
-   form{
-    width:100%;
-   }
-   fieldset{
-    border:0;
-    padding:0;
-    margin:0;
-    display:grid;
-    gap:22px;
-   }
-   /* rótulos acessíveis porém ocultos visualmente */
-   label{
-    display:block;
-    font-size:0;
-    height:0;
-    overflow:hidden;
-   }
-   input[type="email"],
-   input[type="text"]{
-    width:100%;
-    padding:18px 22px;
-    border:0;
-    border-radius:var(--radius);
-    background:var(--input);
-    font-size:20px;
-    outline:none;
-   }
-   input::placeholder{
-    color:#5f6a7a;
-    opacity:.9;
-   }
-   footer{
-    padding:24px 24px 34px;
-    max-width:560px;
-    margin-inline:auto;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    gap:16px;
-   }
-   footer form{
-    display:flex;
-    justify-content:space-between;
-    gap:16px;
-    width:100%;
-   }
-   button[type="button"],
-   button[type="submit"]{
-    flex:1;
-    appearance:none;
-    border:0;
-    padding:14px 22px;
-    border-radius:999px;
-    background:var(--muted);
-    color:#222;
-    font-weight:700;
-    font-size:18px;
-    cursor:default;  /* aparência “desabilitado” como no mock */
-    opacity:.9;
-   }
-   /* Responsividade */
-   @media (min-width: 640px){
-    main{ padding-top:36px; }
-    footer{ padding-bottom:40px; }
-   }
+@font-face {
+  font-family: 'Nunito';
+  src: url('../../fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ===== Base ===== */
+body {
+  background-color: #fafbff;
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+fieldset {
+  border: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* ===== Cabeçalho ===== */
+.pagehead {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+/* link voltar alinhado junto ao título */
+.pagehead a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: #214CCE;
+  text-decoration: none;
+  margin-right: 8px; /* seta colada no título */
+  flex-shrink: 0;
+  background: transparent;
+  border-radius: 8px;
+}
+
+.pagehead a:hover {
+  background: rgba(33,76,206,0.06);
+}
+
+.pagehead .icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+.pagehead h1 {
+  margin: 0;
+  font-size: 2.6rem;
+  color: #214CCE;
+  font-weight: 800;
+  text-align: left;
+  display: inline-block;
+  line-height: 1;
+}
+
+/* ===== Inputs ===== */
+form {
+  width: 85%;
+  max-width: 360px;
+  background: transparent;
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #222;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #e6eef9;
+  margin-bottom: 14px;
+  font-size: 1rem;
+  color: #000;
+  outline: none;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+  height: 70px;
+}
+
+/* mensagens de erro / sucesso */
+.error-message {
+  display: block;
+  color: #c0392b;
+  font-size: 0.9rem;
+  min-height: 1.2em;
+  margin-top: 4px;
+}
+
+.success {
+  color: #1a7f37;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* ===== Botões ===== */
+.salvar,
+.editar {
+  border: none;
+  border-radius: 15px;
+  padding: 10px 24px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin: 8px;
+  background-color: #d0d0d0;
+  color: #000;
+  transition: background-color 0.2s ease;
+  width: 120px;
+}
+
+.salvar:hover,
+.editar:hover {
+  background-color: #c0c0c0;
+}
+
+/* ===== Layout do formulário ===== */
+.form-dados {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 480px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  body {
+    height: auto;
+    padding: 20px 0;
+    align-items: center; /* garante centralização vertical/horizontal */
+  }
+
+  /* Cabeçalho centralizado com a seta à esquerda (colada) */
+  .pagehead {
+    justify-content: center;
+    position: relative;
+    padding: 3px 12px;
+  }
+
+  .pagehead a {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 0;
+  }
+
+  .pagehead h1 {
+    font-size: 1.7rem;
+    text-align: center;
+    display: block;
+  }
+
+  /* Form centralizado e com largura adequada */
+  form {
+    width: 92%;
+    max-width: 360px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Inputs ocupam toda a largura disponível dentro do form */
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  input[type="number"],
+  textarea {
+    width: 100%;
+  }
+
+  /* Botões centralizados */
+  .salvar, .editar {
+    width: 80%;
+    max-width: 240px;
+    margin: 10px auto;
+    padding: 9px 18px;
+    color: #214CCE;
+  }
+}

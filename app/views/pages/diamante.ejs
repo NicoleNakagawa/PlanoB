@@ -235,6 +235,7 @@
       <li><a href="/dados">Meus Dados</a></li>
       <li><a href="/nossosplanos">Planos</a></li>
       <li><a href="/sobre">Sobre nós</a></li>
+      <li><a href="/logout">Logout</a></li>
     </ul>
   </nav>
 </header>
@@ -367,14 +368,7 @@
       </article>
 
       <section class="action-buttons">
-        <button class="action-btn" onclick="adicionarExercicio()">
-          <i class="fas fa-plus"></i>
-          Adicionar exercício
-        </button>
-        <button class="action-btn" onclick="removerExercicio()">
-          <i class="fas fa-trash"></i>
-          Remover exercício
-        </button>
+        <!-- Botões de adicionar/remover removidos conforme solicitado -->
       </section>
     </section>
 
@@ -473,30 +467,6 @@
     // Aqui você pode adicionar lógica para salvar no backend
     console.log('Exercícios salvos para o dia', diaAtual);
     fecharModal();
-  }
-
-  function adicionarExercicio() {
-    const nome = prompt('Nome do exercício:');
-    if (nome) {
-      if (!exerciciosPorDia[diaAtual]) {
-        exerciciosPorDia[diaAtual] = [...exerciciosPadrao];
-      }
-      exerciciosPorDia[diaAtual].push({ nome, tipo: 'T', completado: false });
-      mostrarModal(diaAtual);
-    }
-  }
-
-  function removerExercicio() {
-    if (!exerciciosPorDia[diaAtual]) return;
-    
-    const exercicios = exerciciosPorDia[diaAtual];
-    const nomes = exercicios.map((ex, i) => `${i + 1}. ${ex.nome}`).join('\n');
-    const index = prompt(`Qual exercício remover?\n\n${nomes}\n\nDigite o número:`);
-    
-    if (index && index > 0 && index <= exercicios.length) {
-      exercicios.splice(index - 1, 1);
-      mostrarModal(diaAtual);
-    }
   }
 
   // Fechar modal ao clicar fora

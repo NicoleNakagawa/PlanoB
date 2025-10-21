@@ -171,6 +171,10 @@ router.get('/editar', verificaAluno, function(req,res){
     res.render('pages/editar');
 });
 
+router.get('/simples', verificaAluno, function(req,res){
+    res.render('pages/simples');
+});
+
 
 // ========== ROTAS PROTEGIDAS - PROFESSOR ==========
 
@@ -209,11 +213,13 @@ router.get('/dados', verificaProfessor, function(req,res){
 // ========== ROTA DE LOGOUT ==========
 
 router.get('/logout', function(req, res) {
-    req.session.destroy((err) => {
-        if (err) {
-            console.error('Erro ao fazer logout:', err);
+    // Destruir a sessão
+    req.session.destroy(function(err) {
+        if(err) {
+            console.log(err);
         }
-        res.redirect('/login');
+        // Redirecionar para a página inicial
+        res.redirect('/');
     });
 });
 
@@ -453,6 +459,47 @@ router.get('/lazuli', verificaAluno, function(req, res){
 
 router.get('/prata', verificaAluno, function(req, res){
     res.render('pages/prata', { user: req.session.user || {} });
+});
+
+// Validação e submissão do formulário "Meus Dados"
+router.post('/simples', verificaLogin, [
+  body('nome')
+    .trim()
+    .notEmpty().withMessage('Nome é obrigatório.')
+    .isLength({ min: 2 }).withMessage('Nome deve ter ao menos 2 caracteres.')
+    .matches(/^[A-Za-zÀ-ÖØ-öø-ÿ\s'’-]+$/).withMessage('Nome contém caracteres inválidos.'),
+  body('data') // campo "data" do simples.ejs guarda o e-mail
+    .trim()
+    .notEmpty().withMessage('E-mail é obrigatório.')
+    .isEmail().withMessage('E-mail inválido.')
+    .normalizeEmail()
+], (req, res) => {
+  const errors = validationResult(req);
+  const old = { nome: req.body.nome || '', data: req.body.data || '' };
+
+  if (!errors.isEmpty()) {
+    // retorna 422 e renderiza a mesma página com mensagens de erro e valores preenchidos
+    return res.status(422).render('pages/simples', { errors: errors.array(), old, success: null });
+  }
+
+  // sucesso: exemplo de salvar no session e renderizar com mensagem de sucesso
+  req.session = req.session || {};
+  req.session.user = req.session.user || {};
+  req.session.user.nome = req.body.nome;
+  req.session.user.email = req.body.data;
+
+  return res.render('pages/simples', { errors: [], old, success: 'Dados salvos com sucesso.' });
+});
+
+// RENDERIZA O FORM "Meus Dados" (GET)
+router.get('/simples', verificaLogin, (req, res) => {
+  const user = (req.session && req.session.user) ? req.session.user : {};
+  res.render('pages/simples', {
+    errors: [],
+    old: {},
+    user,
+    success: null
+  });
 });
 
 module.exports = router;

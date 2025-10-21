@@ -92,16 +92,22 @@ body{
   color: #ccc;
 }
 
+
 .caixa-direita {
   background-color: #e6e6e6;
   width: 100%;
-  padding: 20px 15px;
+  padding: 40px 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-top-left-radius: 100px;
   border-bottom-left-radius: 100px;
+}
+
+.caixa-direita > * {
+  width: 100%;
+  max-width: 460px;
 }
 
 .caixa-direita h2 {
